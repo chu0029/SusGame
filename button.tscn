@@ -3,4 +3,4 @@
 [node name="Button" type="Button"]
 offset_right = 8.0
 offset_bottom = 8.0
-text = "hello"
+text = "hello!"
