@@ -13,3 +13,13 @@ config_version=5
 config/name="SusGame"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
+
+[display]
+
+window/size/viewport_width=1120
+window/size/viewport_height=700
+window/stretch/mode="viewport"
+
+[rendering]
+
+renderer/rendering_method="mobile"
