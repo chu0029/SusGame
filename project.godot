@@ -14,3 +14,14 @@ config/name="SusGame"
 run/main_scene="uid://dotcev5cmnn1w"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
+
+[display]
+
+window/size/viewport_width=1120
+window/size/viewport_height=700
+window/stretch/mode="viewport"
+
+[rendering]
+
+textures/canvas_textures/default_texture_filter=0
+renderer/rendering_method="mobile"
