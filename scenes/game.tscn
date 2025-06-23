@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://cu7o6v80yhekf"]
+
+[ext_resource type="Script" uid="uid://cwmna8lkuucmu" path="res://scripts/game.gd" id="1_yqjtg"]
+[ext_resource type="Texture2D" uid="uid://b7xvqpo14820x" path="res://factory.png" id="2_lnu2h"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_yqjtg")
+
+[node name="factory" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 419.0
+offset_top = 183.0
+offset_right = 675.0
+offset_bottom = 439.0
+texture_normal = ExtResource("2_lnu2h")
+stretch_mode = 0
