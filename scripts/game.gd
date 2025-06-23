@@ -1,10 +1,19 @@
 extends Control
 
 var power: int = 0
-var ClickMult: int = 1
+var Cmult: int = 1
+@export var label : RichTextLabel
 
-# Called when the node enters the scene tree for the first time.
+
 func _ready() -> void:
-	UpdateLabelText()
+	Updatelabel()
 
+func Updatelabel()-> void:
+	label.text = "Powah: %s" %power
+	
 func CreatePower() -> void:
+	power += 1 * Cmult
+	Updatelabel()
+
+func _on_factory_pressed() -> void:
+	CreatePower()

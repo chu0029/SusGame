@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://cwmna8lkuucmu" path="res://scripts/game.gd" id="1_yqjtg"]
 [ext_resource type="Texture2D" uid="uid://b7xvqpo14820x" path="res://factory.png" id="2_lnu2h"]
 
-[node name="Control" type="Control"]
+[node name="Control" type="Control" node_paths=PackedStringArray("label")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -11,12 +11,24 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_yqjtg")
+label = NodePath("RichTextLabel")
 
 [node name="factory" type="TextureButton" parent="."]
 layout_mode = 0
-offset_left = 419.0
-offset_top = 183.0
-offset_right = 675.0
-offset_bottom = 439.0
+offset_left = 399.0
+offset_top = 318.0
+offset_right = 712.0
+offset_bottom = 627.0
 texture_normal = ExtResource("2_lnu2h")
 stretch_mode = 0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 485.0
+offset_top = 18.0
+offset_right = 808.0
+offset_bottom = 98.0
+text = "Powah <value>
+"
+
+[connection signal="pressed" from="factory" to="." method="_on_factory_pressed"]

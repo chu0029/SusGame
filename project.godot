@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="SusGame"
-run/main_scene="uid://dotcev5cmnn1w"
+run/main_scene="uid://cu7o6v80yhekf"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 
