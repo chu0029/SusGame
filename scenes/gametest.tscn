@@ -1,0 +1,49 @@
+[gd_scene load_steps=5 format=3 uid="uid://ikdew4lo1lg8"]
+
+[ext_resource type="Script" uid="uid://bpn0pj6e5fff0" path="res://scripts/gametest.gd" id="1_34im5"]
+[ext_resource type="Texture2D" uid="uid://b7xvqpo14820x" path="res://factory.png" id="1_kpvv0"]
+[ext_resource type="FontFile" uid="uid://dd1g3ubwksw" path="res://DOTGOTHIC16.TTF" id="2_34im5"]
+
+[sub_resource type="Theme" id="Theme_6ycye"]
+default_font = ExtResource("2_34im5")
+default_font_size = 26
+
+[node name="Control" type="Control" node_paths=PackedStringArray("counter")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_34im5")
+counter = NodePath("RichTextLabel")
+
+[node name="factory" type="TextureButton" parent="."]
+custom_minimum_size = Vector2(256, 256)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -128.0
+offset_top = -128.0
+offset_right = 128.0
+offset_bottom = 128.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("1_kpvv0")
+stretch_mode = 0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 57.0
+grow_horizontal = 2
+theme = SubResource("Theme_6ycye")
+text = "Power: skibidi"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="factory" to="." method="_on_factory_pressed"]
