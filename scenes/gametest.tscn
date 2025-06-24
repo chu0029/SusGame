@@ -1,11 +1,12 @@
-[gd_scene load_steps=5 format=3 uid="uid://ikdew4lo1lg8"]
+[gd_scene load_steps=6 format=3 uid="uid://ikdew4lo1lg8"]
 
 [ext_resource type="Script" uid="uid://bpn0pj6e5fff0" path="res://scripts/gametest.gd" id="1_34im5"]
 [ext_resource type="Texture2D" uid="uid://b7xvqpo14820x" path="res://factory.png" id="1_kpvv0"]
-[ext_resource type="AudioStream" uid="uid://chsjshog20y1y" path="res://e_se004.ogg" id="3_6ycye"]
+[ext_resource type="AudioStream" uid="uid://b2ev1rwqv8ylo" path="res://e_s004.ogg" id="3_6ycye"]
 [ext_resource type="Theme" uid="uid://yfe8see4c3cw" path="res://gametest.tres" id="3_34im5"]
+[ext_resource type="AudioStream" uid="uid://bou11k5vvk7ai" path="res://e_s015.ogg" id="5_1dvly"]
 
-[node name="Control" type="Control" node_paths=PackedStringArray("counter", "multipcounter", "timer", "soundfactory")]
+[node name="Control" type="Control" node_paths=PackedStringArray("counter", "multipcounter", "timer", "soundfactory", "soundupgrade")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -16,7 +17,8 @@ script = ExtResource("1_34im5")
 counter = NodePath("counter")
 multipcounter = NodePath("multipcounter")
 timer = NodePath("Timer")
-soundfactory = NodePath("factory/AudioStreamPlayer")
+soundfactory = NodePath("factory/soundfactory")
+soundupgrade = NodePath("soundupgrade")
 
 [node name="Timer" type="Timer" parent="."]
 
@@ -37,7 +39,7 @@ grow_vertical = 2
 texture_normal = ExtResource("1_kpvv0")
 stretch_mode = 0
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="factory"]
+[node name="soundfactory" type="AudioStreamPlayer" parent="factory"]
 stream = ExtResource("3_6ycye")
 
 [node name="counter" type="RichTextLabel" parent="."]
@@ -75,11 +77,15 @@ text = "Multiplier: 0"
 
 [node name="autoclicker" type="Button" parent="."]
 custom_minimum_size = Vector2(200, 200)
+layout_mode = 0
 offset_left = 795.0
 offset_top = 182.0
 offset_right = 894.0
 offset_bottom = 213.0
 text = "autoclicker"
+
+[node name="soundupgrade" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_1dvly")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="pressed" from="factory" to="." method="_on_factory_pressed"]

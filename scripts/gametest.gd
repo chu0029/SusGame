@@ -4,6 +4,7 @@ extends Control
 @export var multipcounter: Label
 @export var timer: Timer
 @export var soundfactory: AudioStreamPlayer
+@export var soundupgrade: AudioStreamPlayer
 
 var power: int = 0
 var multiplier : int = 1
@@ -32,10 +33,12 @@ func _on_factory_pressed() -> void:
 
 func _on_multiplier_pressed() -> void:
 	multiplier += 1
+	soundupgrade.play()
 
 func _on_autoclicker_pressed() -> void:
 	timer.start()
 	automult += 1
+	soundupgrade.play()
 
 func _on_timer_timeout() -> void:
 	AutoFactory()
