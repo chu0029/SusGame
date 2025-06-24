@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bpn0pj6e5fff0" path="res://scripts/gametest.gd" id="1_34im5"]
 [ext_resource type="Texture2D" uid="uid://b7xvqpo14820x" path="res://factory.png" id="1_kpvv0"]
-[ext_resource type="AudioStream" uid="uid://chsjshog20y1y" path="res://e_se004.ogg" id="3_6ycye"]
+[ext_resource type="AudioStream" uid="uid://b2ev1rwqv8ylo" path="res://e_s004.ogg" id="3_6ycye"]
 [ext_resource type="Theme" uid="uid://yfe8see4c3cw" path="res://gametest.tres" id="3_34im5"]
 
 [node name="Control" type="Control" node_paths=PackedStringArray("counter", "multipcounter", "timer", "soundfactory")]
@@ -75,6 +75,7 @@ text = "Multiplier: 0"
 
 [node name="autoclicker" type="Button" parent="."]
 custom_minimum_size = Vector2(200, 200)
+layout_mode = 0
 offset_left = 795.0
 offset_top = 182.0
 offset_right = 894.0
