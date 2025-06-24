@@ -1,10 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://ikdew4lo1lg8"]
+[gd_scene load_steps=5 format=3 uid="uid://ikdew4lo1lg8"]
 
 [ext_resource type="Script" uid="uid://bpn0pj6e5fff0" path="res://scripts/gametest.gd" id="1_34im5"]
 [ext_resource type="Texture2D" uid="uid://b7xvqpo14820x" path="res://factory.png" id="1_kpvv0"]
+[ext_resource type="AudioStream" uid="uid://chsjshog20y1y" path="res://e_se004.ogg" id="3_6ycye"]
 [ext_resource type="Theme" uid="uid://yfe8see4c3cw" path="res://gametest.tres" id="3_34im5"]
 
-[node name="Control" type="Control" node_paths=PackedStringArray("counter", "multipcounter", "timer")]
+[node name="Control" type="Control" node_paths=PackedStringArray("counter", "multipcounter", "timer", "soundfactory")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -15,6 +16,7 @@ script = ExtResource("1_34im5")
 counter = NodePath("counter")
 multipcounter = NodePath("multipcounter")
 timer = NodePath("Timer")
+soundfactory = NodePath("factory/AudioStreamPlayer")
 
 [node name="Timer" type="Timer" parent="."]
 
@@ -35,6 +37,9 @@ grow_vertical = 2
 texture_normal = ExtResource("1_kpvv0")
 stretch_mode = 0
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="factory"]
+stream = ExtResource("3_6ycye")
+
 [node name="counter" type="RichTextLabel" parent="."]
 layout_mode = 1
 anchors_preset = 10
@@ -52,20 +57,21 @@ offset_left = 120.0
 offset_top = 167.0
 offset_right = 221.0
 offset_bottom = 198.0
-text = "sajdnsknjdk"
+text = "multiplier
+"
 
 [node name="multipcounter" type="Label" parent="."]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -120.0
-offset_top = 49.0
-offset_right = 127.0
-offset_bottom = 88.0
+offset_left = -86.0
+offset_top = 48.0
+offset_right = 161.0
+offset_bottom = 87.0
 grow_horizontal = 2
 theme = ExtResource("3_34im5")
-text = "multiplier: <value>"
+text = "Multiplier: 0"
 
 [node name="autoclicker" type="Button" parent="."]
 custom_minimum_size = Vector2(200, 200)

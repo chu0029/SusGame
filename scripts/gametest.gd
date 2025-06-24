@@ -3,6 +3,7 @@ extends Control
 @export var counter: RichTextLabel
 @export var multipcounter: Label
 @export var timer: Timer
+@export var soundfactory: AudioStreamPlayer
 
 var power: int = 0
 var multiplier : int = 1
@@ -27,6 +28,7 @@ func AutoFactory() -> void:
 
 func _on_factory_pressed() -> void:
 	CreatePower()
+	soundfactory.play()
 
 func _on_multiplier_pressed() -> void:
 	multiplier += 1
