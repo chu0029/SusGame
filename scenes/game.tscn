@@ -1,9 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://cu7o6v80yhekf"]
+[gd_scene load_steps=5 format=3 uid="uid://cu7o6v80yhekf"]
 
 [ext_resource type="Script" uid="uid://cwmna8lkuucmu" path="res://scripts/game.gd" id="1_yqjtg"]
 [ext_resource type="Texture2D" uid="uid://b7xvqpo14820x" path="res://factory.png" id="2_lnu2h"]
+[ext_resource type="Texture2D" uid="uid://orqviajp7y2t" path="res://icon.svg" id="3_lnu2h"]
 
-[node name="Control" type="Control" node_paths=PackedStringArray("label")]
+[sub_resource type="Theme" id="Theme_lbhrr"]
+default_font_size = 50
+
+[node name="Control" type="Control" node_paths=PackedStringArray("label2", "label", "autoC")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -11,7 +15,9 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_yqjtg")
+label2 = NodePath("Label")
 label = NodePath("RichTextLabel")
+autoC = NodePath("autoC")
 
 [node name="factory" type="TextureButton" parent="."]
 layout_mode = 0
@@ -23,12 +29,61 @@ texture_normal = ExtResource("2_lnu2h")
 stretch_mode = 0
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
-layout_mode = 0
-offset_left = 485.0
-offset_top = 18.0
-offset_right = 808.0
-offset_bottom = 98.0
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -255.0
+offset_right = 255.0
+offset_bottom = 80.0
+grow_horizontal = 2
+theme = SubResource("Theme_lbhrr")
 text = "Powah <value>
 "
+horizontal_alignment = 1
+
+[node name="TextureButton" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 50.0
+offset_top = 285.0
+offset_right = 243.0
+offset_bottom = 484.0
+action_mode = 0
+texture_normal = ExtResource("3_lnu2h")
+texture_pressed = ExtResource("2_lnu2h")
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 52.0
+offset_top = 191.0
+offset_right = 236.0
+offset_bottom = 277.0
+text = "this should be replaced 
+<value>"
+horizontal_alignment = 1
+
+[node name="autoC" type="Label" parent="."]
+layout_mode = 0
+offset_left = 925.862
+offset_top = 173.042
+offset_right = 965.862
+offset_bottom = 196.042
+text = "Autobots rollout!
+"
+
+[node name="Button" type="Button" parent="autoC"]
+layout_mode = 0
+offset_left = -35.8617
+offset_top = 47.9579
+offset_right = 166.138
+offset_bottom = 160.958
+rotation = 0.0565469
+text = "autoclickerrrrrr"
+
+[node name="Timer" type="Timer" parent="."]
 
 [connection signal="pressed" from="factory" to="." method="_on_factory_pressed"]
+[connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]
+[connection signal="pressed" from="autoC/Button" to="." method="_on_button_pressed"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
