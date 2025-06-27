@@ -6,7 +6,7 @@
 [ext_resource type="Theme" uid="uid://yfe8see4c3cw" path="res://gametest.tres" id="3_34im5"]
 [ext_resource type="AudioStream" uid="uid://bou11k5vvk7ai" path="res://e_s015.ogg" id="5_1dvly"]
 
-[node name="Control" type="Control" node_paths=PackedStringArray("counter", "multipcounter", "timer", "soundfactory", "soundupgrade", "autoclicker")]
+[node name="Control" type="Control" node_paths=PackedStringArray("counter", "multipcounter", "timer", "soundfactory", "soundupgrade", "autoclicker", "solarpanel")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -20,6 +20,7 @@ timer = NodePath("Timer")
 soundfactory = NodePath("factory/soundfactory")
 soundupgrade = NodePath("soundupgrade")
 autoclicker = NodePath("autoclicker")
+solarpanel = NodePath("solarpanel")
 
 [node name="Timer" type="Timer" parent="."]
 
@@ -86,12 +87,24 @@ offset_right = 894.0
 offset_bottom = 213.0
 theme = ExtResource("3_34im5")
 text = "autoclicker
-cost: $10"
+cost: 10 kW/s"
 
 [node name="soundupgrade" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_1dvly")
+
+[node name="solarpanel" type="Button" parent="."]
+layout_mode = 0
+offset_left = 123.0
+offset_top = 283.0
+offset_right = 359.0
+offset_bottom = 453.0
+theme = ExtResource("3_34im5")
+text = "Solar Panel: 0
+Cost: 25 kW
+Produces 1 kWs"
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="pressed" from="factory" to="." method="_on_factory_pressed"]
 [connection signal="pressed" from="multiplier" to="." method="_on_multiplier_pressed"]
 [connection signal="pressed" from="autoclicker" to="." method="_on_autoclicker_pressed"]
+[connection signal="pressed" from="solarpanel" to="." method="_on_solarpanel_pressed"]
