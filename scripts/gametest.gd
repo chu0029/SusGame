@@ -11,7 +11,7 @@ var power: int = 0
 var multiplier : int = 1
 var automult : int = 0
 
-var AutomultC = 10
+var AutoclickC = 10
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -39,7 +39,7 @@ func _on_multiplier_pressed() -> void:
 	soundupgrade.play()
 
 func _on_autoclicker_pressed() -> void:
-	if power >= AutomultC:
+	if power >= AutoclickC:
 		timer.start()
 		automult += 1
 		power -= 10
