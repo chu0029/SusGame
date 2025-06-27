@@ -21,7 +21,7 @@ func _process(delta: float) -> void:
 	UpdateLabelText()
 	
 func UpdateLabelText() -> void:
-	counter.text = "Power: %s" %power
+	counter.text = "Power: %s kWh" %power
 	multipcounter.text = "Multiplier: %s" %multiplier
 
 func CreatePower() -> void:
@@ -43,7 +43,8 @@ func _on_autoclicker_pressed() -> void:
 		timer.start()
 		automult += 1
 		power -= 10
-		autoclicker.text = 'Autoclicker \n %c' %power
+		AutoclickC = round(AutoclickC*1.5)
+		autoclicker.text = 'Autoclicker \n %s kWh' %int(AutoclickC)
 		soundupgrade.play()
 
 func _on_timer_timeout() -> void:
