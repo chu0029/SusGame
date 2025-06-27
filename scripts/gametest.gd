@@ -56,11 +56,11 @@ func _on_timer_timeout() -> void:
 
 
 func _on_solarpanel_pressed() -> void:
-	if power >= 10:
+	if power >= 25:
 		timer.start()
 		solarpanelcount += 1
-		power -= 10
-		solarpanel.text = 'Solar Panel: %s \n Cost: 10 kW \n 1 kW/s' %solarpanelcount
+		power -= 25
+		solarpanel.text = 'Solar Panel: %s \n Cost: 25 kW \n Produces 1 kW/s' %solarpanelcount
 		soundupgrade.play()
 		
 		

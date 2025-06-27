@@ -100,7 +100,7 @@ offset_right = 359.0
 offset_bottom = 453.0
 theme = ExtResource("3_34im5")
 text = "Solar Panel: 0
-Cost: 10 kW
+Cost: 25 kW
 Produces 1 kWs"
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
