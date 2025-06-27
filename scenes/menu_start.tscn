@@ -1,0 +1,88 @@
+[gd_scene load_steps=8 format=3 uid="uid://uagqm7agdako"]
+
+[ext_resource type="Script" uid="uid://c07hputae2uq7" path="res://scripts/menu_start_script.gd" id="1_tc6ix"]
+[ext_resource type="Texture2D" uid="uid://0mbegryy0420" path="res://city pixal placeholder.jpg" id="2_4jmj5"]
+[ext_resource type="FontFile" uid="uid://dd1g3ubwksw" path="res://DOTGOTHIC16.TTF" id="3_phe8i"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_tc6ix"]
+font = ExtResource("3_phe8i")
+font_size = 79
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tc6ix"]
+bg_color = Color(0.489521, 0.177108, 0.418911, 0.8)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_blend = true
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_phe8i"]
+bg_color = Color(0.247549, 0.0711574, 0.208018, 0.8)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4jmj5"]
+bg_color = Color(0.489521, 0.177108, 0.418911, 0.8)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[node name="menu start" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_tc6ix")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_4jmj5")
+
+[node name="Label" type="Label" parent="TextureRect"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -280.0
+offset_top = 146.0
+offset_right = 313.0
+offset_bottom = 261.0
+grow_horizontal = 2
+text = "Factory worker!"
+label_settings = SubResource("LabelSettings_tc6ix")
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 316.0
+offset_top = 332.0
+offset_right = 818.0
+offset_bottom = 462.0
+theme_override_fonts/font = ExtResource("3_phe8i")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/hover = SubResource("StyleBoxFlat_tc6ix")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_phe8i")
+theme_override_styles/normal = SubResource("StyleBoxFlat_4jmj5")
+text = "START?"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
