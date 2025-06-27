@@ -6,7 +6,7 @@
 [ext_resource type="Theme" uid="uid://yfe8see4c3cw" path="res://gametest.tres" id="3_34im5"]
 [ext_resource type="AudioStream" uid="uid://bou11k5vvk7ai" path="res://e_s015.ogg" id="5_1dvly"]
 
-[node name="Control" type="Control" node_paths=PackedStringArray("counter", "multipcounter", "timer", "soundfactory", "soundupgrade")]
+[node name="Control" type="Control" node_paths=PackedStringArray("counter", "multipcounter", "timer", "soundfactory", "soundupgrade", "autoclicker")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -19,6 +19,7 @@ multipcounter = NodePath("multipcounter")
 timer = NodePath("Timer")
 soundfactory = NodePath("factory/soundfactory")
 soundupgrade = NodePath("soundupgrade")
+autoclicker = NodePath("autoclicker")
 
 [node name="Timer" type="Timer" parent="."]
 
@@ -59,6 +60,7 @@ offset_left = 120.0
 offset_top = 167.0
 offset_right = 221.0
 offset_bottom = 198.0
+theme = ExtResource("3_34im5")
 text = "multiplier
 "
 
@@ -82,7 +84,9 @@ offset_left = 795.0
 offset_top = 182.0
 offset_right = 894.0
 offset_bottom = 213.0
-text = "autoclicker"
+theme = ExtResource("3_34im5")
+text = "autoclicker
+cost: $10"
 
 [node name="soundupgrade" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_1dvly")
