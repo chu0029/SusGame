@@ -94,10 +94,10 @@ stream = ExtResource("5_1dvly")
 
 [node name="solarpanel" type="Button" parent="."]
 layout_mode = 0
-offset_left = 123.0
-offset_top = 283.0
-offset_right = 359.0
-offset_bottom = 453.0
+offset_left = 84.0
+offset_top = 333.0
+offset_right = 301.0
+offset_bottom = 483.0
 theme = ExtResource("3_34im5")
 text = "Solar Panel: 0
 Cost: 25 kW
