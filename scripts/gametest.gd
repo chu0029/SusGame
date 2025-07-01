@@ -7,14 +7,20 @@ extends Control
 @export var soundupgrade: AudioStreamPlayer
 @export var autoclicker: Button
 @export var solarpanel: Button
+@export var windturbine: Button
+@export var biomass: Button
+@export var geothermalplant: Button
 
-var power: int = 0
+var power: int = 10000
 var multiplier : int = 1
 var automult : int = 0
 
 var AutoclickC = 10
 
 var solarpanelcount : int = 0
+var windturbinecount : int = 0
+var biomasscount : int = 0
+var geothermalplantcount : int = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -33,6 +39,8 @@ func CreatePower() -> void:
 func AutoFactory() -> void: 
 	power += 1 * automult
 	power += 1 * solarpanelcount
+	power += 2 * windturbinecount
+	power += 5 * biomasscount
 
 func _on_factory_pressed() -> void:
 	CreatePower()
@@ -62,5 +70,23 @@ func _on_solarpanel_pressed() -> void:
 		power -= 25
 		solarpanel.text = 'Solar Panel: %s \n Cost: 25 kW \n Produces 1 kW/s' %solarpanelcount
 		soundupgrade.play()
-		
-		
+
+func _on_windturbine_pressed() -> void:
+	if power >= 100:
+		timer.start()
+		windturbinecount += 1
+		power -= 100
+		windturbine.text = 'Wind Turbine: %s \n Cost: 100 kW \n Produces 2 kW/s' %windturbinecount
+		soundupgrade.play()
+
+func _on_biomass_pressed() -> void:
+	if power >= 500:
+		timer.start()
+		biomasscount += 1
+		power -= 500
+		biomass.text = 'Biomass Boiler: %s \n Cost: 500 kW \n Produces 3 kW/s' %biomasscount
+		soundupgrade.play()
+
+
+func _on_geothermalplant_pressed() -> void:
+	pass # Replace with function body.

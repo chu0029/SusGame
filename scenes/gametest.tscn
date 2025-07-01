@@ -1,12 +1,13 @@
-[gd_scene load_steps=6 format=3 uid="uid://ikdew4lo1lg8"]
+[gd_scene load_steps=7 format=3 uid="uid://ikdew4lo1lg8"]
 
 [ext_resource type="Script" uid="uid://bpn0pj6e5fff0" path="res://scripts/gametest.gd" id="1_34im5"]
 [ext_resource type="Texture2D" uid="uid://b7xvqpo14820x" path="res://factory.png" id="1_kpvv0"]
 [ext_resource type="AudioStream" uid="uid://b2ev1rwqv8ylo" path="res://e_s004.ogg" id="3_6ycye"]
 [ext_resource type="Theme" uid="uid://yfe8see4c3cw" path="res://gametest.tres" id="3_34im5"]
 [ext_resource type="AudioStream" uid="uid://bou11k5vvk7ai" path="res://e_s015.ogg" id="5_1dvly"]
+[ext_resource type="Texture2D" uid="uid://i6623btw2mrp" path="res://background placeholder.png" id="6_i0h8x"]
 
-[node name="Control" type="Control" node_paths=PackedStringArray("counter", "multipcounter", "timer", "soundfactory", "soundupgrade", "autoclicker", "solarpanel")]
+[node name="Control" type="Control" node_paths=PackedStringArray("counter", "multipcounter", "timer", "soundfactory", "soundupgrade", "autoclicker", "solarpanel", "windturbine", "biomass")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -20,7 +21,16 @@ timer = NodePath("Timer")
 soundfactory = NodePath("factory/soundfactory")
 soundupgrade = NodePath("soundupgrade")
 autoclicker = NodePath("autoclicker")
-solarpanel = NodePath("solarpanel")
+solarpanel = NodePath("ScrollContainer/HBoxContainer/VBoxContainer/solarpanel")
+windturbine = NodePath("ScrollContainer/HBoxContainer/VBoxContainer/windturbine")
+biomass = NodePath("ScrollContainer/HBoxContainer/VBoxContainer/biomass")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+z_index = -1
+custom_minimum_size = Vector2(1120, 700)
+offset_right = 1120.0
+offset_bottom = 700.0
+texture = ExtResource("6_i0h8x")
 
 [node name="Timer" type="Timer" parent="."]
 
@@ -81,10 +91,10 @@ text = "Multiplier: 0"
 [node name="autoclicker" type="Button" parent="."]
 custom_minimum_size = Vector2(200, 200)
 layout_mode = 0
-offset_left = 795.0
-offset_top = 182.0
-offset_right = 894.0
-offset_bottom = 213.0
+offset_left = 1.0
+offset_top = 20.0
+offset_right = 201.0
+offset_bottom = 220.0
 theme = ExtResource("3_34im5")
 text = "autoclicker
 cost: 10 kW/s"
@@ -92,19 +102,48 @@ cost: 10 kW/s"
 [node name="soundupgrade" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_1dvly")
 
-[node name="solarpanel" type="Button" parent="."]
-layout_mode = 0
-offset_left = 84.0
-offset_top = 333.0
-offset_right = 301.0
-offset_bottom = 483.0
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.04
+anchor_bottom = 0.124
+offset_left = 788.0
+offset_top = 29.0
+offset_right = 1189.2
+offset_bottom = 378.2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ScrollContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="solarpanel" type="Button" parent="ScrollContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
 theme = ExtResource("3_34im5")
 text = "Solar Panel: 0
 Cost: 25 kW
 Produces 1 kWs"
 
+[node name="windturbine" type="Button" parent="ScrollContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_34im5")
+text = "Wind Turbine: 0
+Cost: 100 kW
+Produces 2 kWs"
+
+[node name="biomass" type="Button" parent="ScrollContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_34im5")
+text = "Biomass: 0
+Cost: 500 kW
+Produces 5 kWs"
+
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="pressed" from="factory" to="." method="_on_factory_pressed"]
 [connection signal="pressed" from="multiplier" to="." method="_on_multiplier_pressed"]
 [connection signal="pressed" from="autoclicker" to="." method="_on_autoclicker_pressed"]
-[connection signal="pressed" from="solarpanel" to="." method="_on_solarpanel_pressed"]
+[connection signal="pressed" from="ScrollContainer/HBoxContainer/VBoxContainer/solarpanel" to="." method="_on_solarpanel_pressed"]
+[connection signal="pressed" from="ScrollContainer/HBoxContainer/VBoxContainer/windturbine" to="." method="_on_windturbine_pressed"]
+[connection signal="pressed" from="ScrollContainer/HBoxContainer/VBoxContainer/biomass" to="." method="_on_biomass_pressed"]

@@ -1,0 +1,30 @@
+[gd_scene load_steps=3 format=3 uid="uid://cth80vhcrqkvm"]
+
+[ext_resource type="Theme" uid="uid://yfe8see4c3cw" path="res://gametest.tres" id="1_y8btm"]
+
+[sub_resource type="GDScript" id="GDScript_gsywg"]
+script/source = "extends Node2D
+
+
+
+
+"
+
+[node name="Upgrademenu" type="Node2D"]
+script = SubResource("GDScript_gsywg")
+
+[node name="solarpanel" type="Button" parent="."]
+offset_left = 151.0
+offset_top = 54.0
+offset_right = 517.0
+offset_bottom = 223.0
+theme = ExtResource("1_y8btm")
+text = "Solar Panel: 0
+Cost: 25 kW
+Produces 1 kWs"
+
+[node name="windturbine" type="Button" parent="."]
+offset_right = 8.0
+offset_bottom = 8.0
+
+[connection signal="pressed" from="windturbine" to="." method="_on_windturbine_pressed"]
