@@ -6,7 +6,7 @@
 [ext_resource type="Theme" uid="uid://yfe8see4c3cw" path="res://gametest.tres" id="3_34im5"]
 [ext_resource type="AudioStream" uid="uid://bou11k5vvk7ai" path="res://e_s015.ogg" id="5_1dvly"]
 
-[node name="Control" type="Control" node_paths=PackedStringArray("counter", "multipcounter", "timer", "soundfactory", "soundupgrade", "autoclicker", "solarpanel")]
+[node name="Control" type="Control" node_paths=PackedStringArray("counter", "multipcounter", "timer", "soundfactory", "soundupgrade", "autoclicker", "solarpanel", "windturbine")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -20,7 +20,8 @@ timer = NodePath("Timer")
 soundfactory = NodePath("factory/soundfactory")
 soundupgrade = NodePath("soundupgrade")
 autoclicker = NodePath("autoclicker")
-solarpanel = NodePath("solarpanel")
+solarpanel = NodePath("Container/HBoxContainer/VBoxContainer/solarpanel")
+windturbine = NodePath("Container/HBoxContainer/VBoxContainer/windturbine")
 
 [node name="Timer" type="Timer" parent="."]
 
@@ -92,19 +93,40 @@ cost: 10 kW/s"
 [node name="soundupgrade" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_1dvly")
 
-[node name="solarpanel" type="Button" parent="."]
-layout_mode = 0
-offset_left = 84.0
-offset_top = 333.0
-offset_right = 301.0
-offset_bottom = 483.0
+[node name="Container" type="ScrollContainer" parent="."]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.04
+anchor_bottom = 0.124
+offset_left = 96.0
+offset_top = 373.0
+offset_right = 497.2
+offset_bottom = 722.2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Container"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Container/HBoxContainer"]
+layout_mode = 2
+
+[node name="solarpanel" type="Button" parent="Container/HBoxContainer/VBoxContainer"]
+layout_mode = 2
 theme = ExtResource("3_34im5")
 text = "Solar Panel: 0
 Cost: 25 kW
 Produces 1 kWs"
 
+[node name="windturbine" type="Button" parent="Container/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_34im5")
+text = "Wind Turbine: 0
+Cost: 100 kW
+Produces 2 kWs"
+
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="pressed" from="factory" to="." method="_on_factory_pressed"]
 [connection signal="pressed" from="multiplier" to="." method="_on_multiplier_pressed"]
 [connection signal="pressed" from="autoclicker" to="." method="_on_autoclicker_pressed"]
-[connection signal="pressed" from="solarpanel" to="." method="_on_solarpanel_pressed"]
+[connection signal="pressed" from="Container/HBoxContainer/VBoxContainer/solarpanel" to="." method="_on_solarpanel_pressed"]
+[connection signal="pressed" from="Container/HBoxContainer/VBoxContainer/windturbine" to="." method="_on_windturbine_pressed"]
