@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://cqufdgwarno"]
+
+[ext_resource type="Theme" uid="uid://yfe8see4c3cw" path="res://gametest.tres" id="1_bxhbg"]
+
+[node name="solarpanel" type="Button"]
+offset_left = 84.0
+offset_top = 333.0
+offset_right = 301.0
+offset_bottom = 483.0
+theme = ExtResource("1_bxhbg")
+text = "Solar Panel: 0
+Cost: 25 kW
+Produces 1 kWs"
