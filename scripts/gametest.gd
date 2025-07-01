@@ -10,6 +10,7 @@ extends Control
 @export var windturbine: Button
 @export var biomass: Button
 @export var geothermalplant: Button
+@export var hydroelectricdam: Button
 
 var power: int = 10000
 var multiplier : int = 1
@@ -17,10 +18,12 @@ var automult : int = 0
 
 var AutoclickC = 10
 
+#sustainable upgrades
 var solarpanelcount : int = 0
 var windturbinecount : int = 0
 var biomasscount : int = 0
 var geothermalplantcount : int = 0
+var hydroelectricdamcount : int = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -41,6 +44,7 @@ func AutoFactory() -> void:
 	power += 1 * solarpanelcount
 	power += 2 * windturbinecount
 	power += 5 * biomasscount
+	power += 20 * geothermalplantcount
 
 func _on_factory_pressed() -> void:
 	CreatePower()
@@ -87,6 +91,18 @@ func _on_biomass_pressed() -> void:
 		biomass.text = 'Biomass Boiler: %s \n Cost: 500 kW \n Produces 3 kW/s' %biomasscount
 		soundupgrade.play()
 
-
 func _on_geothermalplant_pressed() -> void:
-	pass # Replace with function body.
+	if power >= 10000:
+		timer.start()
+		geothermalplantcount += 1
+		power -= 10000
+		geothermalplant.text = 'Geothermal Plant: %s \n Cost: 10000 kW \n Produces 20 kW/s' %geothermalplantcount
+		soundupgrade.play()
+
+func _on_hydroelectricdam_pressed() -> void:
+	if power >= 50000:
+		timer.start()
+		hydroelectricdamcount += 1
+		power -= 50000
+		hydroelectricdam.text = 'Hydroelectric Dam: %s \n Cost: 50000 kW \n Produces 100 kW/s' %hydroelectricdam
+		soundupgrade.play()

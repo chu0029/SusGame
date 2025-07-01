@@ -7,7 +7,7 @@
 [ext_resource type="AudioStream" uid="uid://bou11k5vvk7ai" path="res://e_s015.ogg" id="5_1dvly"]
 [ext_resource type="Texture2D" uid="uid://i6623btw2mrp" path="res://background placeholder.png" id="6_i0h8x"]
 
-[node name="Control" type="Control" node_paths=PackedStringArray("counter", "multipcounter", "timer", "soundfactory", "soundupgrade", "autoclicker", "solarpanel", "windturbine", "biomass")]
+[node name="Control" type="Control" node_paths=PackedStringArray("counter", "multipcounter", "timer", "soundfactory", "soundupgrade", "autoclicker", "solarpanel", "windturbine", "biomass", "geothermalplant", "hydroelectricdam")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -24,10 +24,13 @@ autoclicker = NodePath("autoclicker")
 solarpanel = NodePath("ScrollContainer/HBoxContainer/VBoxContainer/solarpanel")
 windturbine = NodePath("ScrollContainer/HBoxContainer/VBoxContainer/windturbine")
 biomass = NodePath("ScrollContainer/HBoxContainer/VBoxContainer/biomass")
+geothermalplant = NodePath("ScrollContainer/HBoxContainer/VBoxContainer/geothermalplant")
+hydroelectricdam = NodePath("ScrollContainer/HBoxContainer/VBoxContainer/hydroelectricdam")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 z_index = -1
 custom_minimum_size = Vector2(1120, 700)
+layout_mode = 0
 offset_right = 1120.0
 offset_bottom = 700.0
 texture = ExtResource("6_i0h8x")
@@ -108,10 +111,10 @@ layout_mode = 1
 anchors_preset = -1
 anchor_right = 0.04
 anchor_bottom = 0.124
-offset_left = 788.0
-offset_top = 29.0
-offset_right = 1189.2
-offset_bottom = 378.2
+offset_left = 747.0
+offset_top = 167.0
+offset_right = 1148.2
+offset_bottom = 696.2
 
 [node name="HBoxContainer" type="HBoxContainer" parent="ScrollContainer"]
 layout_mode = 2
@@ -140,6 +143,19 @@ text = "Biomass: 0
 Cost: 500 kW
 Produces 5 kWs"
 
+[node name="geothermalplant" type="Button" parent="ScrollContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_34im5")
+text = "Geothermal Plant: 0
+Cost: 10000 kW
+Produces 20 kWs"
+
+[node name="hydroelectricdam" type="Button" parent="ScrollContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "Hydroelectric Dam: 0
+Cost: 50000 kW
+Produces 100 kWs"
+
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="pressed" from="factory" to="." method="_on_factory_pressed"]
 [connection signal="pressed" from="multiplier" to="." method="_on_multiplier_pressed"]
@@ -147,3 +163,5 @@ Produces 5 kWs"
 [connection signal="pressed" from="ScrollContainer/HBoxContainer/VBoxContainer/solarpanel" to="." method="_on_solarpanel_pressed"]
 [connection signal="pressed" from="ScrollContainer/HBoxContainer/VBoxContainer/windturbine" to="." method="_on_windturbine_pressed"]
 [connection signal="pressed" from="ScrollContainer/HBoxContainer/VBoxContainer/biomass" to="." method="_on_biomass_pressed"]
+[connection signal="pressed" from="ScrollContainer/HBoxContainer/VBoxContainer/geothermalplant" to="." method="_on_geothermalplant_pressed"]
+[connection signal="pressed" from="ScrollContainer/HBoxContainer/VBoxContainer/hydroelectricdam" to="." method="_on_hydroelectricdam_pressed"]
