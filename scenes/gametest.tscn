@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://ikdew4lo1lg8"]
+[gd_scene load_steps=7 format=3 uid="uid://ikdew4lo1lg8"]
 
 [ext_resource type="Script" uid="uid://bpn0pj6e5fff0" path="res://scripts/gametest.gd" id="1_34im5"]
 [ext_resource type="Texture2D" uid="uid://b7xvqpo14820x" path="res://factory.png" id="1_kpvv0"]
 [ext_resource type="AudioStream" uid="uid://b2ev1rwqv8ylo" path="res://e_s004.ogg" id="3_6ycye"]
 [ext_resource type="Theme" uid="uid://yfe8see4c3cw" path="res://gametest.tres" id="3_34im5"]
 [ext_resource type="AudioStream" uid="uid://bou11k5vvk7ai" path="res://e_s015.ogg" id="5_1dvly"]
+[ext_resource type="Texture2D" uid="uid://i6623btw2mrp" path="res://background placeholder.png" id="6_i0h8x"]
 
 [node name="Control" type="Control" node_paths=PackedStringArray("counter", "multipcounter", "timer", "soundfactory", "soundupgrade", "autoclicker", "solarpanel")]
 layout_mode = 3
@@ -21,6 +22,13 @@ soundfactory = NodePath("factory/soundfactory")
 soundupgrade = NodePath("soundupgrade")
 autoclicker = NodePath("autoclicker")
 solarpanel = NodePath("solarpanel")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+z_index = -1
+custom_minimum_size = Vector2(1120, 700)
+offset_right = 1120.0
+offset_bottom = 700.0
+texture = ExtResource("6_i0h8x")
 
 [node name="Timer" type="Timer" parent="."]
 
