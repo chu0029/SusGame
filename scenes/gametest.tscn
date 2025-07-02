@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://ikdew4lo1lg8"]
+[gd_scene load_steps=8 format=3 uid="uid://ikdew4lo1lg8"]
 
 [ext_resource type="Script" uid="uid://bpn0pj6e5fff0" path="res://scripts/gametest.gd" id="1_34im5"]
 [ext_resource type="Texture2D" uid="uid://b7xvqpo14820x" path="res://factory.png" id="1_kpvv0"]
@@ -6,8 +6,9 @@
 [ext_resource type="Theme" uid="uid://yfe8see4c3cw" path="res://gametest.tres" id="3_34im5"]
 [ext_resource type="AudioStream" uid="uid://bou11k5vvk7ai" path="res://e_s015.ogg" id="5_1dvly"]
 [ext_resource type="Texture2D" uid="uid://i6623btw2mrp" path="res://background placeholder.png" id="6_i0h8x"]
+[ext_resource type="AudioStream" uid="uid://cbjhbqsh1ymx0" path="res://PYRAMID - banana marmalade.ogg" id="7_t82je"]
 
-[node name="Control" type="Control" node_paths=PackedStringArray("counter", "multipcounter", "timer", "soundfactory", "soundupgrade", "autoclicker", "solarpanel", "windturbine", "biomass")]
+[node name="Control" type="Control" node_paths=PackedStringArray("counter", "multipcounter", "timer", "soundfactory", "soundupgrade", "bgm", "autoclicker", "solarpanel", "windturbine", "biomass")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -20,6 +21,7 @@ multipcounter = NodePath("multipcounter")
 timer = NodePath("Timer")
 soundfactory = NodePath("factory/soundfactory")
 soundupgrade = NodePath("soundupgrade")
+bgm = NodePath("Pyramid-BananaMarmalade")
 autoclicker = NodePath("autoclicker")
 solarpanel = NodePath("ScrollContainer/HBoxContainer/VBoxContainer/solarpanel")
 windturbine = NodePath("ScrollContainer/HBoxContainer/VBoxContainer/windturbine")
@@ -28,6 +30,7 @@ biomass = NodePath("ScrollContainer/HBoxContainer/VBoxContainer/biomass")
 [node name="TextureRect" type="TextureRect" parent="."]
 z_index = -1
 custom_minimum_size = Vector2(1120, 700)
+layout_mode = 0
 offset_right = 1120.0
 offset_bottom = 700.0
 texture = ExtResource("6_i0h8x")
@@ -67,12 +70,13 @@ vertical_alignment = 1
 
 [node name="multiplier" type="Button" parent="."]
 layout_mode = 0
-offset_left = 120.0
-offset_top = 167.0
-offset_right = 221.0
-offset_bottom = 198.0
+offset_left = 35.0
+offset_top = 587.0
+offset_right = 173.0
+offset_bottom = 673.0
 theme = ExtResource("3_34im5")
 text = "multiplier
+DEBUG
 "
 
 [node name="multipcounter" type="Label" parent="."]
@@ -139,6 +143,9 @@ theme = ExtResource("3_34im5")
 text = "Biomass: 0
 Cost: 500 kW
 Produces 5 kWs"
+
+[node name="Pyramid-BananaMarmalade" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_t82je")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="pressed" from="factory" to="." method="_on_factory_pressed"]

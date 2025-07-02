@@ -3,8 +3,11 @@ extends Control
 @export var counter: RichTextLabel
 @export var multipcounter: Label
 @export var timer: Timer
+
 @export var soundfactory: AudioStreamPlayer
 @export var soundupgrade: AudioStreamPlayer
+@export var bgm: AudioStreamPlayer
+
 @export var autoclicker: Button
 @export var solarpanel: Button
 @export var windturbine: Button
@@ -25,6 +28,7 @@ var geothermalplantcount : int = 0
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	UpdateLabelText()
+	bgm.play()
 	
 func _process(delta: float) -> void:
 	UpdateLabelText()
