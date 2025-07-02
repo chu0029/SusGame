@@ -23,9 +23,9 @@ soundfactory = NodePath("factory/soundfactory")
 soundupgrade = NodePath("soundupgrade")
 bgm = NodePath("Pyramid-BananaMarmalade")
 autoclicker = NodePath("autoclicker")
-solarpanel = NodePath("ScrollContainer/HBoxContainer/VBoxContainer/solarpanel")
-windturbine = NodePath("ScrollContainer/HBoxContainer/VBoxContainer/windturbine")
-biomass = NodePath("ScrollContainer/HBoxContainer/VBoxContainer/biomass")
+solarpanel = NodePath("Panel/ScrollContainer/MarginContainer/HBoxContainer/VBoxContainer/solarpanel")
+windturbine = NodePath("Panel/ScrollContainer/MarginContainer/HBoxContainer/VBoxContainer/windturbine")
+biomass = NodePath("Panel/ScrollContainer/MarginContainer/HBoxContainer/VBoxContainer/biomass")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 z_index = -1
@@ -106,43 +106,73 @@ cost: 10 kW/s"
 [node name="soundupgrade" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_1dvly")
 
-[node name="ScrollContainer" type="ScrollContainer" parent="."]
+[node name="Panel" type="Panel" parent="."]
+custom_minimum_size = Vector2(450, 450)
+layout_mode = 2
+offset_left = 788.0
+offset_top = 29.0
+offset_right = 788.0
+offset_bottom = 29.0
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Panel"]
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 0.04
 anchor_bottom = 0.124
-offset_left = 788.0
-offset_top = 29.0
-offset_right = 1189.2
-offset_bottom = 378.2
+offset_right = 405.2
+offset_bottom = 363.2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="ScrollContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="Panel/ScrollContainer"]
 layout_mode = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer/HBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/ScrollContainer/MarginContainer"]
 layout_mode = 2
 
-[node name="solarpanel" type="Button" parent="ScrollContainer/HBoxContainer/VBoxContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/ScrollContainer/MarginContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Panel/ScrollContainer/MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_34im5")
+text = "Sustainable"
+horizontal_alignment = 1
+
+[node name="solarpanel" type="Button" parent="Panel/ScrollContainer/MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("3_34im5")
 text = "Solar Panel: 0
 Cost: 25 kW
 Produces 1 kWs"
 
-[node name="windturbine" type="Button" parent="ScrollContainer/HBoxContainer/VBoxContainer"]
+[node name="windturbine" type="Button" parent="Panel/ScrollContainer/MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("3_34im5")
 text = "Wind Turbine: 0
 Cost: 100 kW
 Produces 2 kWs"
 
-[node name="biomass" type="Button" parent="ScrollContainer/HBoxContainer/VBoxContainer"]
+[node name="biomass" type="Button" parent="Panel/ScrollContainer/MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("3_34im5")
 text = "Biomass: 0
 Cost: 500 kW
 Produces 5 kWs"
+
+[node name="Button" type="Button" parent="Panel"]
+layout_mode = 0
+offset_left = -34.0
+offset_right = -6.0
+offset_bottom = 312.0
+theme = ExtResource("3_34im5")
+text = "U
+P
+G
+R
+A
+D
+E
+S"
 
 [node name="Pyramid-BananaMarmalade" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_t82je")
@@ -151,6 +181,6 @@ stream = ExtResource("7_t82je")
 [connection signal="pressed" from="factory" to="." method="_on_factory_pressed"]
 [connection signal="pressed" from="multiplier" to="." method="_on_multiplier_pressed"]
 [connection signal="pressed" from="autoclicker" to="." method="_on_autoclicker_pressed"]
-[connection signal="pressed" from="ScrollContainer/HBoxContainer/VBoxContainer/solarpanel" to="." method="_on_solarpanel_pressed"]
-[connection signal="pressed" from="ScrollContainer/HBoxContainer/VBoxContainer/windturbine" to="." method="_on_windturbine_pressed"]
-[connection signal="pressed" from="ScrollContainer/HBoxContainer/VBoxContainer/biomass" to="." method="_on_biomass_pressed"]
+[connection signal="pressed" from="Panel/ScrollContainer/MarginContainer/HBoxContainer/VBoxContainer/solarpanel" to="." method="_on_solarpanel_pressed"]
+[connection signal="pressed" from="Panel/ScrollContainer/MarginContainer/HBoxContainer/VBoxContainer/windturbine" to="." method="_on_windturbine_pressed"]
+[connection signal="pressed" from="Panel/ScrollContainer/MarginContainer/HBoxContainer/VBoxContainer/biomass" to="." method="_on_biomass_pressed"]
