@@ -111,12 +111,20 @@ layout_mode = 1
 anchors_preset = -1
 anchor_right = 0.04
 anchor_bottom = 0.124
+<<<<<<< HEAD
 offset_left = 747.0
 offset_top = 167.0
 offset_right = 1148.2
 offset_bottom = 696.2
 
 [node name="HBoxContainer" type="HBoxContainer" parent="ScrollContainer"]
+=======
+offset_right = 432.0
+offset_bottom = 394.2
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel/ScrollContainer"]
+custom_minimum_size = Vector2(450, 450)
+>>>>>>> 757dadd949ec5721915deea6ab3a79445ad70f1a
 layout_mode = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer/HBoxContainer"]
@@ -143,8 +151,16 @@ text = "Biomass: 0
 Cost: 500 kW
 Produces 5 kWs"
 
+<<<<<<< HEAD
 [node name="geothermalplant" type="Button" parent="ScrollContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
+=======
+[node name="Button" type="Button" parent="Panel"]
+layout_mode = 0
+offset_left = -30.0
+offset_right = -2.0
+offset_bottom = 312.0
+>>>>>>> 757dadd949ec5721915deea6ab3a79445ad70f1a
 theme = ExtResource("3_34im5")
 text = "Geothermal Plant: 0
 Cost: 10000 kW
