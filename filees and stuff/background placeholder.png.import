@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://0mbegryy0420"
-path="res://.godot/imported/city pixal placeholder.jpg-751dc0239c9de47629b0e17a8d1d12b0.ctex"
+uid="uid://i6623btw2mrp"
+path="res://.godot/imported/background placeholder.png-cf6226489472613077844f4f2366166a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://city pixal placeholder.jpg"
-dest_files=["res://.godot/imported/city pixal placeholder.jpg-751dc0239c9de47629b0e17a8d1d12b0.ctex"]
+source_file="res://filees and stuff/background placeholder.png"
+dest_files=["res://.godot/imported/background placeholder.png-cf6226489472613077844f4f2366166a.ctex"]
 
 [params]
 

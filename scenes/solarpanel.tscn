@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://cqufdgwarno"]
 
-[ext_resource type="Theme" uid="uid://yfe8see4c3cw" path="res://gametest.tres" id="1_bxhbg"]
+[ext_resource type="Theme" uid="uid://yfe8see4c3cw" path="res://filees and stuff/gametest.tres" id="1_bxhbg"]
 
 [node name="solarpanel" type="Button"]
 offset_left = 84.0

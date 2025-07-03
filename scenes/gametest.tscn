@@ -1,14 +1,13 @@
-[gd_scene load_steps=8 format=3 uid="uid://ikdew4lo1lg8"]
+[gd_scene load_steps=7 format=3 uid="uid://ikdew4lo1lg8"]
 
 [ext_resource type="Script" uid="uid://bpn0pj6e5fff0" path="res://scripts/gametest.gd" id="1_34im5"]
-[ext_resource type="Texture2D" uid="uid://b7xvqpo14820x" path="res://factory.png" id="1_kpvv0"]
-[ext_resource type="AudioStream" uid="uid://b2ev1rwqv8ylo" path="res://e_s004.ogg" id="3_6ycye"]
-[ext_resource type="Theme" uid="uid://yfe8see4c3cw" path="res://gametest.tres" id="3_34im5"]
-[ext_resource type="AudioStream" uid="uid://bou11k5vvk7ai" path="res://e_s015.ogg" id="5_1dvly"]
-[ext_resource type="Texture2D" uid="uid://i6623btw2mrp" path="res://background placeholder.png" id="6_i0h8x"]
-[ext_resource type="AudioStream" uid="uid://cbjhbqsh1ymx0" path="res://PYRAMID - banana marmalade.ogg" id="7_t82je"]
+[ext_resource type="Texture2D" uid="uid://b7xvqpo14820x" path="res://filees and stuff/factory.png" id="1_kpvv0"]
+[ext_resource type="AudioStream" uid="uid://b2ev1rwqv8ylo" path="res://filees and stuff/e_s004.ogg" id="3_6ycye"]
+[ext_resource type="Theme" uid="uid://yfe8see4c3cw" path="res://filees and stuff/gametest.tres" id="3_34im5"]
+[ext_resource type="Texture2D" uid="uid://i6623btw2mrp" path="res://filees and stuff/background placeholder.png" id="6_i0h8x"]
+[ext_resource type="AudioStream" uid="uid://cbjhbqsh1ymx0" path="res://filees and stuff/PYRAMID - banana marmalade.ogg" id="7_t82je"]
 
-[node name="Control" type="Control" node_paths=PackedStringArray("counter", "multipcounter", "timer", "soundfactory", "soundupgrade", "bgm", "autoclicker", "solarpanel", "windturbine", "biomass")]
+[node name="Control" type="Control" node_paths=PackedStringArray("counter", "multipcounter", "timer", "soundfactory", "bgm", "autoclicker", "solarpanel", "windturbine", "biomass")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -20,7 +19,6 @@ counter = NodePath("counter")
 multipcounter = NodePath("multipcounter")
 timer = NodePath("Timer")
 soundfactory = NodePath("factory/soundfactory")
-soundupgrade = NodePath("soundupgrade")
 bgm = NodePath("Pyramid-BananaMarmalade")
 autoclicker = NodePath("autoclicker")
 solarpanel = NodePath("Panel/ScrollContainer/MarginContainer/HBoxContainer/VBoxContainer/solarpanel")
@@ -102,9 +100,6 @@ offset_bottom = 220.0
 theme = ExtResource("3_34im5")
 text = "autoclicker
 cost: 10 kW/s"
-
-[node name="soundupgrade" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("5_1dvly")
 
 [node name="Panel" type="Panel" parent="."]
 custom_minimum_size = Vector2(450, 450)

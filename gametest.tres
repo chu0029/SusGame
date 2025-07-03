@@ -1,9 +1,0 @@
-[gd_resource type="Theme" load_steps=3 format=3 uid="uid://yfe8see4c3cw"]
-
-[ext_resource type="FontFile" uid="uid://dd1g3ubwksw" path="res://DOTGOTHIC16.TTF" id="1_0q0bg"]
-[ext_resource type="StyleBox" uid="uid://bmd8e1tc2yjsf" path="res://TEST_style_box_flat.tres" id="1_1prqb"]
-
-[resource]
-default_font = ExtResource("1_0q0bg")
-default_font_size = 26
-Button/styles/normal = ExtResource("1_1prqb")

@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://cth80vhcrqkvm"]
 
-[ext_resource type="Theme" uid="uid://yfe8see4c3cw" path="res://gametest.tres" id="1_y8btm"]
+[ext_resource type="Theme" uid="uid://yfe8see4c3cw" path="res://filees and stuff/gametest.tres" id="1_y8btm"]
 
 [sub_resource type="GDScript" id="GDScript_gsywg"]
 script/source = "extends Node2D
