@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://i6623btw2mrp" path="res://background placeholder.png" id="6_i0h8x"]
 [ext_resource type="AudioStream" uid="uid://cbjhbqsh1ymx0" path="res://PYRAMID - banana marmalade.ogg" id="7_t82je"]
 
-[node name="Control" type="Control" node_paths=PackedStringArray("counter", "multipcounter", "timer", "soundfactory", "soundupgrade", "bgm", "autoclicker", "solarpanel", "windturbine", "biomass")]
+[node name="Control" type="Control" node_paths=PackedStringArray("counter", "multipcounter", "timer", "soundfactory", "soundupgrade", "bgm", "autoclicker", "solarpanel", "windturbine", "biomass", "geothermalplant", "hydroelectricdam", "nuclearfusion")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -26,6 +26,9 @@ autoclicker = NodePath("autoclicker")
 solarpanel = NodePath("Panel/ScrollContainer/MarginContainer/HBoxContainer/VBoxContainer/solarpanel")
 windturbine = NodePath("Panel/ScrollContainer/MarginContainer/HBoxContainer/VBoxContainer/windturbine")
 biomass = NodePath("Panel/ScrollContainer/MarginContainer/HBoxContainer/VBoxContainer/biomass")
+geothermalplant = NodePath("Panel/ScrollContainer/MarginContainer/HBoxContainer/VBoxContainer/geothermalplant")
+hydroelectricdam = NodePath("Panel/ScrollContainer/MarginContainer/HBoxContainer/VBoxContainer/hydroelectricdam")
+nuclearfusion = NodePath("Panel/ScrollContainer/MarginContainer/HBoxContainer/VBoxContainer/nuclearfusion")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 z_index = -1
@@ -121,7 +124,7 @@ anchors_preset = -1
 anchor_right = 0.04
 anchor_bottom = 0.124
 offset_right = 432.0
-offset_bottom = 394.2
+offset_bottom = 611.2
 
 [node name="MarginContainer" type="MarginContainer" parent="Panel/ScrollContainer"]
 custom_minimum_size = Vector2(450, 450)
@@ -144,23 +147,44 @@ layout_mode = 2
 theme = ExtResource("3_34im5")
 text = "Solar Panel: 0
 Cost: 25 kW
-Produces 1 kWs"
+Produces 1 kW/s"
 
 [node name="windturbine" type="Button" parent="Panel/ScrollContainer/MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("3_34im5")
 text = "Wind Turbine: 0
 Cost: 100 kW
-Produces 2 kWs"
+Produces 2 kW/s"
 
 [node name="biomass" type="Button" parent="Panel/ScrollContainer/MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("3_34im5")
-text = "Biomass: 0
+text = "Biomass Boiler: 0
 Cost: 500 kW
-Produces 5 kWs"
+Produces 5 kW/s"
 
-[node name="Button" type="Button" parent="Panel"]
+[node name="geothermalplant" type="Button" parent="Panel/ScrollContainer/MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_34im5")
+text = "Geothermal Plant: 0
+Cost: 10000 kW
+Produces 15 kW/s"
+
+[node name="hydroelectricdam" type="Button" parent="Panel/ScrollContainer/MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_34im5")
+text = "Hydroelectric Dam: 0
+Cost: 50000 kW
+Produces 50 kW/s"
+
+[node name="nuclearfusion" type="Button" parent="Panel/ScrollContainer/MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_34im5")
+text = "Nuclear Fusion: 0
+Cost: 1000000 kW
+Produces 1000 kW/s"
+
+[node name="upgrades" type="Button" parent="Panel"]
 layout_mode = 0
 offset_left = -30.0
 offset_right = -2.0
@@ -185,3 +209,6 @@ stream = ExtResource("7_t82je")
 [connection signal="pressed" from="Panel/ScrollContainer/MarginContainer/HBoxContainer/VBoxContainer/solarpanel" to="." method="_on_solarpanel_pressed"]
 [connection signal="pressed" from="Panel/ScrollContainer/MarginContainer/HBoxContainer/VBoxContainer/windturbine" to="." method="_on_windturbine_pressed"]
 [connection signal="pressed" from="Panel/ScrollContainer/MarginContainer/HBoxContainer/VBoxContainer/biomass" to="." method="_on_biomass_pressed"]
+[connection signal="pressed" from="Panel/ScrollContainer/MarginContainer/HBoxContainer/VBoxContainer/geothermalplant" to="." method="_on_geothermalplant_pressed"]
+[connection signal="pressed" from="Panel/ScrollContainer/MarginContainer/HBoxContainer/VBoxContainer/hydroelectricdam" to="." method="_on_hydroelectricdam_pressed"]
+[connection signal="pressed" from="Panel/ScrollContainer/MarginContainer/HBoxContainer/VBoxContainer/nuclearfusion" to="." method="_on_nuclearfusion_pressed"]

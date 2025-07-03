@@ -14,8 +14,9 @@ extends Control
 @export var biomass: Button
 @export var geothermalplant: Button
 @export var hydroelectricdam: Button
+@export var nuclearfusion: Button
 
-var power: int = 10000
+var power: int = 10000000
 var multiplier : int = 1
 var automult : int = 0
 
@@ -28,6 +29,7 @@ var windturbinecount : int = 0
 var biomasscount : int = 0
 var geothermalplantcount : int = 0
 var hydroelectricdamcount : int = 0
+var nuclearfusioncount : int = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -48,7 +50,9 @@ func AutoFactory() -> void:
 	power += 1 * solarpanelcount
 	power += 2 * windturbinecount
 	power += 5 * biomasscount
-	power += 20 * geothermalplantcount
+	power += 15 * geothermalplantcount
+	power += 50 * hydroelectricdamcount
+	power += 1000 * nuclearfusioncount
 
 func _on_factory_pressed() -> void:
 	CreatePower()
@@ -102,7 +106,7 @@ func _on_geothermalplant_pressed() -> void:
 		timer.start()
 		geothermalplantcount += 1
 		power -= 10000
-		geothermalplant.text = 'Geothermal Plant: %s \n Cost: 10000 kW \n Produces 20 kW/s' %geothermalplantcount
+		geothermalplant.text = 'Geothermal Plant: %s \n Cost: 10000 kW \n Produces 15 kW/s' %geothermalplantcount
 		soundupgrade.play()
 
 func _on_hydroelectricdam_pressed() -> void:
@@ -110,5 +114,13 @@ func _on_hydroelectricdam_pressed() -> void:
 		timer.start()
 		hydroelectricdamcount += 1
 		power -= 50000
-		hydroelectricdam.text = 'Hydroelectric Dam: %s \n Cost: 50000 kW \n Produces 100 kW/s' %hydroelectricdam
+		hydroelectricdam.text = 'Hydroelectric Dam: %s \n Cost: 50000 kW \n Produces 50 kW/s' %hydroelectricdamcount
+		soundupgrade.play()
+
+func _on_nuclearfusion_pressed() -> void:
+	if power >= 1000000:
+		timer.start()
+		nuclearfusioncount += 1
+		power -= 1000000
+		nuclearfusion.text = 'Nuclear Fusion: %s \n Cost: 1000000 kW \n Produces 1000 kW/s' %nuclearfusioncount
 		soundupgrade.play()
