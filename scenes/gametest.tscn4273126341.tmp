@@ -214,4 +214,4 @@ stream = ExtResource("7_82nuq")
 [connection signal="pressed" from="Panel/ScrollContainer/MarginContainer/HBoxContainer/VBoxContainer/geothermalplant" to="." method="_on_geothermalplant_pressed"]
 [connection signal="pressed" from="Panel/ScrollContainer/MarginContainer/HBoxContainer/VBoxContainer/hydroelectricdam" to="." method="_on_hydroelectricdam_pressed"]
 [connection signal="pressed" from="Panel/ScrollContainer/MarginContainer/HBoxContainer/VBoxContainer/nuclearfusion" to="." method="_on_nuclearfusion_pressed"]
-[connection signal="pressed" from="Panel/upgrades" to="Panel" method="_on_upgrades_pressed"]
+[connection signal="pressed" from="Panel/upgrades" to="." method="_on_upgrades_pressed"]
