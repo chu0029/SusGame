@@ -16,6 +16,9 @@ extends Control
 @export var hydroelectricdam: Button
 @export var nuclearfusion: Button
 
+@export var sustainabilityrating: Label
+@export var healthbutton: Label
+
 var power: int = 10000000
 var multiplier : int = 1
 var automult : int = 0
@@ -23,13 +26,19 @@ var automult : int = 0
 var AutoclickC = 10
 var solarC = 25
 
-#sustainable upgrades
+#amount of sustainable upgrades player has acquired
 var solarpanelcount : int = 0
 var windturbinecount : int = 0
 var biomasscount : int = 0
 var geothermalplantcount : int = 0
 var hydroelectricdamcount : int = 0
 var nuclearfusioncount : int = 0
+
+#variables that determine sustainability rating and health
+var sustainability : int = 0
+var susupgrade : int = 1
+var unsusupgrade : = 1
+var health : int = 100
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -46,6 +55,11 @@ func CreatePower() -> void:
 	power += 1 * multiplier
 
 func AutoFactory() -> void: 
+	sustainability = susupgrade/unsusupgrade
+	if sustainability < 70: #and sustainability > 0 ?
+		health -= 1
+	sustainabilityrating.text = "Sustainability Rating: %s" %sustainability
+	healthbutton.text = "Health: %s" %health
 	power += 1 * automult
 	power += 1 * solarpanelcount
 	power += 2 * windturbinecount
