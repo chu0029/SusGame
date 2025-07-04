@@ -9,7 +9,7 @@
 [ext_resource type="AudioStream" uid="uid://bou11k5vvk7ai" path="res://filees and stuff/e_s015.ogg" id="7_82nuq"]
 [ext_resource type="AudioStream" uid="uid://cbjhbqsh1ymx0" path="res://filees and stuff/PYRAMID - banana marmalade.ogg" id="7_t82je"]
 
-[node name="Control" type="Control" node_paths=PackedStringArray("counter", "multipcounter", "timer", "soundfactory", "soundupgrade", "bgm", "autoclicker", "solarpanel", "windturbine", "biomass", "geothermalplant", "hydroelectricdam", "nuclearfusion", "sustainabilityrating", "healthbutton")]
+[node name="Control" type="Control" node_paths=PackedStringArray("counter", "multipcounter", "timer", "soundfactory", "soundupgrade", "bgm", "autoclicker", "solarpanel", "windturbine", "biomass", "geothermalplant", "hydroelectricdam", "nuclearfusion")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -30,8 +30,6 @@ biomass = NodePath("Panel/ScrollContainer/MarginContainer/HBoxContainer/VBoxCont
 geothermalplant = NodePath("Panel/ScrollContainer/MarginContainer/HBoxContainer/VBoxContainer/geothermalplant")
 hydroelectricdam = NodePath("Panel/ScrollContainer/MarginContainer/HBoxContainer/VBoxContainer/hydroelectricdam")
 nuclearfusion = NodePath("Panel/ScrollContainer/MarginContainer/HBoxContainer/VBoxContainer/nuclearfusion")
-sustainabilityrating = NodePath("sustainability")
-healthbutton = NodePath("health")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 z_index = -1
@@ -101,10 +99,10 @@ text = "Multiplier: 0"
 [node name="autoclicker" type="Button" parent="."]
 custom_minimum_size = Vector2(200, 200)
 layout_mode = 0
-offset_left = -387.0
-offset_top = 81.0
-offset_right = -187.0
-offset_bottom = 281.0
+offset_left = 1.0
+offset_top = 20.0
+offset_right = 201.0
+offset_bottom = 220.0
 theme = ExtResource("3_34im5")
 text = "autoclicker
 cost: 10 kW/s"
@@ -200,24 +198,6 @@ D
 E
 S"
 
-[node name="sustainability" type="Label" parent="."]
-layout_mode = 1
-anchors_preset = -1
-anchor_bottom = 0.016
-offset_left = 77.0
-offset_top = 36.0
-offset_right = 311.0
-offset_bottom = 126.8
-theme = ExtResource("3_34im5")
-text = "Sustainability: 0%"
-
-[node name="health" type="Label" parent="."]
-layout_mode = 0
-offset_right = 148.0
-offset_bottom = 80.0
-theme = ExtResource("3_34im5")
-text = "Health: 100%"
-
 [node name="Pyramid-BananaMarmalade" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_t82je")
 
@@ -234,4 +214,4 @@ stream = ExtResource("7_82nuq")
 [connection signal="pressed" from="Panel/ScrollContainer/MarginContainer/HBoxContainer/VBoxContainer/geothermalplant" to="." method="_on_geothermalplant_pressed"]
 [connection signal="pressed" from="Panel/ScrollContainer/MarginContainer/HBoxContainer/VBoxContainer/hydroelectricdam" to="." method="_on_hydroelectricdam_pressed"]
 [connection signal="pressed" from="Panel/ScrollContainer/MarginContainer/HBoxContainer/VBoxContainer/nuclearfusion" to="." method="_on_nuclearfusion_pressed"]
-[connection signal="pressed" from="Panel/upgrades" to="Panel" method="_on_upgrades_pressed"]
+[connection signal="pressed" from="Panel/upgrades" to="." method="_on_upgrades_pressed"]
