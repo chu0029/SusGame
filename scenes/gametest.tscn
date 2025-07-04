@@ -1,10 +1,10 @@
 [gd_scene load_steps=9 format=3 uid="uid://ikdew4lo1lg8"]
 
 [ext_resource type="Script" uid="uid://bpn0pj6e5fff0" path="res://scripts/gametest.gd" id="1_34im5"]
-[ext_resource type="Texture2D" uid="uid://b7xvqpo14820x" path="res://filees and stuff/factory.png" id="1_kpvv0"]
 [ext_resource type="AudioStream" uid="uid://b2ev1rwqv8ylo" path="res://filees and stuff/e_s004.ogg" id="3_6ycye"]
 [ext_resource type="Theme" uid="uid://yfe8see4c3cw" path="res://filees and stuff/gametest.tres" id="3_34im5"]
-[ext_resource type="Script" uid="uid://dg47g08vrd05k" path="res://scenes/upgrademove.gd" id="6_82nuq"]
+[ext_resource type="Texture2D" uid="uid://cbn5ffb63qtty" path="res://filees and stuff/New Piskel-1.png.png" id="3_82nuq"]
+[ext_resource type="Script" path="res://scenes/upgrademove.gd" id="6_82nuq"]
 [ext_resource type="Texture2D" uid="uid://i6623btw2mrp" path="res://filees and stuff/background placeholder.png" id="6_i0h8x"]
 [ext_resource type="AudioStream" uid="uid://bou11k5vvk7ai" path="res://filees and stuff/e_s015.ogg" id="7_82nuq"]
 [ext_resource type="AudioStream" uid="uid://cbjhbqsh1ymx0" path="res://filees and stuff/PYRAMID - banana marmalade.ogg" id="7_t82je"]
@@ -51,13 +51,13 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -128.0
-offset_top = -128.0
-offset_right = 128.0
-offset_bottom = 128.0
+offset_left = -180.0
+offset_top = -177.0
+offset_right = 180.0
+offset_bottom = 177.0
 grow_horizontal = 2
 grow_vertical = 2
-texture_normal = ExtResource("1_kpvv0")
+texture_normal = ExtResource("3_82nuq")
 stretch_mode = 0
 
 [node name="soundfactory" type="AudioStreamPlayer" parent="factory"]

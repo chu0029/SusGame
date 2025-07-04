@@ -1,9 +1,9 @@
 [gd_scene load_steps=8 format=3 uid="uid://uagqm7agdako"]
 
-[ext_resource type="Script" path="res://scripts/menu_start_script.gd" id="1_tc6ix"]
-[ext_resource type="Texture2D" uid="uid://0mbegryy0420" path="res://city pixal placeholder.jpg" id="2_4jmj5"]
-[ext_resource type="FontFile" uid="uid://dd1g3ubwksw" path="res://DOTGOTHIC16.TTF" id="3_phe8i"]
-[ext_resource type="Script" path="res://scripts/rich_text_label.gd" id="4_4jmj5"]
+[ext_resource type="Script" uid="uid://c07hputae2uq7" path="res://scripts/menu_start_script.gd" id="1_tc6ix"]
+[ext_resource type="Texture2D" uid="uid://0mbegryy0420" path="res://filees and stuff/city pixal placeholder.jpg" id="2_4jmj5"]
+[ext_resource type="FontFile" uid="uid://dd1g3ubwksw" path="res://filees and stuff/DOTGOTHIC16.TTF" id="3_phe8i"]
+[ext_resource type="Script" uid="uid://cdaiah8pxptle" path="res://scripts/rich_text_label.gd" id="4_4jmj5"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tc6ix"]
 bg_color = Color(0.489521, 0.177108, 0.418911, 0.8)
