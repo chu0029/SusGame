@@ -1,13 +1,24 @@
 extends Panel
 
-const SPEED = 1000
-
-var destination = Vector2(1100, 200)
+var upgradesOpen = false
 
 '''func _process(delta):
 	position += position.direction_to(destination) * SPEED * delta'''
 	
 func _on_upgrades_pressed():
-	pass
-	self.position.x += 20
-	#position += position.direction_to(destination) * SPEED * delta
+	if upgradesOpen == false:
+		var tween = get_tree().create_tween()
+		tween.set_trans(Tween.TRANS_CUBIC)
+		tween.set_ease(Tween.EASE_OUT)
+		tween.tween_property(self, "global_position", Vector2(1120, 100), 1.0)
+		upgradesOpen = true
+		print(upgradesOpen)
+		pass
+	elif upgradesOpen == true:
+		var tween = get_tree().create_tween()
+		tween.set_trans(Tween.TRANS_CUBIC)
+		tween.set_ease(Tween.EASE_OUT)
+		tween.tween_property(self, "global_position", Vector2(800, 100), 1.0)
+		upgradesOpen = false
+		print(upgradesOpen)
+		pass
