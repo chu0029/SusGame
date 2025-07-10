@@ -25,7 +25,7 @@ var automult : int = 0
 
 #costs to be stored in an array for tidying purposes
 #IN ORDER: 0solar 1wind 2biomass 3geother 4hydroel 5nuclear
-var costs = [10,25,100,500,10000,50000,1000000]
+var costs = [25,100,500,10000,50000,1000000]
 
 #amount of sustainable upgrades player has acquired
 var solarpanelcount : int = 0
@@ -125,11 +125,11 @@ func _on_windturbine_pressed() -> void:
 		soundupgrade.play()
 
 func _on_biomass_pressed() -> void:
-	if power >= 500:
-		timer.start()
-		biomasscount += 1
-		power -= 500
-		biomass.text = 'Biomass Boiler: %s \n Cost: 500 kW \n Produces 3 kW/s' %biomasscount
+	if power >= costs[2]:
+		var output = upgradeClicker(costs[2], biomasscount)
+		costs[2] = output[0]
+		biomasscount = output[1]
+		biomass.text = 'Biomass Boiler: %s \n Cost: %d kW \n Produces 3 kW/s' %[biomasscount,costs[2]]
 		soundupgrade.play()
 
 func _on_geothermalplant_pressed() -> void:
