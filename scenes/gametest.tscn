@@ -112,10 +112,10 @@ cost: 10 kW/s"
 [node name="Panel" type="Panel" parent="."]
 custom_minimum_size = Vector2(450, 450)
 layout_mode = 2
-offset_left = 788.0
-offset_top = 29.0
-offset_right = 788.0
-offset_bottom = 29.0
+offset_left = 1120.0
+offset_top = 100.0
+offset_right = 1570.0
+offset_bottom = 584.0
 script = ExtResource("6_82nuq")
 
 [node name="ScrollContainer" type="ScrollContainer" parent="Panel"]
