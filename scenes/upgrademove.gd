@@ -8,5 +8,6 @@ var destination = Vector2(1100, 200)
 	position += position.direction_to(destination) * SPEED * delta'''
 	
 func _on_upgrades_pressed():
-	print('ok')
+	pass
+	self.position.x += 20
 	#position += position.direction_to(destination) * SPEED * delta

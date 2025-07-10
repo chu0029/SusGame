@@ -1,6 +1,5 @@
-[gd_scene load_steps=3 format=3 uid="uid://dbbtdnjcby4nx"]
+[gd_scene load_steps=2 format=3 uid="uid://dbbtdnjcby4nx"]
 
-[ext_resource type="Texture2D" path="res://city pixal placeholder.jpg" id="1_05p07"]
 [ext_resource type="Script" uid="uid://bx0jdxb81hjsg" path="res://scripts/settings_menu.gd" id="1_cr101"]
 
 [node name="settings menu" type="Control"]
@@ -21,7 +20,6 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_05p07")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 0
