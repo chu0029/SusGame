@@ -169,6 +169,7 @@ layout_mode = 2
 theme_override_constants/separation = 16
 
 [node name="susvbox" type="VBoxContainer" parent="Panel/ScrollContainer/MarginContainer/HBoxContainer"]
+clip_contents = true
 layout_mode = 2
 theme_override_constants/separation = 8
 
