@@ -60,7 +60,7 @@ func CreatePower() -> void: #power created from clicking the thing
 	power += 1 * multiplier
 
 func AutoFactory() -> void: 
-	sustainability = susupgrade/unsusupgrade
+	sustainability = (susupgrade/unsusupgrade)*100
 	if sustainability < 70: #and sustainability > 0 ?
 		health -= 1
 	sustainabilityrating.text = "Sustainability Rating: %s" %sustainability
