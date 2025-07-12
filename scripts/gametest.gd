@@ -49,7 +49,7 @@ func _process(delta: float) -> void: #on every frame...
 	UpdateLabelText()
 	
 func UpdateLabelText() -> void:
-	counter.text = "Power: %s kW" %power
+	counter.text = "Power:%s kW" %power
 	multipcounter.text = "Multiplier: %s" %multiplier
 
 func CreatePower() -> void: #power created from clicking the thing
