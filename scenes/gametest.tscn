@@ -168,6 +168,19 @@ theme_override_constants/margin_right = 16
 layout_mode = 2
 theme_override_constants/separation = 16
 
+[node name="nonsusvbox" type="VBoxContainer" parent="Panel/ScrollContainer/MarginContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Panel/ScrollContainer/MarginContainer/HBoxContainer/nonsusvbox"]
+layout_mode = 2
+text = "Non-Sustainable"
+
+[node name="Button" type="Button" parent="Panel/ScrollContainer/MarginContainer/HBoxContainer/nonsusvbox"]
+layout_mode = 2
+text = "placeholder: 0
+Cost: 10kW
+Produces 1kw/s"
+
 [node name="susvbox" type="VBoxContainer" parent="Panel/ScrollContainer/MarginContainer/HBoxContainer"]
 clip_contents = true
 layout_mode = 2
@@ -220,17 +233,6 @@ theme = ExtResource("3_34im5")
 text = "Nuclear Fusion: 0
 Cost: 1000000 kW
 Produces 1000 kW/s"
-
-[node name="nonsusvbox" type="VBoxContainer" parent="Panel/ScrollContainer/MarginContainer/HBoxContainer"]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="Panel/ScrollContainer/MarginContainer/HBoxContainer/nonsusvbox"]
-layout_mode = 2
-text = "Non-Sustainable"
-
-[node name="Button" type="Button" parent="Panel/ScrollContainer/MarginContainer/HBoxContainer/nonsusvbox"]
-layout_mode = 2
-text = "placeholder"
 
 [node name="upgrades" type="Button" parent="Panel"]
 layout_mode = 0

@@ -143,7 +143,7 @@ func _on_geothermalplant_pressed() -> void: #costs[3]
 		geothermalplantcount = output[1]
 		geothermalplant.text = 'Geothermal Plant: %s \n Cost: %d kW \n Produces 15 kW/s' %[geothermalplantcount,costs[3]]
 
-func _on_hydroelectricdam_pressed() -> void:
+func _on_hydroelectricdam_pressed() -> void: 
 	if power >= costs[4]:
 		var output = upgradeClicker(costs[4], hydroelectricdamcount)
 		costs[4] = output[0]
