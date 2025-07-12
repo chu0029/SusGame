@@ -12,7 +12,7 @@ func _on_upgrades_pressed():
 		var tween = get_tree().create_tween() #create 'tween' animation
 		tween.set_trans(Tween.TRANS_CUBIC) #set all the fancy transitions
 		tween.set_ease(Tween.EASE_OUT)
-		tween.tween_property(self, "global_position", Vector2(1200, 150), 1.0) #move golbal position to (1120,100) in 1 sec
+		tween.tween_property(self, "global_position", Vector2(1200, 150), 1.0) #move golbal position to (1200,150) in 1 sec
 		upgradesOpen = false
 		#print(upgradesOpen)
 		pass

@@ -110,5 +110,5 @@ vertical_alignment = 1
 script = ExtResource("4_4jmj5")
 
 [connection signal="pressed" from="VBoxContainer/start" to="." method="_on_button_pressed"]
-[connection signal="pressed" from="VBoxContainer/exit" to="." method="_on_exit_pressed"]
 [connection signal="pressed" from="VBoxContainer/exit" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/exit" to="." method="_on_exit_pressed"]

@@ -2,6 +2,7 @@ extends Control #this means use the properties of 'control' (get its attributes)
 
 @export var counter: RichTextLabel #get information/data/input/output from that label node
 @export var multipcounter: Label
+@export var kwslabel: Label
 @export var timer: Timer
 
 @export var soundfactory: AudioStreamPlayer #export sounds
@@ -40,6 +41,7 @@ var sustainability : int = 0
 var susupgrade : int = 1
 var unsusupgrade : = 1
 var health : int = 100
+var kws: int = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void: #this is the scratch 'on start' block
@@ -49,8 +51,10 @@ func _process(delta: float) -> void: #on every frame...
 	UpdateLabelText()
 	
 func UpdateLabelText() -> void:
-	counter.text = "Power:%s kW" %power
+	counter.text = "%s kW" %power
 	multipcounter.text = "Multiplier: %s" %multiplier
+	kws = solarpanelcount + windturbinecount*2 + biomasscount*5 + geothermalplantcount*15
+	kwslabel.text = '%s kilowatts/sec' %kws
 
 func CreatePower() -> void: #power created from clicking the thing
 	power += 1 * multiplier

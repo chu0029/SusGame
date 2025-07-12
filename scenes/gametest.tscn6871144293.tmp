@@ -10,7 +10,7 @@
 [ext_resource type="AudioStream" uid="uid://bou11k5vvk7ai" path="res://filees and stuff/e_s015.ogg" id="7_82nuq"]
 [ext_resource type="AudioStream" uid="uid://cbjhbqsh1ymx0" path="res://filees and stuff/PYRAMID - banana marmalade.ogg" id="7_t82je"]
 
-[node name="Control" type="Control" node_paths=PackedStringArray("counter", "multipcounter", "kwslabel", "timer", "soundfactory", "soundupgrade", "bgm", "autoclicker", "solarpanel", "windturbine", "biomass", "geothermalplant", "hydroelectricdam", "nuclearfusion", "sustainabilityrating", "healthbutton")]
+[node name="Control" type="Control" node_paths=PackedStringArray("counter", "multipcounter", "timer", "soundfactory", "soundupgrade", "bgm", "autoclicker", "solarpanel", "windturbine", "biomass", "geothermalplant", "hydroelectricdam", "nuclearfusion", "sustainabilityrating", "healthbutton")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -20,7 +20,6 @@ grow_vertical = 2
 script = ExtResource("1_34im5")
 counter = NodePath("counter")
 multipcounter = NodePath("multipcounter")
-kwslabel = NodePath("kws")
 timer = NodePath("Timer")
 soundfactory = NodePath("factory/soundfactory")
 soundupgrade = NodePath("soundupgrade")
@@ -42,8 +41,6 @@ layout_mode = 0
 offset_right = 1120.0
 offset_bottom = 700.0
 texture = ExtResource("6_i0h8x")
-
-[node name="healthtimer" type="Timer" parent="."]
 
 [node name="Timer" type="Timer" parent="."]
 
