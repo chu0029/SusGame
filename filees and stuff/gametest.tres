@@ -4,7 +4,13 @@
 [ext_resource type="FontFile" uid="uid://cdooeuyqiy8tm" path="res://filees and stuff/robots.ttf" id="1_bf4m7"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bf4m7"]
+content_margin_left = 8.0
+content_margin_top = 8.0
+content_margin_right = 8.0
+content_margin_bottom = 8.0
 bg_color = Color(0.236556, 0.137214, 4.81308e-08, 1)
+border_width_left = 4
+border_width_top = 4
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_74k86"]
 bg_color = Color(0.741176, 0.439216, 0.239216, 1)

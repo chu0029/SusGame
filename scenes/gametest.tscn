@@ -26,12 +26,12 @@ soundfactory = NodePath("factory/soundfactory")
 soundupgrade = NodePath("soundupgrade")
 bgm = NodePath("Pyramid-BananaMarmalade")
 autoclicker = NodePath("autoclicker")
-solarpanel = NodePath("Panel/ScrollContainer/MarginContainer/HBoxContainer/VBoxContainer/solarpanel")
-windturbine = NodePath("Panel/ScrollContainer/MarginContainer/HBoxContainer/VBoxContainer/windturbine")
-biomass = NodePath("Panel/ScrollContainer/MarginContainer/HBoxContainer/VBoxContainer/biomass")
-geothermalplant = NodePath("Panel/ScrollContainer/MarginContainer/HBoxContainer/VBoxContainer/geothermalplant")
-hydroelectricdam = NodePath("Panel/ScrollContainer/MarginContainer/HBoxContainer/VBoxContainer/hydroelectricdam")
-nuclearfusion = NodePath("Panel/ScrollContainer/MarginContainer/HBoxContainer/VBoxContainer/nuclearfusion")
+solarpanel = NodePath("Panel/ScrollContainer/MarginContainer/HBoxContainer/susvbox/solarpanel")
+windturbine = NodePath("Panel/ScrollContainer/MarginContainer/HBoxContainer/susvbox/windturbine")
+biomass = NodePath("Panel/ScrollContainer/MarginContainer/HBoxContainer/susvbox/biomass")
+geothermalplant = NodePath("Panel/ScrollContainer/MarginContainer/HBoxContainer/susvbox/geothermalplant")
+hydroelectricdam = NodePath("Panel/ScrollContainer/MarginContainer/HBoxContainer/susvbox/hydroelectricdam")
+nuclearfusion = NodePath("Panel/ScrollContainer/MarginContainer/HBoxContainer/susvbox/nuclearfusion")
 sustainabilityrating = NodePath("sustainability")
 healthbutton = NodePath("health")
 
@@ -160,60 +160,76 @@ theme = ExtResource("3_34im5")
 [node name="MarginContainer" type="MarginContainer" parent="Panel/ScrollContainer"]
 custom_minimum_size = Vector2(450, 450)
 layout_mode = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Panel/ScrollContainer/MarginContainer"]
 layout_mode = 2
+theme_override_constants/separation = 16
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Panel/ScrollContainer/MarginContainer/HBoxContainer"]
+[node name="susvbox" type="VBoxContainer" parent="Panel/ScrollContainer/MarginContainer/HBoxContainer"]
 layout_mode = 2
+theme_override_constants/separation = 8
 
-[node name="Label" type="Label" parent="Panel/ScrollContainer/MarginContainer/HBoxContainer/VBoxContainer"]
+[node name="Label" type="Label" parent="Panel/ScrollContainer/MarginContainer/HBoxContainer/susvbox"]
 layout_mode = 2
 theme = ExtResource("3_34im5")
 text = "Sustainable"
 horizontal_alignment = 1
 
-[node name="solarpanel" type="Button" parent="Panel/ScrollContainer/MarginContainer/HBoxContainer/VBoxContainer"]
+[node name="solarpanel" type="Button" parent="Panel/ScrollContainer/MarginContainer/HBoxContainer/susvbox"]
 layout_mode = 2
 theme = ExtResource("3_34im5")
 text = "Solar Panel: 0
 Cost: 25 kW
 Produces 1 kW/s"
 
-[node name="windturbine" type="Button" parent="Panel/ScrollContainer/MarginContainer/HBoxContainer/VBoxContainer"]
+[node name="windturbine" type="Button" parent="Panel/ScrollContainer/MarginContainer/HBoxContainer/susvbox"]
 layout_mode = 2
 theme = ExtResource("3_34im5")
 text = "Wind Turbine: 0
 Cost: 100 kW
 Produces 2 kW/s"
 
-[node name="biomass" type="Button" parent="Panel/ScrollContainer/MarginContainer/HBoxContainer/VBoxContainer"]
+[node name="biomass" type="Button" parent="Panel/ScrollContainer/MarginContainer/HBoxContainer/susvbox"]
 layout_mode = 2
 theme = ExtResource("3_34im5")
 text = "Biomass Boiler: 0
 Cost: 500 kW
 Produces 5 kW/s"
 
-[node name="geothermalplant" type="Button" parent="Panel/ScrollContainer/MarginContainer/HBoxContainer/VBoxContainer"]
+[node name="geothermalplant" type="Button" parent="Panel/ScrollContainer/MarginContainer/HBoxContainer/susvbox"]
 layout_mode = 2
 theme = ExtResource("3_34im5")
 text = "Geothermal Plant: 0
 Cost: 10000 kW
 Produces 15 kW/s"
 
-[node name="hydroelectricdam" type="Button" parent="Panel/ScrollContainer/MarginContainer/HBoxContainer/VBoxContainer"]
+[node name="hydroelectricdam" type="Button" parent="Panel/ScrollContainer/MarginContainer/HBoxContainer/susvbox"]
 layout_mode = 2
 theme = ExtResource("3_34im5")
 text = "Hydroelectric Dam: 0
 Cost: 50000 kW
 Produces 50 kW/s"
 
-[node name="nuclearfusion" type="Button" parent="Panel/ScrollContainer/MarginContainer/HBoxContainer/VBoxContainer"]
+[node name="nuclearfusion" type="Button" parent="Panel/ScrollContainer/MarginContainer/HBoxContainer/susvbox"]
 layout_mode = 2
 theme = ExtResource("3_34im5")
 text = "Nuclear Fusion: 0
 Cost: 1000000 kW
 Produces 1000 kW/s"
+
+[node name="nonsusvbox" type="VBoxContainer" parent="Panel/ScrollContainer/MarginContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Panel/ScrollContainer/MarginContainer/HBoxContainer/nonsusvbox"]
+layout_mode = 2
+text = "Non-Sustainable"
+
+[node name="Button" type="Button" parent="Panel/ScrollContainer/MarginContainer/HBoxContainer/nonsusvbox"]
+layout_mode = 2
+text = "placeholder"
 
 [node name="upgrades" type="Button" parent="Panel"]
 layout_mode = 0
@@ -260,10 +276,10 @@ stream = ExtResource("7_82nuq")
 [connection signal="pressed" from="factory" to="." method="_on_factory_pressed"]
 [connection signal="pressed" from="multiplier" to="." method="_on_multiplier_pressed"]
 [connection signal="pressed" from="autoclicker" to="." method="_on_autoclicker_pressed"]
-[connection signal="pressed" from="Panel/ScrollContainer/MarginContainer/HBoxContainer/VBoxContainer/solarpanel" to="." method="_on_solarpanel_pressed"]
-[connection signal="pressed" from="Panel/ScrollContainer/MarginContainer/HBoxContainer/VBoxContainer/windturbine" to="." method="_on_windturbine_pressed"]
-[connection signal="pressed" from="Panel/ScrollContainer/MarginContainer/HBoxContainer/VBoxContainer/biomass" to="." method="_on_biomass_pressed"]
-[connection signal="pressed" from="Panel/ScrollContainer/MarginContainer/HBoxContainer/VBoxContainer/geothermalplant" to="." method="_on_geothermalplant_pressed"]
-[connection signal="pressed" from="Panel/ScrollContainer/MarginContainer/HBoxContainer/VBoxContainer/hydroelectricdam" to="." method="_on_hydroelectricdam_pressed"]
-[connection signal="pressed" from="Panel/ScrollContainer/MarginContainer/HBoxContainer/VBoxContainer/nuclearfusion" to="." method="_on_nuclearfusion_pressed"]
+[connection signal="pressed" from="Panel/ScrollContainer/MarginContainer/HBoxContainer/susvbox/solarpanel" to="." method="_on_solarpanel_pressed"]
+[connection signal="pressed" from="Panel/ScrollContainer/MarginContainer/HBoxContainer/susvbox/windturbine" to="." method="_on_windturbine_pressed"]
+[connection signal="pressed" from="Panel/ScrollContainer/MarginContainer/HBoxContainer/susvbox/biomass" to="." method="_on_biomass_pressed"]
+[connection signal="pressed" from="Panel/ScrollContainer/MarginContainer/HBoxContainer/susvbox/geothermalplant" to="." method="_on_geothermalplant_pressed"]
+[connection signal="pressed" from="Panel/ScrollContainer/MarginContainer/HBoxContainer/susvbox/hydroelectricdam" to="." method="_on_hydroelectricdam_pressed"]
+[connection signal="pressed" from="Panel/ScrollContainer/MarginContainer/HBoxContainer/susvbox/nuclearfusion" to="." method="_on_nuclearfusion_pressed"]
 [connection signal="pressed" from="Panel/upgrades" to="Panel" method="_on_upgrades_pressed"]
