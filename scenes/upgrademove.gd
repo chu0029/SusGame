@@ -20,7 +20,7 @@ func _on_upgrades_pressed():
 		var tween = get_tree().create_tween()
 		tween.set_trans(Tween.TRANS_BOUNCE)
 		tween.set_ease(Tween.EASE_OUT)
-		tween.tween_property(self, "global_position", Vector2(700, 150), 1.0)
+		tween.tween_property(self, "global_position", Vector2(500, 150), 1.0) #move menu out
 		upgradesOpen = true
 		#print(upgradesOpen)
 		pass

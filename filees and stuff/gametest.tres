@@ -2,15 +2,7 @@
 
 [ext_resource type="StyleBox" uid="uid://bmd8e1tc2yjsf" path="res://filees and stuff/TEST_style_box_flat.tres" id="1_1prqb"]
 [ext_resource type="FontFile" uid="uid://cdooeuyqiy8tm" path="res://filees and stuff/robots.ttf" id="1_bf4m7"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bf4m7"]
-content_margin_left = 8.0
-content_margin_top = 8.0
-content_margin_right = 8.0
-content_margin_bottom = 8.0
-bg_color = Color(0.236556, 0.137214, 4.81308e-08, 1)
-border_width_left = 4
-border_width_top = 4
+[ext_resource type="StyleBox" uid="uid://dioyette6nsa4" path="res://brown_style_box_flat.tres" id="2_bf4m7"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_74k86"]
 bg_color = Color(0.741176, 0.439216, 0.239216, 1)
@@ -22,7 +14,8 @@ border_color = Color(1, 1, 1, 0)
 default_font = ExtResource("1_bf4m7")
 default_font_size = 48
 Button/fonts/font = ExtResource("1_bf4m7")
-Button/styles/hover = SubResource("StyleBoxFlat_bf4m7")
+Button/styles/hover = ExtResource("2_bf4m7")
 Button/styles/normal = ExtResource("1_1prqb")
+Button/styles/pressed = ExtResource("2_bf4m7")
 Panel/styles/panel = SubResource("StyleBoxFlat_74k86")
 VScrollBar/styles/grabber = SubResource("StyleBoxFlat_kuev6")

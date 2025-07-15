@@ -142,7 +142,7 @@ custom_minimum_size = Vector2(450, 450)
 layout_mode = 2
 offset_left = 1200.0
 offset_top = 150.0
-offset_right = 1690.0
+offset_right = 1900.0
 offset_bottom = 800.0
 theme = ExtResource("3_34im5")
 script = ExtResource("6_82nuq")
@@ -150,14 +150,15 @@ script = ExtResource("6_82nuq")
 [node name="ScrollContainer" type="ScrollContainer" parent="Panel"]
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 1
-anchors_preset = -1
-anchor_right = 0.04
-anchor_bottom = 0.124
-offset_right = 479.2
-offset_bottom = 569.4
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 theme = ExtResource("3_34im5")
 
 [node name="MarginContainer" type="MarginContainer" parent="Panel/ScrollContainer"]
+clip_contents = true
 custom_minimum_size = Vector2(450, 450)
 layout_mode = 2
 theme_override_constants/margin_left = 16
@@ -174,12 +175,15 @@ layout_mode = 2
 [node name="Label" type="Label" parent="Panel/ScrollContainer/MarginContainer/HBoxContainer/nonsusvbox"]
 layout_mode = 2
 text = "Non-Sustainable"
+horizontal_alignment = 1
 
 [node name="Button" type="Button" parent="Panel/ScrollContainer/MarginContainer/HBoxContainer/nonsusvbox"]
+custom_minimum_size = Vector2(325, 100)
 layout_mode = 2
 text = "placeholder: 0
 Cost: 10kW
 Produces 1kw/s"
+alignment = 0
 
 [node name="susvbox" type="VBoxContainer" parent="Panel/ScrollContainer/MarginContainer/HBoxContainer"]
 clip_contents = true
@@ -193,51 +197,69 @@ text = "Sustainable"
 horizontal_alignment = 1
 
 [node name="solarpanel" type="Button" parent="Panel/ScrollContainer/MarginContainer/HBoxContainer/susvbox"]
+custom_minimum_size = Vector2(325, 100)
 layout_mode = 2
 theme = ExtResource("3_34im5")
 text = "Solar Panel: 0
 Cost: 25 kW
 Produces 1 kW/s"
+alignment = 0
+autowrap_mode = 1
 
 [node name="windturbine" type="Button" parent="Panel/ScrollContainer/MarginContainer/HBoxContainer/susvbox"]
+custom_minimum_size = Vector2(325, 100)
 layout_mode = 2
 theme = ExtResource("3_34im5")
 text = "Wind Turbine: 0
 Cost: 100 kW
 Produces 2 kW/s"
+alignment = 0
+autowrap_mode = 1
 
 [node name="biomass" type="Button" parent="Panel/ScrollContainer/MarginContainer/HBoxContainer/susvbox"]
+custom_minimum_size = Vector2(325, 100)
 layout_mode = 2
 theme = ExtResource("3_34im5")
 text = "Biomass Boiler: 0
 Cost: 500 kW
 Produces 5 kW/s"
+alignment = 0
+autowrap_mode = 1
 
 [node name="geothermalplant" type="Button" parent="Panel/ScrollContainer/MarginContainer/HBoxContainer/susvbox"]
+custom_minimum_size = Vector2(325, 100)
 layout_mode = 2
 theme = ExtResource("3_34im5")
 text = "Geothermal Plant: 0
 Cost: 10000 kW
 Produces 15 kW/s"
+alignment = 0
+autowrap_mode = 1
 
 [node name="hydroelectricdam" type="Button" parent="Panel/ScrollContainer/MarginContainer/HBoxContainer/susvbox"]
+custom_minimum_size = Vector2(325, 100)
 layout_mode = 2
 theme = ExtResource("3_34im5")
 text = "Hydroelectric Dam: 0
 Cost: 50000 kW
 Produces 50 kW/s"
+alignment = 0
+autowrap_mode = 1
+clip_text = true
 
 [node name="nuclearfusion" type="Button" parent="Panel/ScrollContainer/MarginContainer/HBoxContainer/susvbox"]
+custom_minimum_size = Vector2(325, 100)
 layout_mode = 2
 theme = ExtResource("3_34im5")
 text = "Nuclear Fusion: 0
 Cost: 1000000 kW
 Produces 1000 kW/s"
+alignment = 0
+autowrap_mode = 1
 
 [node name="upgrades" type="Button" parent="Panel"]
 layout_mode = 0
 offset_left = -44.0
-offset_right = -2.0
 offset_bottom = 312.0
 theme = ExtResource("3_34im5")
 text = "U
