@@ -10,7 +10,7 @@
 [ext_resource type="AudioStream" uid="uid://bou11k5vvk7ai" path="res://filees and stuff/e_s015.ogg" id="7_82nuq"]
 [ext_resource type="AudioStream" uid="uid://cbjhbqsh1ymx0" path="res://filees and stuff/PYRAMID - banana marmalade.ogg" id="7_t82je"]
 
-[node name="Control" type="Control" node_paths=PackedStringArray("counter", "multipcounter", "kwslabel", "timer", "soundfactory", "soundupgrade", "bgm", "autoclicker", "solarpanel", "windturbine", "biomass", "geothermalplant", "hydroelectricdam", "nuclearfusion", "sustainabilityrating", "healthbutton")]
+[node name="Control" type="Control" node_paths=PackedStringArray("counter", "multipcounter", "kwslabel", "timer", "factory", "soundfactory", "soundupgrade", "bgm", "autoclicker", "solarpanel", "windturbine", "biomass", "geothermalplant", "hydroelectricdam", "nuclearfusion", "sustainabilityrating", "healthbutton")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -22,6 +22,7 @@ counter = NodePath("counter")
 multipcounter = NodePath("multipcounter")
 kwslabel = NodePath("kws")
 timer = NodePath("Timer")
+factory = NodePath("factory")
 soundfactory = NodePath("factory/soundfactory")
 soundupgrade = NodePath("soundupgrade")
 bgm = NodePath("Pyramid-BananaMarmalade")
@@ -61,6 +62,7 @@ offset_right = 180.0
 offset_bottom = 304.0
 grow_horizontal = 2
 grow_vertical = 2
+pivot_offset = Vector2(180, 180)
 texture_normal = ExtResource("3_82nuq")
 stretch_mode = 0
 
@@ -298,7 +300,8 @@ stream = ExtResource("7_t82je")
 stream = ExtResource("7_82nuq")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
-[connection signal="pressed" from="factory" to="." method="_on_factory_pressed"]
+[connection signal="button_down" from="factory" to="." method="_on_factory_button_down"]
+[connection signal="button_up" from="factory" to="." method="_on_factory_button_up"]
 [connection signal="pressed" from="multiplier" to="." method="_on_multiplier_pressed"]
 [connection signal="pressed" from="autoclicker" to="." method="_on_autoclicker_pressed"]
 [connection signal="pressed" from="Panel/ScrollContainer/MarginContainer/HBoxContainer/susvbox/solarpanel" to="." method="_on_solarpanel_pressed"]

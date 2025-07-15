@@ -4,6 +4,7 @@ extends Control #this means use the properties of 'control' (get its attributes)
 @export var multipcounter: Label
 @export var kwslabel: Label
 @export var timer: Timer
+@export var factory: TextureButton
 
 @export var soundfactory: AudioStreamPlayer #export sounds
 @export var soundupgrade: AudioStreamPlayer
@@ -73,9 +74,20 @@ func AutoFactory() -> void:
 	power += 50 * hydroelectricdamcount
 	power += 1000 * nuclearfusioncount
 
-func _on_factory_pressed() -> void:
+func _on_factory_button_down() -> void:
 	CreatePower()
 	soundfactory.play()
+	var tween = create_tween()
+	tween.set_trans(Tween.TRANS_BOUNCE)
+	tween.set_ease(Tween.EASE_OUT)
+	tween.tween_property(factory, "scale", Vector2(1.05, 1.05), 0.1)
+
+func _on_factory_button_up() -> void:
+	soundfactory.play()
+	var tween = create_tween()
+	tween.set_trans(Tween.TRANS_ELASTIC)
+	tween.set_ease(Tween.EASE_OUT)
+	tween.tween_property(factory, "scale", Vector2(1, 1), 0.1)
 
 func _on_multiplier_pressed() -> void:
 	multiplier += 1
