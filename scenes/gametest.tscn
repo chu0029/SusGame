@@ -300,6 +300,7 @@ text = "Health: 100%"
 
 [node name="Pyramid-BananaMarmalade" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_t82je")
+bus = &"bgm"
 
 [node name="soundupgrade" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_82nuq")
