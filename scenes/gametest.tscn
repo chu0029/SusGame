@@ -15,7 +15,7 @@ random_pitch = 1.1
 streams_count = 1
 stream_0/stream = ExtResource("4_xe5qx")
 
-[node name="Control" type="Control" node_paths=PackedStringArray("counter", "multipcounter", "kwslabel", "timer", "factory", "soundfactory", "soundupgrade", "bgm", "autoclicker", "solarpanel", "windturbine", "biomass", "geothermalplant", "hydroelectricdam", "nuclearfusion", "sustainabilityrating", "healthbutton")]
+[node name="Control" type="Control" node_paths=PackedStringArray("counter", "multipcounter", "kwslabel", "timer", "factory", "soundfactory", "soundupgrade", "bgm", "autoclicker", "solarpanel", "windturbine", "biomass", "geothermalplant", "hydroelectricdam", "nuclearfusion", "healthbutton")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -38,7 +38,6 @@ biomass = NodePath("Panel/ScrollContainer/MarginContainer/HBoxContainer/susvbox/
 geothermalplant = NodePath("Panel/ScrollContainer/MarginContainer/HBoxContainer/susvbox/geothermalplant")
 hydroelectricdam = NodePath("Panel/ScrollContainer/MarginContainer/HBoxContainer/susvbox/hydroelectricdam")
 nuclearfusion = NodePath("Panel/ScrollContainer/MarginContainer/HBoxContainer/susvbox/nuclearfusion")
-sustainabilityrating = NodePath("sustainability")
 healthbutton = NodePath("health")
 
 [node name="TextureRect" type="TextureRect" parent="."]
@@ -84,7 +83,7 @@ grow_horizontal = 2
 theme = ExtResource("3_34im5")
 theme_override_fonts/normal_font = ExtResource("6_xe5qx")
 theme_override_font_sizes/normal_font_size = 64
-text = "Power: skibidi"
+text = "Power: skib"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -171,6 +170,7 @@ layout_mode = 2
 theme_override_constants/margin_left = 16
 theme_override_constants/margin_top = 16
 theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Panel/ScrollContainer/MarginContainer"]
 layout_mode = 2
@@ -315,24 +315,42 @@ E
 S"
 
 [node name="sustainability" type="Label" parent="."]
+custom_minimum_size = Vector2(200, 0)
 layout_mode = 1
 anchors_preset = -1
 anchor_bottom = 0.016
 offset_left = 89.0
 offset_top = 50.0
-offset_right = 323.0
-offset_bottom = 140.8
+offset_right = 289.0
+offset_bottom = 79.456
 theme = ExtResource("3_34im5")
-text = "Sustainability: 0%"
+text = "Sustainability:"
+horizontal_alignment = 1
+
+[node name="susbar" type="ProgressBar" parent="sustainability"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 0
+offset_top = 40.0
+offset_right = 200.0
+offset_bottom = 74.0
 
 [node name="health" type="Label" parent="."]
+custom_minimum_size = Vector2(200, 0)
 layout_mode = 0
 offset_left = 932.0
 offset_top = 51.0
-offset_right = 1088.0
-offset_bottom = 112.0
+offset_right = 1019.0
+offset_bottom = 81.0
 theme = ExtResource("3_34im5")
-text = "Health: 100%"
+text = "Health:"
+horizontal_alignment = 1
+
+[node name="healthbar" type="ProgressBar" parent="health"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 0
+offset_top = 40.0
+offset_right = 200.0
+offset_bottom = 74.0
 
 [node name="Pyramid-BananaMarmalade" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_t82je")

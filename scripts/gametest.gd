@@ -11,6 +11,7 @@ extends Control #this means use the properties of 'control' (get its attributes)
 @export var bgm: AudioStreamPlayer
 
 @export var autoclicker: Button #export buttons (im sure theres a better way to do this)
+#update: there IS a better way to do this - use $path-to-file (it autocompletes itself)
 @export var solarpanel: Button
 @export var windturbine: Button
 @export var biomass: Button
@@ -18,7 +19,7 @@ extends Control #this means use the properties of 'control' (get its attributes)
 @export var hydroelectricdam: Button
 @export var nuclearfusion: Button
 
-@export var sustainabilityrating: Label #export labels (i forgor why we need this)
+#export labels (i forgor why we need this)
 @export var healthbutton: Label
 
 var power: int = 10000000 #set all variables needed to increase power
@@ -64,8 +65,8 @@ func AutoFactory() -> void:
 	sustainability = (susupgrade/unsusupgrade)*100
 	if sustainability < 70: #and sustainability > 0 ?
 		health -= 1
-	sustainabilityrating.text = "Sustainability Rating: %s" %sustainability
-	healthbutton.text = "Health: %s" %health
+	$sustainability/susbar.value = sustainability
+	$health/healthbar.value = health
 	power += 1 * automult
 	power += 1 * solarpanelcount
 	power += 2 * windturbinecount
