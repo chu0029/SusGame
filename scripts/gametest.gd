@@ -57,6 +57,8 @@ func UpdateLabelText() -> void:
 	multipcounter.text = "Multiplier: %s" %multiplier
 	kws = solarpanelcount + windturbinecount*2 + biomasscount*5 + geothermalplantcount*15
 	kwslabel.text = '%s kilowatts/sec' %kws
+	$sustainability/susbar.value = sustainability
+	$health/healthbar.value = health
 
 func CreatePower() -> void: #power created from clicking the thing
 	power += 1 * multiplier
@@ -65,8 +67,6 @@ func AutoFactory() -> void:
 	sustainability = (susupgrade/unsusupgrade)*100
 	if sustainability < 70: #and sustainability > 0 ?
 		health -= 1
-	$sustainability/susbar.value = sustainability
-	$health/healthbar.value = health
 	power += 1 * automult
 	power += 1 * solarpanelcount
 	power += 2 * windturbinecount
