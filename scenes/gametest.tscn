@@ -178,18 +178,54 @@ theme_override_constants/separation = 16
 
 [node name="nonsusvbox" type="VBoxContainer" parent="Panel/ScrollContainer/MarginContainer/HBoxContainer"]
 layout_mode = 2
+theme_override_constants/separation = 8
 
 [node name="Label" type="Label" parent="Panel/ScrollContainer/MarginContainer/HBoxContainer/nonsusvbox"]
 layout_mode = 2
 text = "Non-Sustainable"
 horizontal_alignment = 1
 
-[node name="Button" type="Button" parent="Panel/ScrollContainer/MarginContainer/HBoxContainer/nonsusvbox"]
+[node name="incPlant" type="Button" parent="Panel/ScrollContainer/MarginContainer/HBoxContainer/nonsusvbox"]
+layout_mode = 2
+text = "Incinerator Plant: XX
+Cost: XXkW
+Produces XXkw/s"
+alignment = 0
+
+[node name="coal" type="Button" parent="Panel/ScrollContainer/MarginContainer/HBoxContainer/nonsusvbox"]
 custom_minimum_size = Vector2(325, 100)
 layout_mode = 2
-text = "placeholder: 0
-Cost: 10kW
-Produces 1kw/s"
+text = "Coal Burner: XX
+Cost: XXkW
+Produces XXkw/s"
+alignment = 0
+
+[node name="advCoal" type="Button" parent="Panel/ScrollContainer/MarginContainer/HBoxContainer/nonsusvbox"]
+layout_mode = 2
+text = "Advanced Coal: XX
+Cost: XXkW
+Produces XXkw/s"
+alignment = 0
+
+[node name="natGas" type="Button" parent="Panel/ScrollContainer/MarginContainer/HBoxContainer/nonsusvbox"]
+layout_mode = 2
+text = "Natural Gas: XX
+Cost: XXkW
+Produces XXkw/s"
+alignment = 0
+
+[node name="oilRig" type="Button" parent="Panel/ScrollContainer/MarginContainer/HBoxContainer/nonsusvbox"]
+layout_mode = 2
+text = "Oil Rig: XX
+Cost: XXkW
+Produces XXkw/s"
+alignment = 0
+
+[node name="nFission" type="Button" parent="Panel/ScrollContainer/MarginContainer/HBoxContainer/nonsusvbox"]
+layout_mode = 2
+text = "Nuclear Fission: XX
+Cost: XXkW
+Produces XXkw/s"
 alignment = 0
 
 [node name="susvbox" type="VBoxContainer" parent="Panel/ScrollContainer/MarginContainer/HBoxContainer"]
