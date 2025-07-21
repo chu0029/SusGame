@@ -22,13 +22,15 @@ extends Control #this means use the properties of 'control' (get its attributes)
 #export labels (i forgor why we need this)
 @export var healthbutton: Label
 
-var power: int = 10000000 #set all variables needed to increase power
+var power: int = 0 #set all variables needed to increase power
 var multiplier : int = 1
 var automult : int = 0
 
 #costs to be stored in an array for tidying purposes
 #IN ORDER: 0solar 1wind 2biomass 3geother 4hydroel 5nuclear
 var costs = [25,100,500,10000,50000,1000000]
+var costn = [25,100,500,10000,50000,1000000]
+var nonsuscount = [0,0,0,0,0,0]
 
 #amount of sustainable upgrades player has acquired
 var solarpanelcount : int = 0

@@ -358,7 +358,7 @@ theme = ExtResource("3_34im5")
 
 [node name="bgm" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("8_18hib")
-volume_db = -3.0
+volume_db = -5.0
 bus = &"bgm"
 
 [node name="soundupgrade" type="AudioStreamPlayer" parent="."]
