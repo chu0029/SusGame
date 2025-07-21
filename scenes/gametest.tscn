@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://ikdew4lo1lg8"]
+[gd_scene load_steps=12 format=3 uid="uid://ikdew4lo1lg8"]
 
 [ext_resource type="Script" uid="uid://bpn0pj6e5fff0" path="res://scripts/gametest.gd" id="1_34im5"]
 [ext_resource type="Theme" uid="uid://yfe8see4c3cw" path="res://filees and stuff/gametest.tres" id="3_34im5"]
@@ -9,6 +9,7 @@
 [ext_resource type="FontFile" uid="uid://ch5u3e1ev21f7" path="res://filees and stuff/Perfect DOS VGA 437 Win.ttf" id="6_xe5qx"]
 [ext_resource type="AudioStream" uid="uid://bou11k5vvk7ai" path="res://filees and stuff/e_s015.ogg" id="7_82nuq"]
 [ext_resource type="AudioStream" uid="uid://cbjhbqsh1ymx0" path="res://filees and stuff/PYRAMID - banana marmalade.ogg" id="7_t82je"]
+[ext_resource type="Script" uid="uid://cqyximukkqcu2" path="res://scenes/storemove.gd" id="7_xe5qx"]
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_18hib"]
 random_pitch = 1.1
@@ -404,6 +405,88 @@ offset_top = -36.0
 offset_right = 8.0
 grow_vertical = 0
 
+[node name="Panel2" type="Panel" parent="."]
+custom_minimum_size = Vector2(325, 450)
+offset_left = -360.0
+offset_top = 150.0
+offset_bottom = 800.0
+theme = ExtResource("3_34im5")
+script = ExtResource("7_xe5qx")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Panel2"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("3_34im5")
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel2/ScrollContainer"]
+clip_contents = true
+custom_minimum_size = Vector2(325, 450)
+layout_mode = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="nonsusvbox" type="VBoxContainer" parent="Panel2/ScrollContainer/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="Label" type="Label" parent="Panel2/ScrollContainer/MarginContainer/nonsusvbox"]
+layout_mode = 2
+text = "PLACEHOLDER"
+horizontal_alignment = 1
+
+[node name="incPlant" type="Button" parent="Panel2/ScrollContainer/MarginContainer/nonsusvbox"]
+layout_mode = 2
+text = "PLACEHOLDER"
+alignment = 0
+
+[node name="coal" type="Button" parent="Panel2/ScrollContainer/MarginContainer/nonsusvbox"]
+custom_minimum_size = Vector2(325, 100)
+layout_mode = 2
+text = "PLACEHOLDER"
+alignment = 0
+
+[node name="advCoal" type="Button" parent="Panel2/ScrollContainer/MarginContainer/nonsusvbox"]
+layout_mode = 2
+text = "PLACEHOLDER"
+alignment = 0
+
+[node name="natGas" type="Button" parent="Panel2/ScrollContainer/MarginContainer/nonsusvbox"]
+layout_mode = 2
+text = "PLACEHOLDER"
+alignment = 0
+
+[node name="oilRig" type="Button" parent="Panel2/ScrollContainer/MarginContainer/nonsusvbox"]
+layout_mode = 2
+text = "PLACEHOLDER"
+alignment = 0
+
+[node name="nFission" type="Button" parent="Panel2/ScrollContainer/MarginContainer/nonsusvbox"]
+layout_mode = 2
+text = "PLACEHOLDER"
+alignment = 0
+
+[node name="store" type="Button" parent="Panel2"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_right = 44.0
+offset_bottom = 312.0
+grow_horizontal = 0
+theme = ExtResource("3_34im5")
+text = "S
+T
+O
+R
+E"
+
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="button_down" from="factory" to="." method="_on_factory_button_down"]
 [connection signal="button_up" from="factory" to="." method="_on_factory_button_up"]
@@ -416,3 +499,4 @@ grow_vertical = 0
 [connection signal="pressed" from="Panel/ScrollContainer/MarginContainer/HBoxContainer/susvbox/hydroelectricdam" to="." method="_on_hydroelectricdam_pressed"]
 [connection signal="pressed" from="Panel/ScrollContainer/MarginContainer/HBoxContainer/susvbox/nuclearfusion" to="." method="_on_nuclearfusion_pressed"]
 [connection signal="pressed" from="Panel/upgrades" to="Panel" method="_on_upgrades_pressed"]
+[connection signal="pressed" from="Panel2/store" to="Panel2" method="_on_upgrades_pressed"]

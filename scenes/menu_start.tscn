@@ -124,5 +124,5 @@ text = "Version Alpha 0.1"
 vertical_alignment = 2
 
 [connection signal="pressed" from="VBoxContainer/start" to="." method="_on_button_pressed"]
-[connection signal="pressed" from="VBoxContainer/exit" to="." method="_on_exit_pressed"]
 [connection signal="pressed" from="VBoxContainer/exit" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/exit" to="." method="_on_exit_pressed"]
