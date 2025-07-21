@@ -156,17 +156,22 @@ func _on_geothermalplant_pressed() -> void: #costs[3]
 		geothermalplantcount = output[1]
 		geothermalplant.text = 'Geothermal Plant: %s \n Cost: %d kW \n Produces 15 kW/s' %[geothermalplantcount,costs[3]]
 
-func _on_hydroelectricdam_pressed() -> void: 
+func _on_hydroelectricdam_pressed() -> void: #costs[4]
 	if power >= costs[4]:
 		var output = upgradeClicker(costs[4], hydroelectricdamcount)
 		costs[4] = output[0]
 		hydroelectricdamcount = output[1]
 		hydroelectricdam.text = 'Hydroelectric Dam: %s \n Cost: %d kW \n Produces 50 kW/s' %[hydroelectricdamcount,costs[4]]
 
-func _on_nuclearfusion_pressed() -> void:
-	if power >= 1000000:
+func _on_nuclearfusion_pressed() -> void: #costs[5]
+	if power >= costs[5]:
+		var output = upgradeClicker(costs[5], nuclearfusioncount)
+		costs[5] = output[0]
+		nuclearfusioncount = output[1]
+		nuclearfusion.text = 'Nuclear Fusion: %s \n Cost: 1000000 kW \n Produces 1000 kW/s' %[nuclearfusioncount,costs[5]]
+	'''if power >= 1000000:
 		timer.start()
 		nuclearfusioncount += 1
 		power -= 1000000
 		nuclearfusion.text = 'Nuclear Fusion: %s \n Cost: 1000000 kW \n Produces 1000 kW/s' %nuclearfusioncount
-		soundupgrade.play()
+		soundupgrade.play()'''

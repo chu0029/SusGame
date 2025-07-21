@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=7 format=3 uid="uid://yfe8see4c3cw"]
+[gd_resource type="Theme" load_steps=9 format=3 uid="uid://yfe8see4c3cw"]
 
 [ext_resource type="StyleBox" uid="uid://bmd8e1tc2yjsf" path="res://filees and stuff/TEST_style_box_flat.tres" id="1_1prqb"]
 [ext_resource type="FontFile" uid="uid://cdooeuyqiy8tm" path="res://filees and stuff/robots.ttf" id="1_bf4m7"]
@@ -17,6 +17,11 @@ corner_detail = 1
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_74k86"]
 bg_color = Color(0.741176, 0.439216, 0.239216, 1)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6rtx7"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vhr50"]
+bg_color = Color(0, 0.666667, 0.333333, 1)
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kuev6"]
 border_color = Color(1, 1, 1, 0)
 
@@ -28,5 +33,7 @@ Button/styles/hover = ExtResource("2_bf4m7")
 Button/styles/normal = ExtResource("1_1prqb")
 Button/styles/pressed = SubResource("StyleBoxFlat_bf4m7")
 Panel/styles/panel = SubResource("StyleBoxFlat_74k86")
+ProgressBar/styles/background = SubResource("StyleBoxFlat_6rtx7")
+ProgressBar/styles/fill = SubResource("StyleBoxFlat_vhr50")
 VScrollBar/styles/grabber = SubResource("StyleBoxFlat_kuev6")
 VScrollBar/styles/scroll = null
