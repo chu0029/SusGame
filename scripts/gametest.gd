@@ -47,6 +47,7 @@ var kws: int = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void: #this is the scratch 'on start' block
+	bgm.play()
 	pass
 	
 func _process(delta: float) -> void: #on every frame...

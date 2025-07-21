@@ -4,12 +4,12 @@
 [ext_resource type="Theme" uid="uid://yfe8see4c3cw" path="res://filees and stuff/gametest.tres" id="3_34im5"]
 [ext_resource type="Texture2D" uid="uid://cbn5ffb63qtty" path="res://filees and stuff/New Piskel-1.png.png" id="3_82nuq"]
 [ext_resource type="AudioStream" uid="uid://dxaf162lw1lbq" path="res://filees and stuff/e_se014.ogg" id="4_xe5qx"]
-[ext_resource type="Script" uid="uid://dg47g08vrd05k" path="res://scenes/upgrademove.gd" id="6_82nuq"]
+[ext_resource type="Script" uid="uid://dg47g08vrd05k" path="res://upgrademove.gd" id="6_82nuq"]
 [ext_resource type="Texture2D" uid="uid://i6623btw2mrp" path="res://filees and stuff/background placeholder.png" id="6_i0h8x"]
 [ext_resource type="FontFile" uid="uid://ch5u3e1ev21f7" path="res://filees and stuff/Perfect DOS VGA 437 Win.ttf" id="6_xe5qx"]
 [ext_resource type="AudioStream" uid="uid://bou11k5vvk7ai" path="res://filees and stuff/e_s015.ogg" id="7_82nuq"]
-[ext_resource type="AudioStream" uid="uid://cbjhbqsh1ymx0" path="res://filees and stuff/PYRAMID - banana marmalade.ogg" id="7_t82je"]
-[ext_resource type="Script" uid="uid://cqyximukkqcu2" path="res://scenes/storemove.gd" id="7_xe5qx"]
+[ext_resource type="Script" uid="uid://cqyximukkqcu2" path="res://storemove.gd" id="7_xe5qx"]
+[ext_resource type="AudioStream" uid="uid://brau5vfpdgbqq" path="res://filees and stuff/Interlagos.mp3" id="8_18hib"]
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_18hib"]
 random_pitch = 1.1
@@ -31,7 +31,7 @@ timer = NodePath("Timer")
 factory = NodePath("factory")
 soundfactory = NodePath("factory/soundfactory")
 soundupgrade = NodePath("soundupgrade")
-bgm = NodePath("Pyramid-BananaMarmalade")
+bgm = NodePath("bgm")
 autoclicker = NodePath("autoclicker")
 solarpanel = NodePath("Panel/ScrollContainer/MarginContainer/HBoxContainer/susvbox/solarpanel")
 windturbine = NodePath("Panel/ScrollContainer/MarginContainer/HBoxContainer/susvbox/windturbine")
@@ -355,8 +355,9 @@ offset_right = 200.0
 offset_bottom = 74.0
 theme = ExtResource("3_34im5")
 
-[node name="Pyramid-BananaMarmalade" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("7_t82je")
+[node name="bgm" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_18hib")
+volume_db = -3.0
 bus = &"bgm"
 
 [node name="soundupgrade" type="AudioStreamPlayer" parent="."]
@@ -407,6 +408,7 @@ grow_vertical = 0
 
 [node name="Panel2" type="Panel" parent="."]
 custom_minimum_size = Vector2(325, 450)
+layout_mode = 0
 offset_left = -360.0
 offset_top = 150.0
 offset_bottom = 800.0
@@ -443,7 +445,9 @@ horizontal_alignment = 1
 
 [node name="incPlant" type="Button" parent="Panel2/ScrollContainer/MarginContainer/nonsusvbox"]
 layout_mode = 2
-text = "PLACEHOLDER"
+text = "Placeholder: XX
+Cost: XXkW
++5 multiplier"
 alignment = 0
 
 [node name="coal" type="Button" parent="Panel2/ScrollContainer/MarginContainer/nonsusvbox"]
