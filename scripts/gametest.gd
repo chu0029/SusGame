@@ -56,7 +56,7 @@ func _process(delta: float) -> void: #on every frame...
 func UpdateLabelText() -> void:
 	counter.text = "%s kW" %power
 	multipcounter.text = "Multiplier: %s" %multiplier
-	kws = solarpanelcount + windturbinecount*2 + biomasscount*5 + geothermalplantcount*15
+	kws = solarpanelcount + windturbinecount*2 + biomasscount*5 + geothermalplantcount*15 + hydroelectricdamcount*50 + nuclearfusioncount*1000
 	kwslabel.text = '%s kilowatts/sec' %kws
 	$sustainability/susbar.value = sustainability
 	$health/healthbar.value = health
@@ -169,7 +169,7 @@ func _on_nuclearfusion_pressed() -> void: #costs[5]
 		var output = upgradeClicker(costs[5], nuclearfusioncount)
 		costs[5] = output[0]
 		nuclearfusioncount = output[1]
-		nuclearfusion.text = 'Nuclear Fusion: %s \n Cost: 1000000 kW \n Produces 1000 kW/s' %[nuclearfusioncount,costs[5]]
+		nuclearfusion.text = 'Nuclear Fusion: %s \n Cost: %d kW \n Produces 1000 kW/s' %[nuclearfusioncount,costs[5]]
 	'''if power >= 1000000:
 		timer.start()
 		nuclearfusioncount += 1
