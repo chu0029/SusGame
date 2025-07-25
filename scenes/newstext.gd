@@ -24,13 +24,16 @@ var i: int = 0
 func _ready() -> void:
 	headlines.shuffle()
 	#print(headlines)
+	self.text = startmsg[i]
+	await get_tree().create_timer(10).timeout
+	i += 1
 	for i in range(startmsg.size()): #show start messages
 		var tween = get_tree().create_tween()
-		await get_tree().create_timer(10).timeout
 		tween.tween_property(self, "position", Vector2(16, 36), 0.5) 
 		tween.tween_property(self, "position", Vector2(16, 4), 0.5)
 		await get_tree().create_timer(0.5).timeout
 		self.text = startmsg[i]
+		await get_tree().create_timer(10).timeout
 		i += 1
 	headlinetimer.start()
 	print('hello')

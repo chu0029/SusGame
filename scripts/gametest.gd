@@ -18,6 +18,14 @@ extends Control #this means use the properties of 'control' (get its attributes)
 @export var oilrig: Button
 @export var nfission: Button
 
+#export store buttons
+@export var tree: Button
+@export var bus: Button
+@export var ev: Button
+@export var train: Button
+@export var sApartment: Button
+
+#export sustainable buttons
 @export var autoclicker: Button #export buttons (im sure theres a better way to do this)
 #update: there IS a better way to do this - use $path-to-file (it autocompletes itself)
 @export var solarpanel: Button
@@ -39,6 +47,7 @@ var automult : int = 0
 var costs = [25,100,500,10000,50000,1000000]
 var costn = [10,50,250,5000,25000,500000]
 var nonsuscount = [0,0,0,0,0,0]
+var coste = [200,1000,5000,10000,50000]
 
 #couting how many upgrades 
 var susUpgCount = 0
@@ -111,6 +120,7 @@ func _on_factory_button_up() -> void:
 	tween.set_ease(Tween.EASE_OUT)
 	tween.tween_property(factory, "scale", Vector2(1, 1), 0.1)
 
+#DELETE THIS DELETE THIS DELETE THIS DELETE THIS DELETE THIS DELETE THIS 
 func _on_multiplier_pressed() -> void:
 	multiplier += 1
 	soundupgrade.play()
@@ -134,6 +144,15 @@ func upgradeClicker(itemCost, itemCount):
 	itemCount += 1
 	power -= itemCost
 	itemCost = round(itemCost*1.25)
+	soundupgrade.play()
+	return [itemCost, itemCount]
+
+#UNIVERSAL FUNCTION FOR ALL ENHAMCEMENTS
+func enhacement(itemCost, itemCount):
+	timer.start()
+	itemCount += 1
+	power -= itemCost
+	itemCost = round(itemCost*2)
 	soundupgrade.play()
 	return [itemCost, itemCount]
 	
@@ -235,6 +254,13 @@ func _on_oil_rig_pressed() -> void:
 func _on_n_fission_pressed() -> void:
 	if power >= costn[5]:
 		var output = upgradeClicker(costn[5], nonsuscount[5])
+		costn[5] = output[0]
+		nonsuscount[5] = output[1]
+		nfission.text = 'Nuclear Fission: %s \n Cost: %d kW \n Produces 1000 kW/s' %[nonsuscount[5], costn[5]]
+
+func _on_tree_pressed() -> void:
+	if power >= coste[0]:
+		var output = upgradeClicker(coste[5], nonsuscount[5])
 		costn[5] = output[0]
 		nonsuscount[5] = output[1]
 		nfission.text = 'Nuclear Fission: %s \n Cost: %d kW \n Produces 1000 kW/s' %[nonsuscount[5], costn[5]]
