@@ -9,7 +9,7 @@
 [ext_resource type="FontFile" uid="uid://ch5u3e1ev21f7" path="res://filees and stuff/Perfect DOS VGA 437 Win.ttf" id="6_xe5qx"]
 [ext_resource type="AudioStream" uid="uid://bou11k5vvk7ai" path="res://filees and stuff/e_s015.ogg" id="7_82nuq"]
 [ext_resource type="Script" uid="uid://cqyximukkqcu2" path="res://storemove.gd" id="7_xe5qx"]
-[ext_resource type="AudioStream" uid="uid://brau5vfpdgbqq" path="res://filees and stuff/bgmsfxFinal/Interlagos.mp3" id="8_18hib"]
+[ext_resource type="AudioStream" uid="uid://brau5vfpdgbqq" path="res://filees and stuff/Interlagos.mp3" id="8_18hib"]
 [ext_resource type="Script" uid="uid://t8bmxlin25u1" path="res://scenes/newstext.gd" id="10_1uq2d"]
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_18hib"]
@@ -420,7 +420,6 @@ text = "Insert sustainability fact here yipee lorem ipsum dolor sit amet"
 script = ExtResource("10_1uq2d")
 
 [node name="headlineTimer" type="Timer" parent="ColorRectRed/ColorRectWhite"]
-wait_time = 10.0
 autostart = true
 
 [node name="Panel2" type="Panel" parent="."]

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://brau5vfpdgbqq"
+path="res://.godot/imported/Interlagos.mp3-b9dfe017c29d166d6f11d10c7ff4e66a.mp3str"
+
+[deps]
+
+source_file="res://filees and stuff/bgmsfxFinal/Interlagos.mp3"
+dest_files=["res://.godot/imported/Interlagos.mp3-b9dfe017c29d166d6f11d10c7ff4e66a.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

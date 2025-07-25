@@ -420,7 +420,7 @@ text = "Insert sustainability fact here yipee lorem ipsum dolor sit amet"
 script = ExtResource("10_1uq2d")
 
 [node name="headlineTimer" type="Timer" parent="ColorRectRed/ColorRectWhite"]
-wait_time = 10.0
+wait_time = 2.0
 autostart = true
 
 [node name="Panel2" type="Panel" parent="."]
