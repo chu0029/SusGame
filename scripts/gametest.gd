@@ -10,6 +10,10 @@ extends Control #this means use the properties of 'control' (get its attributes)
 @export var soundupgrade: AudioStreamPlayer
 @export var bgm: AudioStreamPlayer
 
+#exports unsustainable buttons so they can be used in code
+@export var incineratorplant: Button
+@export var coal: Button
+
 @export var autoclicker: Button #export buttons (im sure theres a better way to do this)
 #update: there IS a better way to do this - use $path-to-file (it autocompletes itself)
 @export var solarpanel: Button
@@ -22,15 +26,19 @@ extends Control #this means use the properties of 'control' (get its attributes)
 #export labels (i forgor why we need this)
 @export var healthbutton: Label
 
-var power: int = 0 #set all variables needed to increase power
+var power: int = 1000000 #set all variables needed to increase power
 var multiplier : int = 1
 var automult : int = 0
 
 #costs to be stored in an array for tidying purposes
 #IN ORDER: 0solar 1wind 2biomass 3geother 4hydroel 5nuclear
 var costs = [25,100,500,10000,50000,1000000]
-var costn = [25,100,500,10000,50000,1000000]
+var costn = [10,50,250,5000,25000,500000]
 var nonsuscount = [0,0,0,0,0,0]
+
+#amount of unsustainable upgrades player has acquired 
+var incineratorplantcount : int = 0
+
 
 #amount of sustainable upgrades player has acquired
 var solarpanelcount : int = 0
@@ -58,7 +66,7 @@ func _process(delta: float) -> void: #on every frame...
 func UpdateLabelText() -> void:
 	counter.text = "%s kW" %power
 	multipcounter.text = "Multiplier: %s" %multiplier
-	kws = solarpanelcount + windturbinecount*2 + biomasscount*5 + geothermalplantcount*15 + hydroelectricdamcount*50 + nuclearfusioncount*1000
+	kws = solarpanelcount + windturbinecount*2 + biomasscount*5 + geothermalplantcount*15 + hydroelectricdamcount*50 + nuclearfusioncount*1000 + nonsuscount[0] + nonsuscount[1]*2
 	kwslabel.text = '%s kilowatts/sec' %kws
 	$sustainability/susbar.value = sustainability
 	$health/healthbar.value = health
@@ -77,6 +85,8 @@ func AutoFactory() -> void:
 	power += 15 * geothermalplantcount
 	power += 50 * hydroelectricdamcount
 	power += 1000 * nuclearfusioncount
+	power += 1 * nonsuscount[0]
+	power += 2 * nonsuscount[1]
 
 func _on_factory_button_down() -> void:
 	CreatePower()
@@ -178,3 +188,17 @@ func _on_nuclearfusion_pressed() -> void: #costs[5]
 		power -= 1000000
 		nuclearfusion.text = 'Nuclear Fusion: %s \n Cost: 1000000 kW \n Produces 1000 kW/s' %nuclearfusioncount
 		soundupgrade.play()'''
+
+func _on_inc_plant_pressed() -> void:
+	if power >= costn[0]:
+		var output = upgradeClicker(costn[0], nonsuscount[0])
+		costn[0] = output[0]
+		nonsuscount[0] = output[1]
+		incineratorplant.text = 'Incinerator Plant: %s \n Cost: %d kW \n Produces 1 kW/s' %[nonsuscount[0], costn[0]]
+
+func _on_coal_pressed() -> void:
+	if power >= costn[1]:
+		var output = upgradeClicker(costn[1], nonsuscount[1])
+		costn[1] = output[0]
+		nonsuscount[1] = output[1]
+		coal.text = 'Coal Burner: %s \n Cost: %d kW \n Produces 2 kW/s' %[nonsuscount[1], costn[1]]
