@@ -296,7 +296,6 @@ text = "Hydroelectric Dam: 0
 Cost: 50000 kW
 Produces 50 kW/s"
 alignment = 0
-autowrap_mode = 1
 clip_text = true
 
 [node name="nuclearfusion" type="Button" parent="Panel/ScrollContainer/MarginContainer/HBoxContainer/susvbox"]
@@ -430,11 +429,14 @@ headlinetimer = NodePath("../headlineTimer")
 wait_time = 10.0
 
 [node name="Panel2" type="Panel" parent="."]
-custom_minimum_size = Vector2(325, 450)
-layout_mode = 0
+custom_minimum_size = Vector2(100, 450)
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.187
+anchor_bottom = 0.187
 offset_left = -360.0
-offset_top = 150.0
-offset_bottom = 800.0
+offset_top = 0.399994
+offset_bottom = 650.4
 theme = ExtResource("3_34im5")
 script = ExtResource("7_xe5qx")
 
@@ -450,7 +452,7 @@ theme = ExtResource("3_34im5")
 
 [node name="MarginContainer" type="MarginContainer" parent="Panel2/ScrollContainer"]
 clip_contents = true
-custom_minimum_size = Vector2(325, 450)
+custom_minimum_size = Vector2(100, 450)
 layout_mode = 2
 theme_override_constants/margin_left = 16
 theme_override_constants/margin_top = 16
@@ -463,40 +465,43 @@ theme_override_constants/separation = 8
 
 [node name="Label" type="Label" parent="Panel2/ScrollContainer/MarginContainer/nonsusvbox"]
 layout_mode = 2
-text = "PLACEHOLDER"
+text = "Enhancements"
 horizontal_alignment = 1
 
-[node name="incPlant" type="Button" parent="Panel2/ScrollContainer/MarginContainer/nonsusvbox"]
+[node name="tree" type="Button" parent="Panel2/ScrollContainer/MarginContainer/nonsusvbox"]
 layout_mode = 2
-text = "Placeholder: XX
-Cost: XXkW
-+5 multiplier"
+text = "Trees: 0
+Cost: 200 kW
++1 multiplier"
 alignment = 0
 
-[node name="coal" type="Button" parent="Panel2/ScrollContainer/MarginContainer/nonsusvbox"]
+[node name="bus" type="Button" parent="Panel2/ScrollContainer/MarginContainer/nonsusvbox"]
 custom_minimum_size = Vector2(325, 100)
 layout_mode = 2
-text = "PLACEHOLDER"
+text = "Busses: 0
+Cost: 200 kW
++1 multiplier"
 alignment = 0
 
-[node name="advCoal" type="Button" parent="Panel2/ScrollContainer/MarginContainer/nonsusvbox"]
+[node name="ev" type="Button" parent="Panel2/ScrollContainer/MarginContainer/nonsusvbox"]
 layout_mode = 2
-text = "PLACEHOLDER"
+text = "Electric Cars: 0
+Cost: 200 kW
++1 multiplier"
 alignment = 0
 
-[node name="natGas" type="Button" parent="Panel2/ScrollContainer/MarginContainer/nonsusvbox"]
+[node name="train" type="Button" parent="Panel2/ScrollContainer/MarginContainer/nonsusvbox"]
 layout_mode = 2
-text = "PLACEHOLDER"
+text = "Metro: 0
+Cost: 200 kW
++1 multiplier"
 alignment = 0
 
-[node name="oilRig" type="Button" parent="Panel2/ScrollContainer/MarginContainer/nonsusvbox"]
+[node name="sApartment" type="Button" parent="Panel2/ScrollContainer/MarginContainer/nonsusvbox"]
 layout_mode = 2
-text = "PLACEHOLDER"
-alignment = 0
-
-[node name="nFission" type="Button" parent="Panel2/ScrollContainer/MarginContainer/nonsusvbox"]
-layout_mode = 2
-text = "PLACEHOLDER"
+text = "Solar Buildings: 0
+Cost: 200 kW
++1 multiplier"
 alignment = 0
 
 [node name="store" type="Button" parent="Panel2"]
@@ -533,4 +538,5 @@ E"
 [connection signal="pressed" from="Panel/ScrollContainer/MarginContainer/HBoxContainer/susvbox/nuclearfusion" to="." method="_on_nuclearfusion_pressed"]
 [connection signal="pressed" from="Panel/upgrades" to="Panel" method="_on_upgrades_pressed"]
 [connection signal="timeout" from="ColorRectRed/ColorRectWhite/headlineTimer" to="ColorRectRed/ColorRectWhite/headline" method="_on_headline_timer_timeout"]
+[connection signal="pressed" from="Panel2/ScrollContainer/MarginContainer/nonsusvbox/tree" to="." method="_on_tree_pressed"]
 [connection signal="pressed" from="Panel2/store" to="Panel2" method="_on_upgrades_pressed"]
