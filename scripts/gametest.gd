@@ -13,6 +13,10 @@ extends Control #this means use the properties of 'control' (get its attributes)
 #exports unsustainable buttons so they can be used in code
 @export var incineratorplant: Button
 @export var coal: Button
+@export var advcoal: Button
+@export var natgas: Button
+@export var oilrig: Button
+@export var nfission: Button
 
 @export var autoclicker: Button #export buttons (im sure theres a better way to do this)
 #update: there IS a better way to do this - use $path-to-file (it autocompletes itself)
@@ -66,7 +70,7 @@ func _process(delta: float) -> void: #on every frame...
 func UpdateLabelText() -> void:
 	counter.text = "%s kW" %power
 	multipcounter.text = "Multiplier: %s" %multiplier
-	kws = solarpanelcount + windturbinecount*2 + biomasscount*5 + geothermalplantcount*15 + hydroelectricdamcount*50 + nuclearfusioncount*1000 + nonsuscount[0] + nonsuscount[1]*2
+	kws = solarpanelcount + windturbinecount*2 + biomasscount*5 + geothermalplantcount*15 + hydroelectricdamcount*50 + nuclearfusioncount*1000 + nonsuscount[0] + nonsuscount[1]*2 + nonsuscount[2]*5 + nonsuscount[3]*15 + nonsuscount[4]*50 + nonsuscount[5]*1000
 	kwslabel.text = '%s kilowatts/sec' %kws
 	$sustainability/susbar.value = sustainability
 	$health/healthbar.value = health
@@ -87,6 +91,10 @@ func AutoFactory() -> void:
 	power += 1000 * nuclearfusioncount
 	power += 1 * nonsuscount[0]
 	power += 2 * nonsuscount[1]
+	power += 5 * nonsuscount[2]
+	power += 15 * nonsuscount[3]
+	power += 50 * nonsuscount[4]
+	power += 1000 * nonsuscount[5]
 
 func _on_factory_button_down() -> void:
 	CreatePower()
@@ -202,3 +210,31 @@ func _on_coal_pressed() -> void:
 		costn[1] = output[0]
 		nonsuscount[1] = output[1]
 		coal.text = 'Coal Burner: %s \n Cost: %d kW \n Produces 2 kW/s' %[nonsuscount[1], costn[1]]
+
+func _on_adv_coal_pressed() -> void:
+	if power >= costn[2]:
+		var output = upgradeClicker(costn[2], nonsuscount[2])
+		costn[2] = output[0]
+		nonsuscount[2] = output[1]
+		advcoal.text = 'Advanced Coal Burner: %s \n Cost: %d kW \n Produces 5 kW/s' %[nonsuscount[2], costn[2]]
+
+func _on_nat_gas_pressed() -> void:
+	if power >= costn[3]:
+		var output = upgradeClicker(costn[3], nonsuscount[3])
+		costn[3] = output[0]
+		nonsuscount[3] = output[1]
+		natgas.text = 'Natural Gas: %s \n Cost: %d kW \n Produces 15 kW/s' %[nonsuscount[3], costn[3]]
+
+func _on_oil_rig_pressed() -> void:
+	if power >= costn[4]:
+		var output = upgradeClicker(costn[4], nonsuscount[4])
+		costn[4] = output[0]
+		nonsuscount[4] = output[1]
+		oilrig.text = 'Oil Rig: %s \n Cost: %d kW \n Produces 50 kW/s' %[nonsuscount[4], costn[4]]
+
+func _on_n_fission_pressed() -> void:
+	if power >= costn[5]:
+		var output = upgradeClicker(costn[5], nonsuscount[5])
+		costn[5] = output[0]
+		nonsuscount[5] = output[1]
+		nfission.text = 'Nuclear Fission: %s \n Cost: %d kW \n Produces 1000 kW/s' %[nonsuscount[5], costn[5]]
