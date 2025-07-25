@@ -36,9 +36,9 @@ var costs = [25,100,500,10000,50000,1000000]
 var costn = [10,50,250,5000,25000,500000]
 var nonsuscount = [0,0,0,0,0,0]
 
-#amount of unsustainable upgrades player has acquired 
-var incineratorplantcount : int = 0
-
+#couting how many upgrades 
+var susUpgCount = 0
+var totalUpgCount = 0
 
 #amount of sustainable upgrades player has acquired
 var solarpanelcount : int = 0

@@ -411,7 +411,7 @@ offset_top = -36.0
 offset_right = 8.0
 grow_vertical = 0
 
-[node name="headline" type="Label" parent="ColorRectRed/ColorRectWhite"]
+[node name="headline" type="Label" parent="ColorRectRed/ColorRectWhite" node_paths=PackedStringArray("headlinetimer")]
 layout_mode = 0
 offset_left = 16.0
 offset_top = 4.0
@@ -420,6 +420,7 @@ offset_bottom = 34.0
 theme = ExtResource("3_34im5")
 text = "Insert sustainability fact here yipee lorem ipsum dolor sit amet"
 script = ExtResource("10_1uq2d")
+headlinetimer = NodePath("../headlineTimer")
 
 [node name="headlineTimer" type="Timer" parent="ColorRectRed/ColorRectWhite"]
 wait_time = 10.0
