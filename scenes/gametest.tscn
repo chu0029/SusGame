@@ -427,7 +427,6 @@ script = ExtResource("10_1uq2d")
 
 [node name="headlineTimer" type="Timer" parent="ColorRectRed/ColorRectWhite"]
 wait_time = 10.0
-autostart = true
 
 [node name="Panel2" type="Panel" parent="."]
 custom_minimum_size = Vector2(325, 450)

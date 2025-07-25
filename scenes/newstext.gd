@@ -1,5 +1,7 @@
 extends Label
 
+@export 
+
 #array to store messages that the headline can display
 var headlines = [
 	'Confused? Hover over text to see what stuff does.',
@@ -20,7 +22,7 @@ var i: int = 0
 #shuffle the headlines to make it appear random
 func _ready() -> void:
 	headlines.shuffle()
-	print(headlines)
+	#print(headlines)
 
 #after headlines timer timesout
 func _on_headline_timer_timeout() -> void:
@@ -35,4 +37,4 @@ func _on_headline_timer_timeout() -> void:
 	else: #once end of array reached, shuffle again and reset i
 		headlines.shuffle()
 		i = 0
-	print('hello')
+	#print('hello')

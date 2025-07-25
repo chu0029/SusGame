@@ -53,7 +53,7 @@ var hydroelectricdamcount : int = 0
 var nuclearfusioncount : int = 0
 
 #variables that determine sustainability rating and health
-var sustainability : int = 0
+var sustainability : int = 100
 var susupgrade : int = 1
 var unsusupgrade : = 1
 var health : int = 100
