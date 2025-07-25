@@ -17,7 +17,7 @@ random_pitch = 1.1
 streams_count = 1
 stream_0/stream = ExtResource("4_xe5qx")
 
-[node name="Control" type="Control" node_paths=PackedStringArray("counter", "multipcounter", "kwslabel", "timer", "factory", "soundfactory", "soundupgrade", "bgm", "incineratorplant", "coal", "autoclicker", "solarpanel", "windturbine", "biomass", "geothermalplant", "hydroelectricdam", "nuclearfusion", "healthbutton")]
+[node name="Control" type="Control" node_paths=PackedStringArray("counter", "multipcounter", "kwslabel", "timer", "factory", "soundfactory", "soundupgrade", "bgm", "incineratorplant", "coal", "advcoal", "natgas", "oilrig", "nfission", "autoclicker", "solarpanel", "windturbine", "biomass", "geothermalplant", "hydroelectricdam", "nuclearfusion", "healthbutton")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -35,6 +35,10 @@ soundupgrade = NodePath("soundupgrade")
 bgm = NodePath("bgm")
 incineratorplant = NodePath("Panel/ScrollContainer/MarginContainer/HBoxContainer/nonsusvbox/incPlant")
 coal = NodePath("Panel/ScrollContainer/MarginContainer/HBoxContainer/nonsusvbox/coal")
+advcoal = NodePath("Panel/ScrollContainer/MarginContainer/HBoxContainer/nonsusvbox/advCoal")
+natgas = NodePath("Panel/ScrollContainer/MarginContainer/HBoxContainer/nonsusvbox/natGas")
+oilrig = NodePath("Panel/ScrollContainer/MarginContainer/HBoxContainer/nonsusvbox/oilRig")
+nfission = NodePath("Panel/ScrollContainer/MarginContainer/HBoxContainer/nonsusvbox/nFission")
 autoclicker = NodePath("autoclicker")
 solarpanel = NodePath("Panel/ScrollContainer/MarginContainer/HBoxContainer/susvbox/solarpanel")
 windturbine = NodePath("Panel/ScrollContainer/MarginContainer/HBoxContainer/susvbox/windturbine")
@@ -207,30 +211,30 @@ alignment = 0
 
 [node name="advCoal" type="Button" parent="Panel/ScrollContainer/MarginContainer/HBoxContainer/nonsusvbox"]
 layout_mode = 2
-text = "Advanced Coal: XX
-Cost: XXkW
-Produces XXkw/s"
+text = "Advanced Coal: 0
+Cost: 250 kW
+Produces 5 kw/s"
 alignment = 0
 
 [node name="natGas" type="Button" parent="Panel/ScrollContainer/MarginContainer/HBoxContainer/nonsusvbox"]
 layout_mode = 2
-text = "Natural Gas: XX
-Cost: XXkW
-Produces XXkw/s"
+text = "Natural Gas: 0
+Cost: 5000 kW
+Produces 15 kw/s"
 alignment = 0
 
 [node name="oilRig" type="Button" parent="Panel/ScrollContainer/MarginContainer/HBoxContainer/nonsusvbox"]
 layout_mode = 2
-text = "Oil Rig: XX
-Cost: XXkW
-Produces XXkw/s"
+text = "Oil Rig: 0
+Cost: 25000 kW
+Produces 50 kW/s"
 alignment = 0
 
 [node name="nFission" type="Button" parent="Panel/ScrollContainer/MarginContainer/HBoxContainer/nonsusvbox"]
 layout_mode = 2
-text = "Nuclear Fission: XX
-Cost: XXkW
-Produces XXkw/s"
+text = "Nuclear Fission: 0
+Cost: 500000kW
+Produces 1000 kW/s"
 alignment = 0
 
 [node name="susvbox" type="VBoxContainer" parent="Panel/ScrollContainer/MarginContainer/HBoxContainer"]
@@ -517,6 +521,10 @@ E"
 [connection signal="pressed" from="autoclicker" to="." method="_on_autoclicker_pressed"]
 [connection signal="pressed" from="Panel/ScrollContainer/MarginContainer/HBoxContainer/nonsusvbox/incPlant" to="." method="_on_inc_plant_pressed"]
 [connection signal="pressed" from="Panel/ScrollContainer/MarginContainer/HBoxContainer/nonsusvbox/coal" to="." method="_on_coal_pressed"]
+[connection signal="pressed" from="Panel/ScrollContainer/MarginContainer/HBoxContainer/nonsusvbox/advCoal" to="." method="_on_adv_coal_pressed"]
+[connection signal="pressed" from="Panel/ScrollContainer/MarginContainer/HBoxContainer/nonsusvbox/natGas" to="." method="_on_nat_gas_pressed"]
+[connection signal="pressed" from="Panel/ScrollContainer/MarginContainer/HBoxContainer/nonsusvbox/oilRig" to="." method="_on_oil_rig_pressed"]
+[connection signal="pressed" from="Panel/ScrollContainer/MarginContainer/HBoxContainer/nonsusvbox/nFission" to="." method="_on_n_fission_pressed"]
 [connection signal="pressed" from="Panel/ScrollContainer/MarginContainer/HBoxContainer/susvbox/solarpanel" to="." method="_on_solarpanel_pressed"]
 [connection signal="pressed" from="Panel/ScrollContainer/MarginContainer/HBoxContainer/susvbox/windturbine" to="." method="_on_windturbine_pressed"]
 [connection signal="pressed" from="Panel/ScrollContainer/MarginContainer/HBoxContainer/susvbox/biomass" to="." method="_on_biomass_pressed"]
