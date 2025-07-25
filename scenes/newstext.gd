@@ -4,7 +4,8 @@ extends Label
 var headlines = [
 	'Confused? Hover over text to see what stuff does.',
 	'Earth is now 1.5 degrees hotter than it was in pre-industrial times.',
-	'60 people in a diesel bus would emit 1/6 smog than if they were all in cars.'
+	'60 people in a diesel bus would emit 1/6 smog than if they were all in cars.',
+	'The country Tuvalu will likely be completely underwater by 2050.'
 ]
 var startmsg = [
 	'Welcome to INSERT GAME NAME',
@@ -27,7 +28,7 @@ func _on_headline_timer_timeout() -> void:
 	tween.tween_property(self, "position", Vector2(16, 36), 0.5) 
 	tween.tween_property(self, "position", Vector2(16, 4), 0.5)
 	await get_tree().create_timer(0.5).timeout
-	self.text = headlines[i] #use i to keep track of what jumber headline
+	self.text = headlines[i] #use i to keep track of what number headline
 	print(headlines[i], '|', i)
 	if i+1 < headlines.size(): #i+1 is used as i starts at 0
 		i += 1
