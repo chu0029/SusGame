@@ -28,7 +28,7 @@ func _ready() -> void:
 	await get_tree().create_timer(0).timeout
 	#print(i)
 	for i in range(startmsg.size()): #show start messages
-		print(startmsg[i], '|', i)
+		#print(startmsg[i], '|', i)
 		var tween = get_tree().create_tween()
 		tween.tween_property(self, "position", Vector2(16, 36), 0.5) 
 		tween.tween_property(self, "position", Vector2(16, 4), 0.5)
@@ -37,7 +37,7 @@ func _ready() -> void:
 		await get_tree().create_timer(10).timeout
 		i += 1
 	headlinetimer.start()
-	print('hello')
+	#print('hello')
 
 #after headlines timer timesout
 func _on_headline_timer_timeout() -> void:
@@ -46,7 +46,7 @@ func _on_headline_timer_timeout() -> void:
 	tween.tween_property(self, "position", Vector2(16, 4), 0.5)
 	await get_tree().create_timer(0.5).timeout
 	self.text = headlines[i] #use i to keep track of what number headline
-	print(headlines[i], '|', i)
+	#print(headlines[i], '|', i)
 	if i+1 < headlines.size(): #i+1 is used as i starts at 0
 		i += 1
 	else: #once end of array reached, shuffle again and reset i

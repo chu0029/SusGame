@@ -29,9 +29,9 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -382.0
+offset_left = -550.0
 offset_top = -25.0
-offset_right = 382.0
+offset_right = 214.0
 offset_bottom = 25.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -65,5 +65,24 @@ grow_vertical = 0
 scale = Vector2(1, 1.00576)
 theme = ExtResource("2_cr101")
 text = "BACK"
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 850.0
+offset_right = 1200.0
+offset_bottom = 800.0
+theme = ExtResource("2_cr101")
+text = "                  CREDITS
+Programming:
+Michaelangelo Pranowo
+Andy He
+Leroy Chung
+
+Art:
+Andy He
+
+Music:
+KPM 1000 Series:
+"
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

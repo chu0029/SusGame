@@ -281,3 +281,47 @@ func _on_tree_pressed() -> void:
 			tree.disabled = true
 			#encount +1 because it doesnt like when the button disaables for some reason
 			tree.text = 'Trees: %s \n MAX UPGRADES \n +1 Multiplier' %(encount[0]+1)
+
+func _on_bus_pressed() -> void:
+	if power >= coste[1]:
+		var output = enhacement(coste[1], encount[1])
+		print(encount[1])
+		coste[1] = output[0]
+		encount[1] = output[1]
+		bus.text = 'Busses: %s \n Cost: %d kW \n +X Multiplier' %[encount[1], coste[1]]
+		if output[2] == 1:
+			bus.disabled = true
+			bus.text = 'Busses: %s \n MAX UPGRADES \n +X Multiplier' %(encount[1]+1)
+
+func _on_ev_pressed() -> void:
+	if power >= coste[2]:
+		var output = enhacement(coste[2], encount[2])
+		print(encount[2])
+		coste[2] = output[0]
+		encount[2] = output[1]
+		ev.text = 'Electric Cars: %s \n Cost: %d kW \n +X Multiplier' %[encount[2], coste[2]]
+		if output[2] == 1:
+			ev.disabled = true
+			ev.text = 'Electric Cars: %s \n MAX UPGRADES \n +X Multiplier' %(encount[2]+1)
+
+func _on_train_pressed() -> void:
+	if power >= coste[3]:
+		var output = enhacement(coste[3], encount[3])
+		print(encount[3])
+		coste[3] = output[0]
+		encount[3] = output[1]
+		train.text = 'Metro: %s \n Cost: %d kW \n +X Multiplier' %[encount[3], coste[3]]
+		if output[2] == 1:
+			train.disabled = true
+			train.text = 'Metro: %s \n MAX UPGRADES \n +X Multiplier' %(encount[3]+1)
+
+func _on_s_apartment_pressed() -> void:
+	if power >= coste[4]:
+		var output = enhacement(coste[4], encount[4])
+		print(encount[4])
+		coste[4] = output[0]
+		encount[4] = output[1]
+		sApartment.text = 'Solar Buildings: %s \n Cost: %d kW \n +X Multiplier' %[encount[4], coste[4]]
+		if output[2] == 1:
+			sApartment.disabled = true
+			sApartment.text = 'Solar Buildings: %s \n MAX UPGRADES \n +X Multiplier' %(encount[4]+1)

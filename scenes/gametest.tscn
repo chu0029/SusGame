@@ -316,7 +316,7 @@ autowrap_mode = 1
 [node name="upgrades" type="Button" parent="Panel"]
 layout_mode = 0
 offset_left = -44.0
-offset_bottom = 300.0
+offset_bottom = 280.0
 theme = ExtResource("3_34im5")
 text = "U
 P
@@ -486,28 +486,28 @@ alignment = 0
 layout_mode = 2
 text = "Busses: 0
 Cost: 200 kW
-+1 multiplier"
++1 Multiplier"
 alignment = 0
 
 [node name="ev" type="Button" parent="Panel2/ScrollContainer/MarginContainer/nonsusvbox"]
 layout_mode = 2
 text = "Electric Cars: 0
 Cost: 200 kW
-+1 multiplier"
++1 Multiplier"
 alignment = 0
 
 [node name="train" type="Button" parent="Panel2/ScrollContainer/MarginContainer/nonsusvbox"]
 layout_mode = 2
 text = "Metro: 0
 Cost: 200 kW
-+1 multiplier"
++1 Multiplier"
 alignment = 0
 
 [node name="sApartment" type="Button" parent="Panel2/ScrollContainer/MarginContainer/nonsusvbox"]
 layout_mode = 2
 text = "Solar Buildings: 0
 Cost: 200 kW
-+1 multiplier"
++1 Multiplier"
 alignment = 0
 text_overrun_behavior = 1
 
@@ -546,4 +546,8 @@ E"
 [connection signal="pressed" from="Panel/upgrades" to="Panel" method="_on_upgrades_pressed"]
 [connection signal="timeout" from="ColorRectRed/ColorRectWhite/headlineTimer" to="ColorRectRed/ColorRectWhite/headline" method="_on_headline_timer_timeout"]
 [connection signal="pressed" from="Panel2/ScrollContainer/MarginContainer/nonsusvbox/tree" to="." method="_on_tree_pressed"]
+[connection signal="pressed" from="Panel2/ScrollContainer/MarginContainer/nonsusvbox/bus" to="." method="_on_bus_pressed"]
+[connection signal="pressed" from="Panel2/ScrollContainer/MarginContainer/nonsusvbox/ev" to="." method="_on_ev_pressed"]
+[connection signal="pressed" from="Panel2/ScrollContainer/MarginContainer/nonsusvbox/train" to="." method="_on_train_pressed"]
+[connection signal="pressed" from="Panel2/ScrollContainer/MarginContainer/nonsusvbox/sApartment" to="." method="_on_s_apartment_pressed"]
 [connection signal="pressed" from="Panel2/store" to="Panel2" method="_on_upgrades_pressed"]
