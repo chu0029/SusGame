@@ -8,7 +8,7 @@ var headlines = [
 	'Earth is now 1.5 degrees hotter than it was in pre-industrial times.',
 	'60 people in a diesel bus would emit 1/6 smog than if they were all in cars.',
 	'The country Tuvalu will likely be completely underwater by 2050.',
-	"You can't regain health, as this is how it is in real life."
+	"You can't regain health, as this how Earth is in real life."
 ]
 var startmsg = [
 	'Welcome to INSERT GAME NAME',
@@ -20,14 +20,15 @@ var startmsg = [
 
 var i: int = 0
 
-#shuffle the headlines to make it appear random
+#shuffle the headlines to make it appear random, but without repeats
 func _ready() -> void:
 	headlines.shuffle()
 	#print(headlines)
-	self.text = startmsg[i]
-	await get_tree().create_timer(10).timeout
-	i += 1
+	self.text = ''
+	await get_tree().create_timer(0).timeout
+	#print(i)
 	for i in range(startmsg.size()): #show start messages
+		print(startmsg[i], '|', i)
 		var tween = get_tree().create_tween()
 		tween.tween_property(self, "position", Vector2(16, 36), 0.5) 
 		tween.tween_property(self, "position", Vector2(16, 4), 0.5)

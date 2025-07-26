@@ -1,8 +1,11 @@
-[gd_resource type="Theme" load_steps=9 format=3 uid="uid://yfe8see4c3cw"]
+[gd_resource type="Theme" load_steps=11 format=3 uid="uid://yfe8see4c3cw"]
 
 [ext_resource type="StyleBox" uid="uid://bmd8e1tc2yjsf" path="res://filees and stuff/TEST_style_box_flat.tres" id="1_1prqb"]
 [ext_resource type="FontFile" uid="uid://cdooeuyqiy8tm" path="res://filees and stuff/robots.ttf" id="1_bf4m7"]
+[ext_resource type="StyleBox" uid="uid://cxgaaisllgqlb" path="res://disable_style_box_flat.tres" id="2_74k86"]
 [ext_resource type="StyleBox" uid="uid://dioyette6nsa4" path="res://brown_style_box_flat.tres" id="2_bf4m7"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_74k86"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bf4m7"]
 content_margin_left = 8.0
@@ -29,6 +32,8 @@ border_color = Color(1, 1, 1, 0)
 default_font = ExtResource("1_bf4m7")
 default_font_size = 48
 Button/fonts/font = ExtResource("1_bf4m7")
+Button/styles/disabled = ExtResource("2_74k86")
+Button/styles/focus = SubResource("StyleBoxEmpty_74k86")
 Button/styles/hover = ExtResource("2_bf4m7")
 Button/styles/normal = ExtResource("1_1prqb")
 Button/styles/pressed = SubResource("StyleBoxFlat_bf4m7")

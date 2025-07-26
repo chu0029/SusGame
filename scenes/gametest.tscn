@@ -17,7 +17,7 @@ random_pitch = 1.1
 streams_count = 1
 stream_0/stream = ExtResource("4_xe5qx")
 
-[node name="Control" type="Control" node_paths=PackedStringArray("counter", "multipcounter", "kwslabel", "timer", "factory", "soundfactory", "soundupgrade", "bgm", "incineratorplant", "coal", "advcoal", "natgas", "oilrig", "nfission", "autoclicker", "solarpanel", "windturbine", "biomass", "geothermalplant", "hydroelectricdam", "nuclearfusion", "healthbutton")]
+[node name="Control" type="Control" node_paths=PackedStringArray("counter", "multipcounter", "kwslabel", "timer", "factory", "soundfactory", "soundupgrade", "bgm", "incineratorplant", "coal", "advcoal", "natgas", "oilrig", "nfission", "tree", "bus", "ev", "train", "sApartment", "autoclicker", "solarpanel", "windturbine", "biomass", "geothermalplant", "hydroelectricdam", "nuclearfusion", "healthbutton")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -39,6 +39,11 @@ advcoal = NodePath("Panel/ScrollContainer/MarginContainer/HBoxContainer/nonsusvb
 natgas = NodePath("Panel/ScrollContainer/MarginContainer/HBoxContainer/nonsusvbox/natGas")
 oilrig = NodePath("Panel/ScrollContainer/MarginContainer/HBoxContainer/nonsusvbox/oilRig")
 nfission = NodePath("Panel/ScrollContainer/MarginContainer/HBoxContainer/nonsusvbox/nFission")
+tree = NodePath("Panel2/ScrollContainer/MarginContainer/nonsusvbox/tree")
+bus = NodePath("Panel2/ScrollContainer/MarginContainer/nonsusvbox/bus")
+ev = NodePath("Panel2/ScrollContainer/MarginContainer/nonsusvbox/ev")
+train = NodePath("Panel2/ScrollContainer/MarginContainer/nonsusvbox/train")
+sApartment = NodePath("Panel2/ScrollContainer/MarginContainer/nonsusvbox/sApartment")
 autoclicker = NodePath("autoclicker")
 solarpanel = NodePath("Panel/ScrollContainer/MarginContainer/HBoxContainer/susvbox/solarpanel")
 windturbine = NodePath("Panel/ScrollContainer/MarginContainer/HBoxContainer/susvbox/windturbine")
@@ -97,10 +102,10 @@ vertical_alignment = 1
 
 [node name="multiplier" type="Button" parent="."]
 layout_mode = 0
-offset_left = 35.0
-offset_top = 587.0
-offset_right = 173.0
-offset_bottom = 673.0
+offset_left = 1256.0
+offset_top = 35.0
+offset_right = 1394.0
+offset_bottom = 121.0
 theme = ExtResource("3_34im5")
 text = "multiplier
 DEBUG
@@ -311,7 +316,7 @@ autowrap_mode = 1
 [node name="upgrades" type="Button" parent="Panel"]
 layout_mode = 0
 offset_left = -44.0
-offset_bottom = 312.0
+offset_bottom = 300.0
 theme = ExtResource("3_34im5")
 text = "U
 P
@@ -434,7 +439,7 @@ layout_mode = 1
 anchors_preset = -1
 anchor_top = 0.187
 anchor_bottom = 0.187
-offset_left = -360.0
+offset_left = -280.0
 offset_top = 0.399994
 offset_bottom = 650.4
 theme = ExtResource("3_34im5")
@@ -449,6 +454,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("3_34im5")
+horizontal_scroll_mode = 0
 
 [node name="MarginContainer" type="MarginContainer" parent="Panel2/ScrollContainer"]
 clip_contents = true
@@ -464,6 +470,7 @@ layout_mode = 2
 theme_override_constants/separation = 8
 
 [node name="Label" type="Label" parent="Panel2/ScrollContainer/MarginContainer/nonsusvbox"]
+custom_minimum_size = Vector2(245, 0)
 layout_mode = 2
 text = "Enhancements"
 horizontal_alignment = 1
@@ -472,11 +479,10 @@ horizontal_alignment = 1
 layout_mode = 2
 text = "Trees: 0
 Cost: 200 kW
-+1 multiplier"
++1 Multiplier"
 alignment = 0
 
 [node name="bus" type="Button" parent="Panel2/ScrollContainer/MarginContainer/nonsusvbox"]
-custom_minimum_size = Vector2(325, 100)
 layout_mode = 2
 text = "Busses: 0
 Cost: 200 kW
@@ -503,6 +509,7 @@ text = "Solar Buildings: 0
 Cost: 200 kW
 +1 multiplier"
 alignment = 0
+text_overrun_behavior = 1
 
 [node name="store" type="Button" parent="Panel2"]
 layout_mode = 1
@@ -510,7 +517,7 @@ anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
 offset_right = 44.0
-offset_bottom = 312.0
+offset_bottom = 200.0
 grow_horizontal = 0
 theme = ExtResource("3_34im5")
 text = "S

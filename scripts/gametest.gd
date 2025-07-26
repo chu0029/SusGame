@@ -38,7 +38,7 @@ extends Control #this means use the properties of 'control' (get its attributes)
 #export labels (i forgor why we need this)
 @export var healthbutton: Label
 
-var power: int = 0 #set all variables needed to increase power
+var power: int = 9999999999 #set all variables needed to increase power
 var multiplier : int = 1
 var automult : int = 0
 
@@ -48,6 +48,7 @@ var costs = [25,100,500,10000,50000,1000000]
 var costn = [10,50,250,5000,25000,500000]
 var nonsuscount = [0,0,0,0,0,0]
 var coste = [200,1000,5000,10000,50000]
+var encount = [0,0,0,0,0]
 
 #couting how many upgrades 
 var susUpgCount = 0
@@ -79,7 +80,15 @@ func _process(delta: float) -> void: #on every frame...
 func UpdateLabelText() -> void:
 	counter.text = "%s kW" %power
 	multipcounter.text = "Multiplier: %s" %multiplier
-	kws = solarpanelcount + windturbinecount*2 + biomasscount*5 + geothermalplantcount*15 + hydroelectricdamcount*50 + nuclearfusioncount*1000 + nonsuscount[0] + nonsuscount[1]*2 + nonsuscount[2]*5 + nonsuscount[3]*15 + nonsuscount[4]*50 + nonsuscount[5]*1000
+	kws = (
+		solarpanelcount + windturbinecount*2 + biomasscount*5 + geothermalplantcount*15 + 
+		hydroelectricdamcount*50 + nuclearfusioncount*1000 + nonsuscount[0] + 
+		nonsuscount[1]*2 + nonsuscount[2]*5 + nonsuscount[3]*15 + nonsuscount[4]*50 + 
+		nonsuscount[5]*1000
+		)
+	multiplier = 1+(
+		encount[0]*1+encount[1]+encount[2]+encount[3]+encount[4]
+		)
 	kwslabel.text = '%s kilowatts/sec' %kws
 	$sustainability/susbar.value = sustainability
 	$health/healthbar.value = health
@@ -149,12 +158,15 @@ func upgradeClicker(itemCost, itemCount):
 
 #UNIVERSAL FUNCTION FOR ALL ENHAMCEMENTS
 func enhacement(itemCost, itemCount):
-	timer.start()
-	itemCount += 1
-	power -= itemCost
-	itemCost = round(itemCost*2)
-	soundupgrade.play()
-	return [itemCost, itemCount]
+	if itemCount <9: #if there are less than 10 items purchased alr
+		timer.start()
+		itemCount += 1
+		power -= itemCost
+		itemCost = round(itemCost*2)
+		soundupgrade.play()
+		return [itemCost, itemCount, 0]
+	else:
+		return [itemCost, itemCount, 1]
 	
 func _on_solarpanel_pressed() -> void:
 	if power >= costs[0]:
@@ -235,7 +247,7 @@ func _on_adv_coal_pressed() -> void:
 		var output = upgradeClicker(costn[2], nonsuscount[2])
 		costn[2] = output[0]
 		nonsuscount[2] = output[1]
-		advcoal.text = 'Advanced Coal Burner: %s \n Cost: %d kW \n Produces 5 kW/s' %[nonsuscount[2], costn[2]]
+		advcoal.text = 'Advanced Coal: %s \n Cost: %d kW \n Produces 5 kW/s' %[nonsuscount[2], costn[2]]
 
 func _on_nat_gas_pressed() -> void:
 	if power >= costn[3]:
@@ -260,7 +272,12 @@ func _on_n_fission_pressed() -> void:
 
 func _on_tree_pressed() -> void:
 	if power >= coste[0]:
-		var output = upgradeClicker(coste[5], nonsuscount[5])
-		costn[5] = output[0]
-		nonsuscount[5] = output[1]
-		nfission.text = 'Nuclear Fission: %s \n Cost: %d kW \n Produces 1000 kW/s' %[nonsuscount[5], costn[5]]
+		var output = enhacement(coste[0], encount[0])
+		print(encount[0])
+		coste[0] = output[0]
+		encount[0] = output[1]
+		tree.text = 'Trees: %s \n Cost: %d kW \n +1 Multiplier' %[encount[0], coste[0]]
+		if output[2] == 1:
+			tree.disabled = true
+			#encount +1 because it doesnt like when the button disaables for some reason
+			tree.text = 'Trees: %s \n MAX UPGRADES \n +1 Multiplier' %(encount[0]+1)
