@@ -336,6 +336,7 @@ offset_left = 89.0
 offset_top = 50.0
 offset_right = 289.0
 offset_bottom = 79.456
+tooltip_text = "If sustainability is below 70, then you'll lose health"
 theme = ExtResource("3_34im5")
 text = "Sustainability:"
 horizontal_alignment = 1
@@ -346,6 +347,7 @@ layout_mode = 0
 offset_top = 40.0
 offset_right = 200.0
 offset_bottom = 74.0
+tooltip_text = "If sustainability is below 70, then you'll lose health"
 theme = ExtResource("3_34im5")
 
 [node name="health" type="Label" parent="."]
@@ -355,6 +357,7 @@ offset_left = 932.0
 offset_top = 51.0
 offset_right = 1019.0
 offset_bottom = 81.0
+tooltip_text = "If health gets to 0, you lose"
 theme = ExtResource("3_34im5")
 text = "Health:"
 horizontal_alignment = 1
@@ -365,7 +368,7 @@ layout_mode = 0
 offset_top = 40.0
 offset_right = 200.0
 offset_bottom = 74.0
-tooltip_text = "Health is dependant on Sustainability. If health gets to 0, you lose"
+tooltip_text = "If health gets to 0, you lose"
 theme = ExtResource("3_34im5")
 
 [node name="bgm" type="AudioStreamPlayer" parent="."]

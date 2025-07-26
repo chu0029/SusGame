@@ -50,10 +50,6 @@ var nonsuscount = [0,0,0,0,0,0]
 var coste = [200,1000,5000,10000,50000]
 var encount = [0,0,0,0,0]
 
-#couting how many upgrades 
-var susUpgCount = 0
-var totalUpgCount = 0
-
 #amount of sustainable upgrades player has acquired
 var solarpanelcount : int = 0
 var windturbinecount : int = 0
@@ -63,9 +59,9 @@ var hydroelectricdamcount : int = 0
 var nuclearfusioncount : int = 0
 
 #variables that determine sustainability rating and health
-var sustainability : int = 100
-var susupgrade : int = 1
-var unsusupgrade : = 1
+var sustainability : float = 100 #use float otherwise godot tweaks out when division
+var susUpgCount: float = 0
+var totalUpgCount: float = 0
 var health : int = 100
 var kws: int = 0
 
@@ -97,7 +93,8 @@ func CreatePower() -> void: #power created from clicking the thing
 	power += 1 * multiplier
 
 func AutoFactory() -> void: 
-	sustainability = (susupgrade/unsusupgrade)*100
+	sustainability = (susUpgCount/totalUpgCount)*100
+	print(susUpgCount, '|', totalUpgCount, '|', sustainability)
 	if sustainability < 70: #and sustainability > 0 ?
 		health -= 1
 	power += 1 * automult
@@ -154,6 +151,7 @@ func upgradeClicker(itemCost, itemCount):
 	power -= itemCost
 	itemCost = round(itemCost*1.25)
 	soundupgrade.play()
+	totalUpgCount += 1
 	return [itemCost, itemCount]
 
 #UNIVERSAL FUNCTION FOR ALL ENHAMCEMENTS
@@ -174,6 +172,7 @@ func _on_solarpanel_pressed() -> void:
 		costs[0] = output[0]
 		solarpanelcount = output[1]
 		solarpanel.text = 'Solar Panel: %s \n Cost: %d kW \n Produces 1 kW/s' %[solarpanelcount,costs[0]]
+		susUpgCount+=1 #increase amt of sus. upgrades
 	'''	if power >= costs[0]:
 		timer.start()
 		solarpanelcount += 1
@@ -185,13 +184,12 @@ func _on_solarpanel_pressed() -> void:
 
 func _on_windturbine_pressed() -> void:
 	if power >= costs[1]:
-		timer.start()
-		windturbinecount += 1
-		power -= 100
-		costs[1] = round(costs[1]*1.25)
+		var output = upgradeClicker(costs[2], windturbinecount)
+		costs[1] = output[0]
+		windturbinecount = output[1]
 		windturbine.text = 'Wind Turbine: %s \n Cost: %d kW \n Produces 2 kW/s' %[windturbinecount,costs[1]]
-		print(costs[1])
-		soundupgrade.play()
+		#print(costs[1])
+		susUpgCount+=1 #increase amt of sus. upgrades
 
 func _on_biomass_pressed() -> void:
 	if power >= costs[2]:
@@ -199,7 +197,7 @@ func _on_biomass_pressed() -> void:
 		costs[2] = output[0]
 		biomasscount = output[1]
 		biomass.text = 'Biomass Boiler: %s \n Cost: %d kW \n Produces 3 kW/s' %[biomasscount,costs[2]]
-		soundupgrade.play()
+		susUpgCount+=1 #increase amt of sus. upgrades
 
 func _on_geothermalplant_pressed() -> void: #costs[3]
 	if power >= costs[3]:
@@ -207,6 +205,7 @@ func _on_geothermalplant_pressed() -> void: #costs[3]
 		costs[3] = output[0]
 		geothermalplantcount = output[1]
 		geothermalplant.text = 'Geothermal Plant: %s \n Cost: %d kW \n Produces 15 kW/s' %[geothermalplantcount,costs[3]]
+		susUpgCount+=1 #increase amt of sus. upgrades
 
 func _on_hydroelectricdam_pressed() -> void: #costs[4]
 	if power >= costs[4]:
@@ -214,6 +213,7 @@ func _on_hydroelectricdam_pressed() -> void: #costs[4]
 		costs[4] = output[0]
 		hydroelectricdamcount = output[1]
 		hydroelectricdam.text = 'Hydroelectric Dam: %s \n Cost: %d kW \n Produces 50 kW/s' %[hydroelectricdamcount,costs[4]]
+		susUpgCount+=1 #increase amt of sus. upgrades
 
 func _on_nuclearfusion_pressed() -> void: #costs[5]
 	if power >= costs[5]:
@@ -221,6 +221,7 @@ func _on_nuclearfusion_pressed() -> void: #costs[5]
 		costs[5] = output[0]
 		nuclearfusioncount = output[1]
 		nuclearfusion.text = 'Nuclear Fusion: %s \n Cost: %d kW \n Produces 1000 kW/s' %[nuclearfusioncount,costs[5]]
+		susUpgCount+=1 #increase amt of sus. upgrades
 	'''if power >= 1000000:
 		timer.start()
 		nuclearfusioncount += 1
