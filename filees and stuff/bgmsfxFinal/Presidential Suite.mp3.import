@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://doc5fhmmax784"
+path="res://.godot/imported/Presidential Suite.mp3-c646fa6a0b11248ede8155c59ae46b3f.mp3str"
+
+[deps]
+
+source_file="res://filees and stuff/bgmsfxFinal/Presidential Suite.mp3"
+dest_files=["res://.godot/imported/Presidential Suite.mp3-c646fa6a0b11248ede8155c59ae46b3f.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://bdgiy7f6pyp6h"
+path="res://.godot/imported/Title Theme (Super Mario Kart) (Day) - Mario Kart World (OST).ogg-b2e94e0b3173b6cce26bd389ef601633.oggvorbisstr"
+
+[deps]
+
+source_file="res://filees and stuff/bgmsfxFinal/Title Theme (Super Mario Kart) (Day) - Mario Kart World (OST).ogg"
+dest_files=["res://.godot/imported/Title Theme (Super Mario Kart) (Day) - Mario Kart World (OST).ogg-b2e94e0b3173b6cce26bd389ef601633.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

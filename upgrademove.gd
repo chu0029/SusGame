@@ -16,6 +16,7 @@ func _on_upgrades_pressed():
 		tween.tween_property(self, "global_position", Vector2(1200, 150), 1.0) #move golbal position to (1200,150) in 1 sec
 		upgradesOpen = false
 		#print(upgradesOpen)
+		$upgrades/clickoff.play()
 		pass
 	elif upgradesOpen == false: #if menu closed
 		var tween = get_tree().create_tween()
@@ -24,4 +25,5 @@ func _on_upgrades_pressed():
 		tween.tween_property(self, "global_position", Vector2(500, 150), 1.0) #move menu out
 		upgradesOpen = true
 		#print(upgradesOpen)
+		$upgrades/clickon.play()
 		pass

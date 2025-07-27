@@ -11,7 +11,7 @@ var headlines = [
 	"You can't regain health, as this how Earth is in real life."
 ]
 var startmsg = [
-	'Welcome to INSERT GAME NAME',
+	'Welcome to Factory Worker!',
 	'Here, you get to upgrade a factory to power this city',
 	'Try to be sustainable tho',
 	'This box will display tips for the game and facts about global warming',

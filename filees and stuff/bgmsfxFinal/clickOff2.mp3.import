@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bbmu4nlq2dmpq"
+path="res://.godot/imported/clickOff2.mp3-3eb9953bae2e249a88934cfe1ebcf001.mp3str"
+
+[deps]
+
+source_file="res://filees and stuff/bgmsfxFinal/clickOff2.mp3"
+dest_files=["res://.godot/imported/clickOff2.mp3-3eb9953bae2e249a88934cfe1ebcf001.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://ikdew4lo1lg8"]
+[gd_scene load_steps=20 format=3 uid="uid://ikdew4lo1lg8"]
 
 [ext_resource type="Script" uid="uid://bpn0pj6e5fff0" path="res://scripts/gametest.gd" id="1_34im5"]
 [ext_resource type="Theme" uid="uid://yfe8see4c3cw" path="res://filees and stuff/gametest.tres" id="3_34im5"]
@@ -7,15 +7,31 @@
 [ext_resource type="Script" uid="uid://dg47g08vrd05k" path="res://upgrademove.gd" id="6_82nuq"]
 [ext_resource type="Texture2D" uid="uid://i6623btw2mrp" path="res://filees and stuff/background placeholder.png" id="6_i0h8x"]
 [ext_resource type="FontFile" uid="uid://ch5u3e1ev21f7" path="res://filees and stuff/Perfect DOS VGA 437 Win.ttf" id="6_xe5qx"]
-[ext_resource type="AudioStream" uid="uid://bou11k5vvk7ai" path="res://filees and stuff/e_s015.ogg" id="7_82nuq"]
 [ext_resource type="Script" uid="uid://cqyximukkqcu2" path="res://storemove.gd" id="7_xe5qx"]
 [ext_resource type="AudioStream" uid="uid://brau5vfpdgbqq" path="res://filees and stuff/bgmsfxFinal/Interlagos.mp3" id="8_18hib"]
+[ext_resource type="AudioStream" uid="uid://ivt0dsfonigc" path="res://filees and stuff/bgmsfxFinal/clickOn2.mp3" id="8_o2kiw"]
+[ext_resource type="AudioStream" uid="uid://ccwuq0okb0yxh" path="res://filees and stuff/bgmsfxFinal/College Girl.mp3" id="9_8qdvn"]
+[ext_resource type="AudioStream" uid="uid://bbmu4nlq2dmpq" path="res://filees and stuff/bgmsfxFinal/clickOff2.mp3" id="9_ytmfn"]
 [ext_resource type="Script" uid="uid://t8bmxlin25u1" path="res://scenes/newstext.gd" id="10_1uq2d"]
+[ext_resource type="AudioStream" uid="uid://btyncbl15sxjc" path="res://filees and stuff/bgmsfxFinal/Nimbusedit.ogg" id="10_k6ha7"]
+[ext_resource type="AudioStream" uid="uid://doc5fhmmax784" path="res://filees and stuff/bgmsfxFinal/Presidential Suite.mp3" id="11_o2kiw"]
+[ext_resource type="AudioStream" uid="uid://cgldhscuyodng" path="res://filees and stuff/bgmsfxFinal/cash-register-fake-88639.mp3" id="14_o2kiw"]
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_18hib"]
 random_pitch = 1.1
 streams_count = 1
 stream_0/stream = ExtResource("4_xe5qx")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1uq2d"]
+bg_color = Color(0.6, 0, 0, 1)
+
+[sub_resource type="AudioStreamPlaylist" id="AudioStreamPlaylist_ytmfn"]
+shuffle = true
+stream_count = 4
+stream_0 = ExtResource("8_18hib")
+stream_1 = ExtResource("9_8qdvn")
+stream_2 = ExtResource("10_k6ha7")
+stream_3 = ExtResource("11_o2kiw")
 
 [node name="Control" type="Control" node_paths=PackedStringArray("counter", "multipcounter", "kwslabel", "timer", "factory", "soundfactory", "soundupgrade", "bgm", "incineratorplant", "coal", "advcoal", "natgas", "oilrig", "nfission", "tree", "bus", "ev", "train", "sApartment", "autoclicker", "solarpanel", "windturbine", "biomass", "geothermalplant", "hydroelectricdam", "nuclearfusion", "healthbutton")]
 layout_mode = 3
@@ -129,6 +145,7 @@ text = "xxx kW/s"
 horizontal_alignment = 1
 
 [node name="multipcounter" type="Label" parent="."]
+z_index = 1
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -327,6 +344,12 @@ D
 E
 S"
 
+[node name="clickon" type="AudioStreamPlayer" parent="Panel/upgrades"]
+stream = ExtResource("8_o2kiw")
+
+[node name="clickoff" type="AudioStreamPlayer" parent="Panel/upgrades"]
+stream = ExtResource("9_ytmfn")
+
 [node name="sustainability" type="Label" parent="."]
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 1
@@ -337,6 +360,7 @@ offset_top = 50.0
 offset_right = 289.0
 offset_bottom = 79.456
 tooltip_text = "If sustainability is below 70, then you'll lose health"
+mouse_filter = 0
 theme = ExtResource("3_34im5")
 text = "Sustainability:"
 horizontal_alignment = 1
@@ -358,6 +382,7 @@ offset_top = 51.0
 offset_right = 1019.0
 offset_bottom = 81.0
 tooltip_text = "If health gets to 0, you lose"
+mouse_filter = 0
 theme = ExtResource("3_34im5")
 text = "Health:"
 horizontal_alignment = 1
@@ -370,14 +395,15 @@ offset_right = 200.0
 offset_bottom = 74.0
 tooltip_text = "If health gets to 0, you lose"
 theme = ExtResource("3_34im5")
+theme_override_styles/fill = SubResource("StyleBoxFlat_1uq2d")
 
 [node name="bgm" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("8_18hib")
-volume_db = -5.0
+stream = SubResource("AudioStreamPlaylist_ytmfn")
+volume_db = -10.0
 bus = &"bgm"
 
 [node name="soundupgrade" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("7_82nuq")
+stream = ExtResource("14_o2kiw")
 
 [node name="ColorRectBlue" type="ColorRect" parent="."]
 layout_mode = 1
