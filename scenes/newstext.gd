@@ -8,13 +8,17 @@ var headlines = [
 	'Earth is now 1.5 degrees hotter than it was in pre-industrial times.',
 	'60 people in a diesel bus would emit 1/6 smog than if they were all in cars.',
 	'The country Tuvalu will likely be completely underwater by 2050.',
-	"You can't regain health, as this how Earth is in real life."
+	"You can't regain health, as this how Earth is in real life.",
+	"Read more about the UN's sustainability development goal No. 11.",
+	"1.12 billion live in slums or informal settlements without basic services.",
+	'Press the ESCAPE key to access settings.'
 ]
 var startmsg = [
 	'Welcome to Factory Worker!',
 	'Here, you get to upgrade a factory to power this city',
 	'Try to be sustainable tho',
 	'This box will display tips for the game and facts about global warming',
+	'Press the ESCAPE key to access settings.',
 	'Ms Magalona please give us a good score'
 ]
 
@@ -53,3 +57,7 @@ func _on_headline_timer_timeout() -> void:
 		headlines.shuffle()
 		i = 0
 	#print('hello')
+
+func _input(event):
+	if event.is_action_pressed("ui_cancel"):
+		get_tree().change_scene_to_file("res://scenes/settings_menu.tscn")

@@ -38,7 +38,7 @@ extends Control #this means use the properties of 'control' (get its attributes)
 #export labels (i forgor why we need this)
 @export var healthbutton: Label
 
-var power: int = 9999999999 #set all variables needed to increase power
+var power: int = 0 #set all variables needed to increase power
 var multiplier : int = 1
 var automult : int = 0
 
