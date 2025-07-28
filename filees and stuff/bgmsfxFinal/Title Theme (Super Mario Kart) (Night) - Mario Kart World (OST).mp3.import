@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bqudu6381uo7k"
+path="res://.godot/imported/Title Theme (Super Mario Kart) (Night) - Mario Kart World (OST).mp3-719ece2f9bacd1f4107959676bcd14bf.mp3str"
+
+[deps]
+
+source_file="res://filees and stuff/bgmsfxFinal/Title Theme (Super Mario Kart) (Night) - Mario Kart World (OST).mp3"
+dest_files=["res://.godot/imported/Title Theme (Super Mario Kart) (Night) - Mario Kart World (OST).mp3-719ece2f9bacd1f4107959676bcd14bf.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

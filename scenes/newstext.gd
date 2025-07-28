@@ -11,7 +11,7 @@ var headlines = [
 	"You can't regain health, as this how Earth is in real life.",
 	"Read more about the UN's sustainability development goal No. 11.",
 	"1.12 billion live in slums or informal settlements without basic services.",
-	'Press the ESCAPE key to access settings.'
+	'Clicking ever so slightly increases sustainability.'
 ]
 var startmsg = [
 	'Welcome to Factory Worker!',

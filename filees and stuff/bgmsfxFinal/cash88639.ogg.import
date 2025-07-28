@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://qsrjp8qpsv54"
+path="res://.godot/imported/cash88639.ogg-fed8665834f5e1553a02b2cf99197562.oggvorbisstr"
+
+[deps]
+
+source_file="res://filees and stuff/bgmsfxFinal/cash88639.ogg"
+dest_files=["res://.godot/imported/cash88639.ogg-fed8665834f5e1553a02b2cf99197562.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

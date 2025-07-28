@@ -1,9 +1,10 @@
-[gd_scene load_steps=20 format=3 uid="uid://ikdew4lo1lg8"]
+[gd_scene load_steps=22 format=3 uid="uid://ikdew4lo1lg8"]
 
 [ext_resource type="Script" uid="uid://bpn0pj6e5fff0" path="res://scripts/gametest.gd" id="1_34im5"]
 [ext_resource type="Theme" uid="uid://yfe8see4c3cw" path="res://filees and stuff/gametest.tres" id="3_34im5"]
 [ext_resource type="Texture2D" uid="uid://cbn5ffb63qtty" path="res://filees and stuff/New Piskel-1.png.png" id="3_82nuq"]
-[ext_resource type="AudioStream" uid="uid://dxaf162lw1lbq" path="res://filees and stuff/e_se014.ogg" id="4_xe5qx"]
+[ext_resource type="AudioStream" uid="uid://dkqpsop44fcmf" path="res://filees and stuff/bgmsfxFinal/thockup.wav" id="4_nrbvj"]
+[ext_resource type="AudioStream" uid="uid://csvwdo1e5fae8" path="res://filees and stuff/bgmsfxFinal/thockdown.wav" id="5_6cixp"]
 [ext_resource type="Script" uid="uid://dg47g08vrd05k" path="res://upgrademove.gd" id="6_82nuq"]
 [ext_resource type="Texture2D" uid="uid://i6623btw2mrp" path="res://filees and stuff/background placeholder.png" id="6_i0h8x"]
 [ext_resource type="FontFile" uid="uid://ch5u3e1ev21f7" path="res://filees and stuff/Perfect DOS VGA 437 Win.ttf" id="6_xe5qx"]
@@ -15,25 +16,27 @@
 [ext_resource type="Script" uid="uid://t8bmxlin25u1" path="res://scenes/newstext.gd" id="10_1uq2d"]
 [ext_resource type="AudioStream" uid="uid://btyncbl15sxjc" path="res://filees and stuff/bgmsfxFinal/Nimbusedit.ogg" id="10_k6ha7"]
 [ext_resource type="AudioStream" uid="uid://doc5fhmmax784" path="res://filees and stuff/bgmsfxFinal/Presidential Suite.mp3" id="11_o2kiw"]
-[ext_resource type="AudioStream" uid="uid://cgldhscuyodng" path="res://filees and stuff/bgmsfxFinal/cash-register-fake-88639.mp3" id="14_o2kiw"]
+[ext_resource type="AudioStream" uid="uid://bqudu6381uo7k" path="res://filees and stuff/bgmsfxFinal/Title Theme (Super Mario Kart) (Night) - Mario Kart World (OST).mp3" id="14_ytmfn"]
+[ext_resource type="AudioStream" uid="uid://qsrjp8qpsv54" path="res://filees and stuff/bgmsfxFinal/cash88639.ogg" id="15_ytmfn"]
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_18hib"]
 random_pitch = 1.1
 streams_count = 1
-stream_0/stream = ExtResource("4_xe5qx")
+stream_0/stream = ExtResource("4_nrbvj")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1uq2d"]
 bg_color = Color(0.6, 0, 0, 1)
 
 [sub_resource type="AudioStreamPlaylist" id="AudioStreamPlaylist_ytmfn"]
 shuffle = true
-stream_count = 4
+stream_count = 5
 stream_0 = ExtResource("8_18hib")
 stream_1 = ExtResource("9_8qdvn")
 stream_2 = ExtResource("10_k6ha7")
 stream_3 = ExtResource("11_o2kiw")
+stream_4 = ExtResource("14_ytmfn")
 
-[node name="Control" type="Control" node_paths=PackedStringArray("counter", "multipcounter", "kwslabel", "timer", "factory", "soundfactory", "soundupgrade", "bgm", "incineratorplant", "coal", "advcoal", "natgas", "oilrig", "nfission", "tree", "bus", "ev", "train", "sApartment", "autoclicker", "solarpanel", "windturbine", "biomass", "geothermalplant", "hydroelectricdam", "nuclearfusion", "healthbutton")]
+[node name="Control" type="Control" node_paths=PackedStringArray("counter", "multipcounter", "kwslabel", "timer", "factory", "soundfactory", "soundfactorydown", "soundupgrade", "bgm", "incineratorplant", "coal", "advcoal", "natgas", "oilrig", "nfission", "tree", "bus", "ev", "train", "sApartment", "autoclicker", "solarpanel", "windturbine", "biomass", "geothermalplant", "hydroelectricdam", "nuclearfusion", "healthbutton")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -47,6 +50,7 @@ kwslabel = NodePath("kws")
 timer = NodePath("Timer")
 factory = NodePath("factory")
 soundfactory = NodePath("factory/soundfactory")
+soundfactorydown = NodePath("factory/soundfactorydown")
 soundupgrade = NodePath("soundupgrade")
 bgm = NodePath("bgm")
 incineratorplant = NodePath("Panel/ScrollContainer/MarginContainer/HBoxContainer/nonsusvbox/incPlant")
@@ -101,6 +105,10 @@ stretch_mode = 0
 
 [node name="soundfactory" type="AudioStreamPlayer" parent="factory"]
 stream = SubResource("AudioStreamRandomizer_18hib")
+
+[node name="soundfactorydown" type="AudioStreamPlayer" parent="factory"]
+stream = ExtResource("5_6cixp")
+volume_db = -7.0
 
 [node name="counter" type="RichTextLabel" parent="."]
 layout_mode = 1
@@ -399,11 +407,11 @@ theme_override_styles/fill = SubResource("StyleBoxFlat_1uq2d")
 
 [node name="bgm" type="AudioStreamPlayer" parent="."]
 stream = SubResource("AudioStreamPlaylist_ytmfn")
-volume_db = -10.0
+volume_db = -7.0
 bus = &"bgm"
 
 [node name="soundupgrade" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("14_o2kiw")
+stream = ExtResource("15_ytmfn")
 
 [node name="ColorRectBlue" type="ColorRect" parent="."]
 layout_mode = 1
@@ -514,29 +522,29 @@ alignment = 0
 [node name="bus" type="Button" parent="Panel2/ScrollContainer/MarginContainer/nonsusvbox"]
 layout_mode = 2
 text = "Busses: 0
-Cost: 200 kW
-+1 Multiplier"
+Cost: 1000 kW
++10 Multiplier"
 alignment = 0
 
 [node name="ev" type="Button" parent="Panel2/ScrollContainer/MarginContainer/nonsusvbox"]
 layout_mode = 2
 text = "Electric Cars: 0
-Cost: 200 kW
-+1 Multiplier"
+Cost: 5000 kW
++200 Multiplier"
 alignment = 0
 
 [node name="train" type="Button" parent="Panel2/ScrollContainer/MarginContainer/nonsusvbox"]
 layout_mode = 2
 text = "Metro: 0
-Cost: 200 kW
-+1 Multiplier"
+Cost: 10000 kW
++2500 Multiplier"
 alignment = 0
 
 [node name="sApartment" type="Button" parent="Panel2/ScrollContainer/MarginContainer/nonsusvbox"]
 layout_mode = 2
 text = "Solar Buildings: 0
-Cost: 200 kW
-+1 Multiplier"
+Cost: 50000 kW
++5000 Multiplier"
 alignment = 0
 text_overrun_behavior = 1
 
