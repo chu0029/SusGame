@@ -1,0 +1,16 @@
+[gd_resource type="AudioStreamPlaylist" load_steps=6 format=3 uid="uid://bcb6pk0g8u4l7"]
+
+[ext_resource type="AudioStream" uid="uid://brau5vfpdgbqq" path="res://filees and stuff/bgmsfxFinal/Interlagos.mp3" id="1_x37fa"]
+[ext_resource type="AudioStream" uid="uid://ccwuq0okb0yxh" path="res://filees and stuff/bgmsfxFinal/College Girl.mp3" id="2_j8d27"]
+[ext_resource type="AudioStream" uid="uid://btyncbl15sxjc" path="res://filees and stuff/bgmsfxFinal/Nimbusedit.ogg" id="3_2t20f"]
+[ext_resource type="AudioStream" uid="uid://doc5fhmmax784" path="res://filees and stuff/bgmsfxFinal/Presidential Suite.mp3" id="4_ixelv"]
+[ext_resource type="AudioStream" uid="uid://bqudu6381uo7k" path="res://filees and stuff/bgmsfxFinal/Title Theme (Super Mario Kart) (Night) - Mario Kart World (OST).mp3" id="5_kv466"]
+
+[resource]
+shuffle = true
+stream_count = 5
+stream_0 = ExtResource("1_x37fa")
+stream_1 = ExtResource("2_j8d27")
+stream_2 = ExtResource("3_2t20f")
+stream_3 = ExtResource("4_ixelv")
+stream_4 = ExtResource("5_kv466")

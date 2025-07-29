@@ -1,5 +1,6 @@
 extends Control
 
+@export var bgm : AudioStreamPlayer
 
 func _ready():
 	$titlemusic.play()

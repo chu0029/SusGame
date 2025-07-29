@@ -76,7 +76,7 @@ theme_override_font_sizes/font_size = 48
 theme_override_styles/hover = SubResource("StyleBoxFlat_tc6ix")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_phe8i")
 theme_override_styles/normal = SubResource("StyleBoxFlat_4jmj5")
-text = "START?"
+text = "Start"
 
 [node name="exit" type="Button" parent="VBoxContainer"]
 layout_mode = 2
@@ -85,7 +85,7 @@ theme_override_font_sizes/font_size = 48
 theme_override_styles/hover = SubResource("StyleBoxFlat_tc6ix")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_phe8i")
 theme_override_styles/normal = SubResource("StyleBoxFlat_4jmj5")
-text = "EXIT"
+text = "Exit To Desktop"
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
 layout_mode = 1

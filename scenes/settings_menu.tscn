@@ -1,7 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://dbbtdnjcby4nx"]
+[gd_scene load_steps=6 format=3 uid="uid://dbbtdnjcby4nx"]
 
 [ext_resource type="Script" uid="uid://bx0jdxb81hjsg" path="res://scripts/settings_menu.gd" id="1_cr101"]
 [ext_resource type="Theme" uid="uid://yfe8see4c3cw" path="res://filees and stuff/gametest.tres" id="2_cr101"]
+[ext_resource type="FontFile" uid="uid://ch5u3e1ev21f7" path="res://filees and stuff/Perfect DOS VGA 437 Win.ttf" id="3_lwwgp"]
+[ext_resource type="Script" uid="uid://dpltd24gclocs" path="res://scenes/h_slider.gd" id="3_wswnh"]
+[ext_resource type="AudioStream" uid="uid://bcb6pk0g8u4l7" path="res://scenes/bgmplaylist.tres" id="4_labj1"]
 
 [node name="settings menu" type="Control"]
 layout_mode = 3
@@ -22,32 +25,68 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="."]
+[node name="ColorRect" type="ColorRect" parent="TextureRect"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+offset_left = 50.0
+offset_top = 267.0
+offset_right = 814.0
+offset_bottom = 548.0
+color = Color(0, 0, 0, 0.501961)
+
+[node name="menu" type="VBoxContainer" parent="."]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -550.0
-offset_top = -25.0
-offset_right = 214.0
-offset_bottom = 25.0
+offset_left = -520.0
+offset_top = -88.0
+offset_right = 180.0
+offset_bottom = 88.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(1, 1.00808)
+theme_override_constants/separation = 16
 
-[node name="Label" type="Label" parent="HBoxContainer"]
+[node name="Label" type="Label" parent="menu"]
 layout_mode = 2
 theme = ExtResource("2_cr101")
-text = "Background Music  "
+theme_override_fonts/font = ExtResource("3_lwwgp")
+text = "Background Music"
+horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="HSlider" type="HSlider" parent="HBoxContainer"]
+[node name="HSlider" type="HSlider" parent="menu"]
 custom_minimum_size = Vector2(500, 0)
 layout_mode = 2
 size_flags_vertical = 1
-step = 5.0
-rounded = true
+theme = ExtResource("2_cr101")
+max_value = 1.0
+step = 0.05
+tick_count = 21
+script = ExtResource("3_wswnh")
+bus_name = "bgm"
+
+[node name="Label2" type="Label" parent="menu"]
+layout_mode = 2
+theme = ExtResource("2_cr101")
+theme_override_fonts/font = ExtResource("3_lwwgp")
+text = "Sound Effects"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HSlider2" type="HSlider" parent="menu"]
+custom_minimum_size = Vector2(500, 0)
+layout_mode = 2
+size_flags_vertical = 1
+theme = ExtResource("2_cr101")
+max_value = 1.0
+step = 0.05
+tick_count = 21
+script = ExtResource("3_wswnh")
+bus_name = "sfx"
 
 [node name="Button" type="Button" parent="."]
 layout_mode = 1
@@ -94,4 +133,23 @@ Interlagos - Angel 'Pocho' Gatti Orchestra
 Settings Menu: 
 Mario Kart World - Title Theme (Super Mario Kart) (Night)"
 
+[node name="bgm" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_labj1")
+volume_db = -7.0
+autoplay = true
+bus = &"bgm"
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_right = 841.0
+offset_bottom = 118.0
+theme = ExtResource("2_cr101")
+theme_override_fonts/font = ExtResource("3_lwwgp")
+theme_override_font_sizes/font_size = 64
+text = "Settings"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="value_changed" from="menu/HSlider" to="menu/HSlider" method="_on_value_changed"]
+[connection signal="value_changed" from="menu/HSlider2" to="menu/HSlider2" method="_on_value_changed"]
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

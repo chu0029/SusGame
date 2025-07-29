@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://ccybex2lv1v85"]
+[gd_scene load_steps=4 format=3 uid="uid://ccybex2lv1v85"]
 
 [ext_resource type="FontFile" uid="uid://ch5u3e1ev21f7" path="res://filees and stuff/Perfect DOS VGA 437 Win.ttf" id="1_0hhgj"]
+[ext_resource type="Script" uid="uid://cy1v0fmtjftrj" path="res://scenes/death.gd" id="1_tjai8"]
 [ext_resource type="Theme" uid="uid://yfe8see4c3cw" path="res://filees and stuff/gametest.tres" id="2_w8wr1"]
 
 [node name="Control" type="Control"]
@@ -10,6 +11,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_tjai8")
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 1
@@ -28,8 +30,8 @@ theme_override_fonts/font = ExtResource("1_0hhgj")
 theme_override_font_sizes/font_size = 64
 text = "Your city became too polluted."
 
-[node name="Button" type="Button" parent="."]
-custom_minimum_size = Vector2(256, 100)
+[node name="deadbutton" type="Button" parent="."]
+custom_minimum_size = Vector2(300, 100)
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -44,4 +46,8 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("2_w8wr1")
 theme_override_font_sizes/font_size = 64
-text = "Quit Game"
+text = "Back To Menu"
+
+[node name="dead" type="AudioStreamPlayer" parent="."]
+
+[connection signal="pressed" from="deadbutton" to="." method="_on_deadbutton_pressed"]

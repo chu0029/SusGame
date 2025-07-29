@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://ikdew4lo1lg8"]
+[gd_scene load_steps=22 format=3 uid="uid://ikdew4lo1lg8"]
 
 [ext_resource type="Script" uid="uid://bpn0pj6e5fff0" path="res://scripts/gametest.gd" id="1_34im5"]
 [ext_resource type="Theme" uid="uid://yfe8see4c3cw" path="res://filees and stuff/gametest.tres" id="3_34im5"]
@@ -9,10 +9,14 @@
 [ext_resource type="Texture2D" uid="uid://i6623btw2mrp" path="res://filees and stuff/background placeholder.png" id="6_i0h8x"]
 [ext_resource type="FontFile" uid="uid://ch5u3e1ev21f7" path="res://filees and stuff/Perfect DOS VGA 437 Win.ttf" id="6_xe5qx"]
 [ext_resource type="Script" uid="uid://cqyximukkqcu2" path="res://storemove.gd" id="7_xe5qx"]
+[ext_resource type="AudioStream" uid="uid://brau5vfpdgbqq" path="res://filees and stuff/bgmsfxFinal/Interlagos.mp3" id="8_18hib"]
 [ext_resource type="AudioStream" uid="uid://ivt0dsfonigc" path="res://filees and stuff/bgmsfxFinal/clickOn2.mp3" id="8_o2kiw"]
+[ext_resource type="AudioStream" uid="uid://ccwuq0okb0yxh" path="res://filees and stuff/bgmsfxFinal/College Girl.mp3" id="9_8qdvn"]
 [ext_resource type="AudioStream" uid="uid://bbmu4nlq2dmpq" path="res://filees and stuff/bgmsfxFinal/clickOff2.mp3" id="9_ytmfn"]
 [ext_resource type="Script" uid="uid://t8bmxlin25u1" path="res://scenes/newstext.gd" id="10_1uq2d"]
-[ext_resource type="AudioStream" uid="uid://bcb6pk0g8u4l7" path="res://scenes/bgmplaylist.tres" id="11_8qdvn"]
+[ext_resource type="AudioStream" uid="uid://btyncbl15sxjc" path="res://filees and stuff/bgmsfxFinal/Nimbusedit.ogg" id="10_k6ha7"]
+[ext_resource type="AudioStream" uid="uid://doc5fhmmax784" path="res://filees and stuff/bgmsfxFinal/Presidential Suite.mp3" id="11_o2kiw"]
+[ext_resource type="AudioStream" uid="uid://bqudu6381uo7k" path="res://filees and stuff/bgmsfxFinal/Title Theme (Super Mario Kart) (Night) - Mario Kart World (OST).mp3" id="14_ytmfn"]
 [ext_resource type="AudioStream" uid="uid://qsrjp8qpsv54" path="res://filees and stuff/bgmsfxFinal/cash88639.ogg" id="15_ytmfn"]
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_18hib"]
@@ -20,10 +24,17 @@ random_pitch = 1.1
 streams_count = 1
 stream_0/stream = ExtResource("4_nrbvj")
 
-[sub_resource type="SystemFont" id="SystemFont_8qdvn"]
-
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1uq2d"]
 bg_color = Color(0.6, 0, 0, 1)
+
+[sub_resource type="AudioStreamPlaylist" id="AudioStreamPlaylist_ytmfn"]
+shuffle = true
+stream_count = 5
+stream_0 = ExtResource("8_18hib")
+stream_1 = ExtResource("9_8qdvn")
+stream_2 = ExtResource("10_k6ha7")
+stream_3 = ExtResource("11_o2kiw")
+stream_4 = ExtResource("14_ytmfn")
 
 [node name="Control" type="Control" node_paths=PackedStringArray("counter", "multipcounter", "kwslabel", "timer", "factory", "soundfactory", "soundfactorydown", "soundupgrade", "bgm", "incineratorplant", "coal", "advcoal", "natgas", "oilrig", "nfission", "tree", "bus", "ev", "train", "sApartment", "autoclicker", "solarpanel", "windturbine", "biomass", "geothermalplant", "hydroelectricdam", "nuclearfusion", "healthbutton")]
 layout_mode = 3
@@ -73,7 +84,6 @@ texture = ExtResource("6_i0h8x")
 [node name="healthtimer" type="Timer" parent="."]
 
 [node name="Timer" type="Timer" parent="."]
-autostart = true
 
 [node name="factory" type="TextureButton" parent="."]
 custom_minimum_size = Vector2(256, 256)
@@ -95,12 +105,10 @@ stretch_mode = 0
 
 [node name="soundfactory" type="AudioStreamPlayer" parent="factory"]
 stream = SubResource("AudioStreamRandomizer_18hib")
-bus = &"sfx"
 
 [node name="soundfactorydown" type="AudioStreamPlayer" parent="factory"]
 stream = ExtResource("5_6cixp")
 volume_db = -7.0
-bus = &"sfx"
 
 [node name="counter" type="RichTextLabel" parent="."]
 layout_mode = 1
@@ -140,7 +148,6 @@ offset_right = 123.5
 offset_bottom = -266.0
 grow_horizontal = 2
 grow_vertical = 2
-tooltip_text = "ASDFASDF"
 theme = ExtResource("3_34im5")
 text = "xxx kW/s"
 horizontal_alignment = 1
@@ -153,15 +160,13 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 49.0
-offset_top = -243.0
-offset_right = 296.0
-offset_bottom = -204.0
+offset_left = -577.0
+offset_top = 324.0
+offset_right = -330.0
+offset_bottom = 363.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("3_34im5")
-theme_override_fonts/font = SubResource("SystemFont_8qdvn")
-theme_override_font_sizes/font_size = 20
 text = "multiplier: xx"
 horizontal_alignment = 1
 
@@ -337,7 +342,6 @@ autowrap_mode = 1
 layout_mode = 0
 offset_left = -44.0
 offset_bottom = 280.0
-tooltip_text = "Stuff that clicks for you"
 theme = ExtResource("3_34im5")
 text = "U
 P
@@ -350,11 +354,9 @@ S"
 
 [node name="clickon" type="AudioStreamPlayer" parent="Panel/upgrades"]
 stream = ExtResource("8_o2kiw")
-bus = &"sfx"
 
 [node name="clickoff" type="AudioStreamPlayer" parent="Panel/upgrades"]
 stream = ExtResource("9_ytmfn")
-bus = &"sfx"
 
 [node name="sustainability" type="Label" parent="."]
 custom_minimum_size = Vector2(200, 0)
@@ -404,13 +406,12 @@ theme = ExtResource("3_34im5")
 theme_override_styles/fill = SubResource("StyleBoxFlat_1uq2d")
 
 [node name="bgm" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("11_8qdvn")
+stream = SubResource("AudioStreamPlaylist_ytmfn")
 volume_db = -7.0
 bus = &"bgm"
 
 [node name="soundupgrade" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("15_ytmfn")
-bus = &"sfx"
 
 [node name="ColorRectBlue" type="ColorRect" parent="."]
 layout_mode = 1
@@ -555,7 +556,6 @@ anchor_right = 1.0
 offset_right = 44.0
 offset_bottom = 200.0
 grow_horizontal = 0
-tooltip_text = "Enhances how much power you get per click"
 theme = ExtResource("3_34im5")
 text = "S
 T
