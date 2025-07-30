@@ -1,13 +1,14 @@
-[gd_scene load_steps=12 format=3 uid="uid://uagqm7agdako"]
+[gd_scene load_steps=13 format=3 uid="uid://uagqm7agdako"]
 
 [ext_resource type="Script" uid="uid://c07hputae2uq7" path="res://scripts/menu_start_script.gd" id="1_tc6ix"]
-[ext_resource type="Texture2D" uid="uid://0mbegryy0420" path="res://filees and stuff/city pixal placeholder.jpg" id="2_4jmj5"]
+[ext_resource type="Texture2D" uid="uid://d00smxw8w1bsd" path="res://sprites/Image_20250730_163725_130.png" id="2_cp8n1"]
 [ext_resource type="Theme" uid="uid://yfe8see4c3cw" path="res://filees and stuff/gametest.tres" id="3_cp8n1"]
 [ext_resource type="FontFile" uid="uid://dd1g3ubwksw" path="res://filees and stuff/DOTGOTHIC16.TTF" id="3_phe8i"]
 [ext_resource type="Script" uid="uid://cdaiah8pxptle" path="res://scripts/rich_text_label.gd" id="4_4jmj5"]
 [ext_resource type="FontFile" uid="uid://ch5u3e1ev21f7" path="res://filees and stuff/Perfect DOS VGA 437 Win.ttf" id="4_okbob"]
 [ext_resource type="FontFile" uid="uid://cdooeuyqiy8tm" path="res://filees and stuff/robots.ttf" id="5_phe8i"]
 [ext_resource type="AudioStream" uid="uid://bdgiy7f6pyp6h" path="res://filees and stuff/bgmsfxFinal/Title Theme (Super Mario Kart) (Day) - Mario Kart World (OST).ogg" id="7_egsp4"]
+[ext_resource type="AudioStream" uid="uid://dxaf162lw1lbq" path="res://filees and stuff/e_se014.ogg" id="9_5poo7"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tc6ix"]
 bg_color = Color(0.489521, 0.177108, 0.418911, 0.8)
@@ -38,7 +39,7 @@ corner_radius_top_right = 50
 corner_radius_bottom_right = 50
 corner_radius_bottom_left = 50
 
-[node name="menu start" type="Control"]
+[node name="menu start" type="Control" node_paths=PackedStringArray("bg")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -46,15 +47,20 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_tc6ix")
+bg = NodePath("TextureRect")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -500.0
+offset_right = 2140.0
+offset_bottom = 1760.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_4jmj5")
+scale = Vector2(0.45, 0.45)
+texture = ExtResource("2_cp8n1")
 
 [node name="hbox" type="HBoxContainer" parent="."]
 layout_mode = 1
@@ -112,6 +118,9 @@ offset_right = 598.0
 offset_bottom = -81.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.0745098, 0.141176, 0.172549, 1)
+theme_override_constants/outline_size = 16
 theme_override_fonts/normal_font = ExtResource("4_okbob")
 theme_override_fonts/bold_font = ExtResource("3_phe8i")
 theme_override_font_sizes/normal_font_size = 108
@@ -133,13 +142,15 @@ offset_right = 144.0
 grow_vertical = 0
 theme_override_fonts/font = ExtResource("5_phe8i")
 theme_override_font_sizes/font_size = 32
-text = "Version Beta 0.2"
+text = "Version Release 1.0.1"
 vertical_alignment = 2
 
 [node name="titlemusic" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_egsp4")
+volume_db = -3.0
 
 [node name="placeholder" type="Button" parent="."]
+layout_mode = 0
 offset_left = -195.0
 offset_top = 17.0
 offset_right = -60.0
@@ -151,7 +162,15 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_phe8i")
 theme_override_styles/normal = SubResource("StyleBoxFlat_4jmj5")
 text = "Start"
 
+[node name="ESe014" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_5poo7")
+pitch_scale = 0.7
+bus = &"sfx"
+
+[connection signal="mouse_entered" from="hbox/VBoxContainer/settings" to="." method="_on_settings_mouse_entered"]
 [connection signal="pressed" from="hbox/VBoxContainer/settings" to="." method="_on_settings_pressed"]
-[connection signal="pressed" from="hbox/VBoxContainer/exit" to="." method="_on_exit_pressed"]
+[connection signal="mouse_entered" from="hbox/VBoxContainer/exit" to="." method="_on_exit_mouse_entered"]
 [connection signal="pressed" from="hbox/VBoxContainer/exit" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="hbox/VBoxContainer/exit" to="." method="_on_exit_pressed"]
+[connection signal="mouse_entered" from="hbox/start" to="." method="_on_start_mouse_entered"]
 [connection signal="pressed" from="hbox/start" to="." method="_on_button_pressed"]

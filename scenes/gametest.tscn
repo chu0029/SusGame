@@ -1,20 +1,30 @@
-[gd_scene load_steps=19 format=3 uid="uid://ikdew4lo1lg8"]
+[gd_scene load_steps=29 format=3 uid="uid://ikdew4lo1lg8"]
 
 [ext_resource type="Script" uid="uid://bpn0pj6e5fff0" path="res://scripts/gametest.gd" id="1_34im5"]
+[ext_resource type="Texture2D" uid="uid://btge1mbaiaemq" path="res://sprites/bg.png" id="2_xally"]
 [ext_resource type="Theme" uid="uid://yfe8see4c3cw" path="res://filees and stuff/gametest.tres" id="3_34im5"]
-[ext_resource type="Texture2D" uid="uid://cbn5ffb63qtty" path="res://filees and stuff/New Piskel-1.png.png" id="3_82nuq"]
+[ext_resource type="Texture2D" uid="uid://dlbgjk1hyakxq" path="res://sprites/factory.png" id="3_ytmfn"]
 [ext_resource type="AudioStream" uid="uid://dkqpsop44fcmf" path="res://filees and stuff/bgmsfxFinal/thockup.wav" id="4_nrbvj"]
 [ext_resource type="AudioStream" uid="uid://csvwdo1e5fae8" path="res://filees and stuff/bgmsfxFinal/thockdown.wav" id="5_6cixp"]
 [ext_resource type="Script" uid="uid://dg47g08vrd05k" path="res://upgrademove.gd" id="6_82nuq"]
-[ext_resource type="Texture2D" uid="uid://i6623btw2mrp" path="res://filees and stuff/background placeholder.png" id="6_i0h8x"]
-[ext_resource type="Texture2D" uid="uid://b7xvqpo14820x" path="res://filees and stuff/factory.png" id="6_k6ha7"]
+[ext_resource type="Texture2D" uid="uid://bckrvi1hplv1t" path="res://sprites/sola.png" id="6_nrbvj"]
 [ext_resource type="FontFile" uid="uid://ch5u3e1ev21f7" path="res://filees and stuff/Perfect DOS VGA 437 Win.ttf" id="6_xe5qx"]
+[ext_resource type="Texture2D" uid="uid://ceyqkiywodwhs" path="res://sprites/wind.png" id="7_xally"]
 [ext_resource type="Script" uid="uid://cqyximukkqcu2" path="res://storemove.gd" id="7_xe5qx"]
+[ext_resource type="Texture2D" uid="uid://eurcpwm2tvn4" path="res://sprites/biom.png" id="8_2hywi"]
 [ext_resource type="AudioStream" uid="uid://ivt0dsfonigc" path="res://filees and stuff/bgmsfxFinal/clickOn2.mp3" id="8_o2kiw"]
+[ext_resource type="Texture2D" uid="uid://jo682gu7e7ey" path="res://sprites/geot.png" id="9_a2inv"]
 [ext_resource type="AudioStream" uid="uid://bbmu4nlq2dmpq" path="res://filees and stuff/bgmsfxFinal/clickOff2.mp3" id="9_ytmfn"]
 [ext_resource type="Script" uid="uid://t8bmxlin25u1" path="res://scenes/newstext.gd" id="10_1uq2d"]
+[ext_resource type="Texture2D" uid="uid://bmp1wtd6006gw" path="res://sprites/fusi.png" id="10_q27r4"]
 [ext_resource type="AudioStream" uid="uid://bcb6pk0g8u4l7" path="res://scenes/bgmplaylist.tres" id="11_8qdvn"]
+[ext_resource type="Texture2D" uid="uid://cm0qbcxccwfgr" path="res://sprites/inci.png" id="11_bvssg"]
+[ext_resource type="Texture2D" uid="uid://du6qydwlt7f56" path="res://sprites/coal.png" id="12_5w31o"]
+[ext_resource type="Texture2D" uid="uid://dva5fpw811ija" path="res://sprites/adva.png" id="13_h0ywf"]
+[ext_resource type="Texture2D" uid="uid://dkyrtomkly2fh" path="res://sprites/natu.png" id="14_701r1"]
+[ext_resource type="Texture2D" uid="uid://dc67xc4rqwjya" path="res://sprites/oilr.png" id="15_20c3r"]
 [ext_resource type="AudioStream" uid="uid://qsrjp8qpsv54" path="res://filees and stuff/bgmsfxFinal/cash88639.ogg" id="15_ytmfn"]
+[ext_resource type="Texture2D" uid="uid://eid6p1nm1gsl" path="res://sprites/fiss.png" id="16_0lbsl"]
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_18hib"]
 random_pitch = 1.1
@@ -63,25 +73,26 @@ hydroelectricdam = NodePath("Panel/ScrollContainer/MarginContainer/HBoxContainer
 nuclearfusion = NodePath("Panel/ScrollContainer/MarginContainer/HBoxContainer/susvbox/nuclearfusion")
 healthbutton = NodePath("health")
 solaSpriteS = NodePath("factory/sola")
-windSpriteS = NodePath("factory/wind")
-biomSpriteS = NodePath("factory/biom")
-geotSpriteS = NodePath("factory/geot")
-hydrSpriteS = NodePath("factory/hydr")
-fusiSpriteS = NodePath("factory/fusi")
-inciSpriteN = NodePath("factory/inci")
-coalSpriteN = NodePath("factory/coal")
-advaSpriteN = NodePath("factory/adva")
-natuSpriteN = NodePath("factory/natu")
-oilrSpriteN = NodePath("factory/oilr")
-fissSpriteN = NodePath("factory/fiss")
+windSpriteS = NodePath("wind")
+biomSpriteS = NodePath("factory/Control/biom")
+geotSpriteS = NodePath("factory/Control/geot")
+hydrSpriteS = NodePath("factory/Control/hydr")
+fusiSpriteS = NodePath("factory/Control/fusi")
+inciSpriteN = NodePath("factory/Control/inci")
+coalSpriteN = NodePath("factory/Control/coal")
+advaSpriteN = NodePath("factory/Control/adva")
+natuSpriteN = NodePath("factory/Control/natu")
+oilrSpriteN = NodePath("factory/Control/oilr")
+fissSpriteN = NodePath("factory/Control/fiss")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 z_index = -1
 custom_minimum_size = Vector2(1200, 800)
 layout_mode = 0
-offset_right = 1120.0
-offset_bottom = 700.0
-texture = ExtResource("6_i0h8x")
+offset_right = 1200.0
+offset_bottom = 800.0
+texture = ExtResource("2_xally")
+expand_mode = 1
 
 [node name="healthtimer" type="Timer" parent="."]
 
@@ -96,14 +107,15 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -180.0
-offset_top = -50.0
-offset_right = 180.0
-offset_bottom = 304.0
+offset_left = -300.0
+offset_top = -94.0
+offset_right = 262.5
+offset_bottom = 271.625
 grow_horizontal = 2
 grow_vertical = 2
 pivot_offset = Vector2(180, 180)
-texture_normal = ExtResource("3_82nuq")
+texture_normal = ExtResource("3_ytmfn")
+ignore_texture_size = true
 stretch_mode = 0
 
 [node name="soundfactory" type="AudioStreamPlayer" parent="factory"]
@@ -117,55 +129,109 @@ bus = &"sfx"
 
 [node name="sola" type="TextureRect" parent="factory"]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-texture = ExtResource("6_k6ha7")
+offset_left = -244.0
+offset_top = -306.0
+offset_right = 3596.0
+offset_bottom = 2254.0
+scale = Vector2(0.313, 0.313)
+mouse_filter = 2
+texture = ExtResource("6_nrbvj")
 
-[node name="wind" type="TextureRect" parent="factory"]
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="Control" type="Control" parent="factory"]
+anchors_preset = 0
+offset_left = -321.0
+offset_top = -403.0
+offset_right = -321.0
+offset_bottom = -403.0
+scale = Vector2(0.313, 0.313)
 
-[node name="biom" type="TextureRect" parent="factory"]
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="biom" type="TextureRect" parent="factory/Control"]
+offset_left = 244.0
+offset_top = 306.0
+offset_right = 4084.0
+offset_bottom = 2866.0
+mouse_filter = 2
+texture = ExtResource("8_2hywi")
 
-[node name="geot" type="TextureRect" parent="factory"]
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="geot" type="TextureRect" parent="factory/Control"]
+offset_left = 244.0
+offset_top = 306.0
+offset_right = 4084.0
+offset_bottom = 2866.0
+mouse_filter = 2
+texture = ExtResource("9_a2inv")
 
-[node name="hydr" type="TextureRect" parent="factory"]
-offset_right = 40.0
-offset_bottom = 40.0
-texture = ExtResource("6_k6ha7")
+[node name="hydr" type="TextureRect" parent="factory/Control"]
+offset_left = 244.0
+offset_top = 306.0
+offset_right = 284.0
+offset_bottom = 346.0
+mouse_filter = 2
 
-[node name="fusi" type="TextureRect" parent="factory"]
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="fusi" type="TextureRect" parent="factory/Control"]
+offset_left = 244.0
+offset_top = 306.0
+offset_right = 4084.0
+offset_bottom = 2866.0
+mouse_filter = 2
+texture = ExtResource("10_q27r4")
 
-[node name="inci" type="TextureRect" parent="factory"]
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="inci" type="TextureRect" parent="factory/Control"]
+offset_left = 244.0
+offset_top = 306.0
+offset_right = 4084.0
+offset_bottom = 2866.0
+mouse_filter = 2
+texture = ExtResource("11_bvssg")
 
-[node name="coal" type="TextureRect" parent="factory"]
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="coal" type="TextureRect" parent="factory/Control"]
+offset_left = 244.0
+offset_top = 306.0
+offset_right = 4084.0
+offset_bottom = 2866.0
+mouse_filter = 2
+texture = ExtResource("12_5w31o")
 
-[node name="adva" type="TextureRect" parent="factory"]
-offset_right = 40.0
-offset_bottom = 40.0
-texture = ExtResource("6_k6ha7")
+[node name="adva" type="TextureRect" parent="factory/Control"]
+offset_left = 244.0
+offset_top = 306.0
+offset_right = 4084.0
+offset_bottom = 2866.0
+mouse_filter = 2
+texture = ExtResource("13_h0ywf")
 
-[node name="natu" type="TextureRect" parent="factory"]
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="natu" type="TextureRect" parent="factory/Control"]
+offset_left = 244.0
+offset_top = 306.0
+offset_right = 4084.0
+offset_bottom = 2866.0
+mouse_filter = 2
+texture = ExtResource("14_701r1")
 
-[node name="oilr" type="TextureRect" parent="factory"]
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="oilr" type="TextureRect" parent="factory/Control"]
+offset_left = 244.0
+offset_top = 306.0
+offset_right = 4084.0
+offset_bottom = 2866.0
+mouse_filter = 2
+texture = ExtResource("15_20c3r")
 
-[node name="fiss" type="TextureRect" parent="factory"]
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="fiss" type="TextureRect" parent="factory/Control"]
+offset_left = 244.0
+offset_top = 306.0
+offset_right = 4084.0
+offset_bottom = 2866.0
+mouse_filter = 2
+texture = ExtResource("16_0lbsl")
+
+[node name="wind" type="TextureRect" parent="."]
+offset_left = 55.372
+offset_top = -1.222
+offset_right = 3895.37
+offset_bottom = 2558.78
+scale = Vector2(0.313, 0.313)
+mouse_filter = 2
+texture = ExtResource("7_xally")
 
 [node name="counter" type="RichTextLabel" parent="."]
 layout_mode = 1
@@ -218,10 +284,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 49.0
-offset_top = -243.0
-offset_right = 296.0
-offset_bottom = -204.0
+offset_left = -935.0
+offset_top = -376.0
+offset_right = -688.0
+offset_bottom = -337.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("3_34im5")

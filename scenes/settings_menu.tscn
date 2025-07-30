@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://dbbtdnjcby4nx"]
+[gd_scene load_steps=7 format=3 uid="uid://dbbtdnjcby4nx"]
 
 [ext_resource type="Script" uid="uid://bx0jdxb81hjsg" path="res://scripts/settings_menu.gd" id="1_cr101"]
 [ext_resource type="Theme" uid="uid://yfe8see4c3cw" path="res://filees and stuff/gametest.tres" id="2_cr101"]
 [ext_resource type="FontFile" uid="uid://ch5u3e1ev21f7" path="res://filees and stuff/Perfect DOS VGA 437 Win.ttf" id="3_lwwgp"]
 [ext_resource type="Script" uid="uid://dpltd24gclocs" path="res://scenes/h_slider.gd" id="3_wswnh"]
 [ext_resource type="AudioStream" uid="uid://bcb6pk0g8u4l7" path="res://scenes/bgmplaylist.tres" id="4_labj1"]
+[ext_resource type="AudioStream" uid="uid://dxaf162lw1lbq" path="res://filees and stuff/e_se014.ogg" id="6_bgjg7"]
 
 [node name="settings menu" type="Control"]
 layout_mode = 3
@@ -116,6 +117,7 @@ Programming and UI:
 	Michaelangelo Pranowo
 	Andy He
 	Leroy Chung
+
 Art: Andy He
 
 Music:
@@ -136,7 +138,9 @@ Music:
 	'Pocho' Gatti Orchestra
 -  Mario Kart World - Title 
 	Theme (Super Mario 
-	Kart) (Night)"
+	Kart) (Night)
+-  Everybody's Fancy -
+	Johnny Costa"
 
 [node name="bgm" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_labj1")
@@ -155,6 +159,12 @@ text = "Settings"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="ESe014" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_bgjg7")
+pitch_scale = 0.7
+bus = &"sfx"
+
 [connection signal="value_changed" from="menu/HSlider" to="menu/HSlider" method="_on_value_changed"]
 [connection signal="value_changed" from="menu/HSlider2" to="menu/HSlider2" method="_on_value_changed"]
+[connection signal="mouse_entered" from="Button" to="." method="_on_button_mouse_entered"]
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

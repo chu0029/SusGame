@@ -13,3 +13,8 @@ func _input(event):
 
 func _on_button_pressed() -> void:
 	get_tree().change_scene_to_file("res://scenes/menu_start.tscn")
+
+
+
+func _on_button_mouse_entered() -> void:
+	$ESe014.play()

@@ -1,6 +1,6 @@
 extends Node
 #THESE ARE ALL THE GLOBAL VARIABLES IN THE GAME
-var power: int = 10000 #set all variables needed to increase power
+var power: int = 0000 #set all variables needed to increase power
 var multiplier : int = 1
 var automult : int = 0
 
@@ -26,6 +26,9 @@ var susUpgCount: float = 0
 var totalUpgCount: float = 0
 var health : int = 100
 var kws: int = 0
+
+#start screen music progress tracker (NOT WORKING)
+var musicProgress = 0.0
 
 func resetGame(): #CALLED WHENEVER HEALTH = 0
 	power= 0 #set all variables needed to increase power

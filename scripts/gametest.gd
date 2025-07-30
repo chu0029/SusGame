@@ -133,7 +133,7 @@ func _on_factory_button_down() -> void:
 	var tween = create_tween()
 	tween.set_trans(Tween.TRANS_BOUNCE)
 	tween.set_ease(Tween.EASE_OUT)
-	tween.tween_property(factory, "scale", Vector2(1.05, 1.05), 0.1)
+	tween.tween_property(factory, "scale", Vector2(1.02, 1.02), 0.1)
 
 func _on_factory_button_up() -> void:
 	soundfactorydown.play()
@@ -171,9 +171,11 @@ func upgradeClicker(itemCost, itemCount):
 
 #UNIVERSAL FUNCTION FOR ALL ENHAMCEMENTS
 func enhacement(itemCost, itemCount):
-	if itemCount <2: #if there are less than 3 items purchased alr
-		itemCount += 1
-		global.power -= itemCost
+	itemCount += 1
+	global.power -= itemCost
+	if itemCount <3: #if there are less than 3 items purchased alr
+		
+		
 		itemCost = round(itemCost*2)
 		soundupgrade.play()
 		return [itemCost, itemCount, 0]
@@ -302,7 +304,8 @@ func _on_tree_pressed() -> void:
 		if output[2] == 1:
 			tree.disabled = true
 			#global.encount +1 because it doesnt like when the button disaables for some reason
-			tree.text = 'Trees: %s \n MAX UPGRADES \n +1 Multiplier' %(global.encount[0]+1)
+			#note: this has been fixed
+			tree.text = 'Trees: %s \n MAX UPGRADES \n +1 Multiplier' %(global.encount[0])
 
 func _on_bus_pressed() -> void:
 	if global.power >= global.coste[1]:
@@ -313,7 +316,7 @@ func _on_bus_pressed() -> void:
 		bus.text = 'Busses: %s \n Cost: %d kW \n +10 Multiplier' %[global.encount[1], global.coste[1]]
 		if output[2] == 1:
 			bus.disabled = true
-			bus.text = 'Busses: %s \n MAX UPGRADES \n +10 Multiplier' %(global.encount[1]+1)
+			bus.text = 'Busses: %s \n MAX UPGRADES \n +10 Multiplier' %(global.encount[1])
 
 func _on_ev_pressed() -> void:
 	if global.power >= global.coste[2]:
@@ -324,7 +327,7 @@ func _on_ev_pressed() -> void:
 		ev.text = 'Electric Cars: %s \n Cost: %d kW \n +200 Multiplier' %[global.encount[2], global.coste[2]]
 		if output[2] == 1:
 			ev.disabled = true
-			ev.text = 'Electric Cars: %s \n MAX UPGRADES \n +200 Multiplier' %(global.encount[2]+1)
+			ev.text = 'Electric Cars: %s \n MAX UPGRADES \n +200 Multiplier' %(global.encount[2])
 
 func _on_train_pressed() -> void:
 	if global.power >= global.coste[3]:
@@ -335,7 +338,7 @@ func _on_train_pressed() -> void:
 		train.text = 'Metro: %s \n Cost: %d kW \n +2500 Multiplier' %[global.encount[3], global.coste[3]]
 		if output[2] == 1:
 			train.disabled = true
-			train.text = 'Metro: %s \n MAX UPGRADES \n +2500 Multiplier' %(global.encount[3]+1)
+			train.text = 'Metro: %s \n MAX UPGRADES \n +2500 Multiplier' %(global.encount[3])
 
 func _on_s_apartment_pressed() -> void:
 	if global.power >= global.coste[4]:
@@ -346,4 +349,4 @@ func _on_s_apartment_pressed() -> void:
 		sApartment.text = 'Solar Buildings: %s \n Cost: %d kW \n +5000 Multiplier' %[global.encount[4], global.coste[4]]
 		if output[2] == 1:
 			sApartment.disabled = true
-			sApartment.text = 'Solar Buildings: %s \n MAX UPGRADES \n +5000 Multiplier' %(global.encount[4]+1)
+			sApartment.text = 'Solar Buildings: %s \n MAX UPGRADES \n +5000 Multiplier' %(global.encount[4])
