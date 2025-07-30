@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://3kebcwl4p3kx"
+path="res://.godot/imported/gamover.ogg-825baaa76570967919a6e18b3ecff5ab.oggvorbisstr"
+
+[deps]
+
+source_file="res://filees and stuff/bgmsfxFinal/gamover.ogg"
+dest_files=["res://.godot/imported/gamover.ogg-825baaa76570967919a6e18b3ecff5ab.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,10 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://ccybex2lv1v85"]
+[gd_scene load_steps=5 format=3 uid="uid://ccybex2lv1v85"]
 
 [ext_resource type="FontFile" uid="uid://ch5u3e1ev21f7" path="res://filees and stuff/Perfect DOS VGA 437 Win.ttf" id="1_0hhgj"]
 [ext_resource type="Script" uid="uid://cy1v0fmtjftrj" path="res://scenes/death.gd" id="1_tjai8"]
 [ext_resource type="Theme" uid="uid://yfe8see4c3cw" path="res://filees and stuff/gametest.tres" id="2_w8wr1"]
+[ext_resource type="AudioStream" uid="uid://3kebcwl4p3kx" path="res://filees and stuff/bgmsfxFinal/gamover.ogg" id="4_q1r8t"]
 
-[node name="Control" type="Control"]
+[node name="Control" type="Control" node_paths=PackedStringArray("info")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -12,6 +13,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_tjai8")
+info = NodePath("Label2")
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 1
@@ -49,5 +51,25 @@ theme_override_font_sizes/font_size = 64
 text = "Back To Menu"
 
 [node name="dead" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_q1r8t")
+autoplay = true
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -409.5
+offset_top = -31.5
+offset_right = 409.5
+offset_bottom = 31.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_w8wr1")
+text = "You have generated XXXXXX kilowatts of un-sustainable power.
+That would kill XXX trees."
+horizontal_alignment = 1
 
 [connection signal="pressed" from="deadbutton" to="." method="_on_deadbutton_pressed"]

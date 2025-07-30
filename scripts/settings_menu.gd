@@ -8,3 +8,8 @@ func _ready() -> void:
 func _input(event):
 	if event.is_action_pressed("ui_cancel"):
 		get_tree().change_scene_to_file("res://scenes/gametest.tscn")
+
+
+
+func _on_button_pressed() -> void:
+	get_tree().change_scene_to_file("res://scenes/menu_start.tscn")

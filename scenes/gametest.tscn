@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://ikdew4lo1lg8"]
+[gd_scene load_steps=19 format=3 uid="uid://ikdew4lo1lg8"]
 
 [ext_resource type="Script" uid="uid://bpn0pj6e5fff0" path="res://scripts/gametest.gd" id="1_34im5"]
 [ext_resource type="Theme" uid="uid://yfe8see4c3cw" path="res://filees and stuff/gametest.tres" id="3_34im5"]
@@ -7,6 +7,7 @@
 [ext_resource type="AudioStream" uid="uid://csvwdo1e5fae8" path="res://filees and stuff/bgmsfxFinal/thockdown.wav" id="5_6cixp"]
 [ext_resource type="Script" uid="uid://dg47g08vrd05k" path="res://upgrademove.gd" id="6_82nuq"]
 [ext_resource type="Texture2D" uid="uid://i6623btw2mrp" path="res://filees and stuff/background placeholder.png" id="6_i0h8x"]
+[ext_resource type="Texture2D" uid="uid://b7xvqpo14820x" path="res://filees and stuff/factory.png" id="6_k6ha7"]
 [ext_resource type="FontFile" uid="uid://ch5u3e1ev21f7" path="res://filees and stuff/Perfect DOS VGA 437 Win.ttf" id="6_xe5qx"]
 [ext_resource type="Script" uid="uid://cqyximukkqcu2" path="res://storemove.gd" id="7_xe5qx"]
 [ext_resource type="AudioStream" uid="uid://ivt0dsfonigc" path="res://filees and stuff/bgmsfxFinal/clickOn2.mp3" id="8_o2kiw"]
@@ -25,7 +26,7 @@ stream_0/stream = ExtResource("4_nrbvj")
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1uq2d"]
 bg_color = Color(0.6, 0, 0, 1)
 
-[node name="Control" type="Control" node_paths=PackedStringArray("counter", "multipcounter", "kwslabel", "timer", "factory", "soundfactory", "soundfactorydown", "soundupgrade", "bgm", "incineratorplant", "coal", "advcoal", "natgas", "oilrig", "nfission", "tree", "bus", "ev", "train", "sApartment", "autoclicker", "solarpanel", "windturbine", "biomass", "geothermalplant", "hydroelectricdam", "nuclearfusion", "healthbutton")]
+[node name="Control" type="Control" node_paths=PackedStringArray("counter", "multipcounter", "kwslabel", "timer", "factory", "soundfactory", "soundfactorydown", "soundupgrade", "bgm", "incineratorplant", "coal", "advcoal", "natgas", "oilrig", "nfission", "tree", "bus", "ev", "train", "sApartment", "autoclicker", "solarpanel", "windturbine", "biomass", "geothermalplant", "hydroelectricdam", "nuclearfusion", "healthbutton", "solaSpriteS", "windSpriteS", "biomSpriteS", "geotSpriteS", "hydrSpriteS", "fusiSpriteS", "inciSpriteN", "coalSpriteN", "advaSpriteN", "natuSpriteN", "oilrSpriteN", "fissSpriteN")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -61,6 +62,18 @@ geothermalplant = NodePath("Panel/ScrollContainer/MarginContainer/HBoxContainer/
 hydroelectricdam = NodePath("Panel/ScrollContainer/MarginContainer/HBoxContainer/susvbox/hydroelectricdam")
 nuclearfusion = NodePath("Panel/ScrollContainer/MarginContainer/HBoxContainer/susvbox/nuclearfusion")
 healthbutton = NodePath("health")
+solaSpriteS = NodePath("factory/sola")
+windSpriteS = NodePath("factory/wind")
+biomSpriteS = NodePath("factory/biom")
+geotSpriteS = NodePath("factory/geot")
+hydrSpriteS = NodePath("factory/hydr")
+fusiSpriteS = NodePath("factory/fusi")
+inciSpriteN = NodePath("factory/inci")
+coalSpriteN = NodePath("factory/coal")
+advaSpriteN = NodePath("factory/adva")
+natuSpriteN = NodePath("factory/natu")
+oilrSpriteN = NodePath("factory/oilr")
+fissSpriteN = NodePath("factory/fiss")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 z_index = -1
@@ -101,6 +114,58 @@ bus = &"sfx"
 stream = ExtResource("5_6cixp")
 volume_db = -7.0
 bus = &"sfx"
+
+[node name="sola" type="TextureRect" parent="factory"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("6_k6ha7")
+
+[node name="wind" type="TextureRect" parent="factory"]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="biom" type="TextureRect" parent="factory"]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="geot" type="TextureRect" parent="factory"]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="hydr" type="TextureRect" parent="factory"]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("6_k6ha7")
+
+[node name="fusi" type="TextureRect" parent="factory"]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="inci" type="TextureRect" parent="factory"]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="coal" type="TextureRect" parent="factory"]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="adva" type="TextureRect" parent="factory"]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("6_k6ha7")
+
+[node name="natu" type="TextureRect" parent="factory"]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="oilr" type="TextureRect" parent="factory"]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="fiss" type="TextureRect" parent="factory"]
+offset_right = 40.0
+offset_bottom = 40.0
 
 [node name="counter" type="RichTextLabel" parent="."]
 layout_mode = 1
@@ -216,6 +281,8 @@ theme_override_constants/separation = 8
 
 [node name="Label" type="Label" parent="Panel/ScrollContainer/MarginContainer/HBoxContainer/nonsusvbox"]
 layout_mode = 2
+tooltip_text = "Decreases sustainability"
+mouse_filter = 0
 text = "Non-Sustainable"
 horizontal_alignment = 1
 
@@ -269,6 +336,8 @@ theme_override_constants/separation = 8
 
 [node name="Label" type="Label" parent="Panel/ScrollContainer/MarginContainer/HBoxContainer/susvbox"]
 layout_mode = 2
+tooltip_text = "Increases sustainability"
+mouse_filter = 0
 theme = ExtResource("3_34im5")
 text = "Sustainable"
 horizontal_alignment = 1

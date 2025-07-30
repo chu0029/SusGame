@@ -95,9 +95,9 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -126.0
+offset_left = -300.0
 offset_top = -155.0
-offset_right = 126.0
+offset_right = -48.0
 offset_bottom = -80.0
 grow_horizontal = 2
 grow_vertical = 0
@@ -112,26 +112,31 @@ offset_right = 1200.0
 offset_bottom = 800.0
 theme = ExtResource("2_cr101")
 text = "                  CREDITS
-Programming:
+Programming and UI:
 	Michaelangelo Pranowo
 	Andy He
 	Leroy Chung
-
 Art: Andy He
 
 Music:
+	Title Screen: 
+-  Mario Kart World - Title
+	Theme (Super Mario 
+	Kart) (Day)
 
-Title Screen: 
-Mario Kart World - Title Theme (Super Mario Kart) (Day)
-
-Main Game:
-Kpm 1000 Series:
-	College Girl - Neil Richardson
-	Nimbus - Graham De Wilde
-Interlagos - Angel 'Pocho' Gatti Orchestra
-
-Settings Menu: 
-Mario Kart World - Title Theme (Super Mario Kart) (Night)"
+	Main Game:
+	Kpm 1000 Series:
+-  College Girl - Neil 
+	Richardson
+-  Nimbus - Graham De Wilde
+-  Presidential Suite - 
+	Robert Jones
+	Other:
+-  Interlagos - Angel 
+	'Pocho' Gatti Orchestra
+-  Mario Kart World - Title 
+	Theme (Super Mario 
+	Kart) (Night)"
 
 [node name="bgm" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_labj1")
