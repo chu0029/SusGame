@@ -366,7 +366,7 @@ horizontal_alignment = 1
 [node name="incPlant" type="Button" parent="Panel/ScrollContainer/MarginContainer/HBoxContainer/nonsusvbox"]
 layout_mode = 2
 text = "Incinerator Plant: 0
-Cost: 10 kW
+Cost: 25 kW
 Produces 1 kW/s"
 alignment = 0
 
@@ -374,36 +374,36 @@ alignment = 0
 custom_minimum_size = Vector2(325, 100)
 layout_mode = 2
 text = "Coal Burner: 0
-Cost: 50 kW
-Produces 2 kW/s"
+Cost: 250 kW
+Produces 5 kW/s"
 alignment = 0
 
 [node name="advCoal" type="Button" parent="Panel/ScrollContainer/MarginContainer/HBoxContainer/nonsusvbox"]
 layout_mode = 2
 text = "Advanced Coal: 0
-Cost: 250 kW
-Produces 5 kw/s"
+Cost: 1500 kW
+Produces 30 kw/s"
 alignment = 0
 
 [node name="natGas" type="Button" parent="Panel/ScrollContainer/MarginContainer/HBoxContainer/nonsusvbox"]
 layout_mode = 2
 text = "Natural Gas: 0
-Cost: 5000 kW
-Produces 15 kw/s"
+Cost: 10000 kW
+Produces 50 kw/s"
 alignment = 0
 
 [node name="oilRig" type="Button" parent="Panel/ScrollContainer/MarginContainer/HBoxContainer/nonsusvbox"]
 layout_mode = 2
 text = "Oil Rig: 0
-Cost: 25000 kW
-Produces 50 kW/s"
+Cost: 100000 kW
+Produces 400 kW/s"
 alignment = 0
 
 [node name="nFission" type="Button" parent="Panel/ScrollContainer/MarginContainer/HBoxContainer/nonsusvbox"]
 layout_mode = 2
 text = "Nuclear Fission: 0
-Cost: 500000kW
-Produces 1000 kW/s"
+Cost: 1000000 kW
+Produces 2000 kW/s"
 alignment = 0
 
 [node name="susvbox" type="VBoxContainer" parent="Panel/ScrollContainer/MarginContainer/HBoxContainer"]
@@ -424,7 +424,7 @@ custom_minimum_size = Vector2(325, 100)
 layout_mode = 2
 theme = ExtResource("3_34im5")
 text = "Solar Panel: 0
-Cost: 25 kW
+Cost: 75 kW
 Produces 1 kW/s"
 alignment = 0
 autowrap_mode = 1
@@ -434,7 +434,7 @@ custom_minimum_size = Vector2(325, 100)
 layout_mode = 2
 theme = ExtResource("3_34im5")
 text = "Wind Turbine: 0
-Cost: 100 kW
+Cost: 500 kW
 Produces 2 kW/s"
 alignment = 0
 autowrap_mode = 1
@@ -444,7 +444,7 @@ custom_minimum_size = Vector2(325, 100)
 layout_mode = 2
 theme = ExtResource("3_34im5")
 text = "Biomass Boiler: 0
-Cost: 500 kW
+Cost: 3000 kW
 Produces 5 kW/s"
 alignment = 0
 autowrap_mode = 1
@@ -454,7 +454,7 @@ custom_minimum_size = Vector2(325, 100)
 layout_mode = 2
 theme = ExtResource("3_34im5")
 text = "Geothermal Plant: 0
-Cost: 10000 kW
+Cost: 20000 kW
 Produces 15 kW/s"
 alignment = 0
 autowrap_mode = 1
@@ -464,7 +464,7 @@ custom_minimum_size = Vector2(325, 100)
 layout_mode = 2
 theme = ExtResource("3_34im5")
 text = "Hydroelectric Dam: 0
-Cost: 50000 kW
+Cost: 200000 kW
 Produces 50 kW/s"
 alignment = 0
 clip_text = true
@@ -474,7 +474,7 @@ custom_minimum_size = Vector2(325, 100)
 layout_mode = 2
 theme = ExtResource("3_34im5")
 text = "Nuclear Fusion: 0
-Cost: 1000000 kW
+Cost: 2500000 kW
 Produces 1000 kW/s"
 alignment = 0
 autowrap_mode = 1

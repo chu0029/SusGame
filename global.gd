@@ -6,8 +6,8 @@ var automult : int = 0
 
 #costs to be stored in an array for tidying purposes
 #IN ORDER: 0solar 1wind 2biomass 3geother 4hydroel 5nuclear
-var costs = [25,100,500,10000,50000,1000000]
-var costn = [10,50,250,5000,25000,500000]
+var costs = [75,500,3000,20000,200000,2500000]
+var costn = [25,250,1500,10000,100000,1000000]
 var nonsuscount = [0,0,0,0,0,0]
 var coste = [200,1000,5000,10000,50000]
 var encount = [0,0,0,0,0]
@@ -37,8 +37,8 @@ func resetGame(): #CALLED WHENEVER HEALTH = 0
 
 	#costs to be stored in an array for tidying purposes
 	#IN ORDER: 0solar 1wind 2biomass 3geother 4hydroel 5nuclear
-	costs = [25,100,500,10000,50000,1000000]
-	costn = [10,50,250,5000,25000,500000]
+	costs = [75,500,3000,20000,200000,2500000]
+	costn = [25,250,1500,10000,100000,1000000]
 	nonsuscount = [0,0,0,0,0,0]
 	coste = [200,1000,5000,10000,50000]
 	encount = [0,0,0,0,0]
