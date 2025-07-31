@@ -90,6 +90,64 @@ func UpdateLabelText() -> void:
 	kwslabel.text = '%s kilowatts/sec' %global.kws
 	$sustainability/susbar.value = global.sustainability
 	$health/healthbar.value = global.health
+	#sustainable upgrade text update
+	solarpanel.text = 'Solar Panel: %s \n Cost: %d kW \n Produces 1 kW/s' %[global.solarpanelcount,global.costs[0]]
+	windturbine.text = 'Wind Turbine: %s \n Cost: %d kW \n Produces 2 kW/s' %[global.windturbinecount,global.costs[1]]
+	biomass.text = 'Biomass Boiler: %s \n Cost: %d kW \n Produces 3 kW/s' %[global.biomasscount,global.costs[2]]
+	geothermalplant.text = 'Geothermal Plant: %s \n Cost: %d kW \n Produces 15 kW/s' %[global.geothermalplantcount,global.costs[3]]
+	hydroelectricdam.text = 'Hydroelectric Dam: %s \n Cost: %d kW \n Produces 50 kW/s' %[global.hydroelectricdamcount,global.costs[4]]
+	nuclearfusion.text = 'Nuclear Fusion: %s \n Cost: %d kW \n Produces 1000 kW/s' %[global.nuclearfusioncount,global.costs[5]]
+	#unsustainable
+	incineratorplant.text = 'Incinerator Plant: %s \n Cost: %d kW \n Produces 1 kW/s' %[global.nonsuscount[0], global.costn[0]]
+	coal.text = 'Coal Burner: %s \n Cost: %d kW \n Produces 2 kW/s' %[global.nonsuscount[1], global.costn[1]]
+	advcoal.text = 'Advanced Coal: %s \n Cost: %d kW \n Produces 5 kW/s' %[global.nonsuscount[2], global.costn[2]]
+	natgas.text = 'Natural Gas: %s \n Cost: %d kW \n Produces 15 kW/s' %[global.nonsuscount[3], global.costn[3]]
+	oilrig.text = 'Oil Rig: %s \n Cost: %d kW \n Produces 50 kW/s' %[global.nonsuscount[4], global.costn[4]]
+	nfission.text = 'Nuclear Fission: %s \n Cost: %d kW \n Produces 1000 kW/s' %[global.nonsuscount[5], global.costn[5]]
+
+	if global.encount[0] <3: #if there are less than 3 items purchased alr
+		tree.text = 'Trees: %s \n Cost: %d kW \n +1 Multiplier' %[global.encount[0], global.coste[0]]
+		if global.encount[0] > 0:
+			pass
+	else:
+		tree.text = 'Trees: %s \n MAX UPGRADES \n +1 Multiplier' %(global.encount[0])
+		tree.disabled = true
+
+	if global.encount[1] <3: #if there are less than 3 items purchased alr
+		bus.text = 'Busses: %s \n Cost: %d kW \n +10 Multiplier' %[global.encount[1], global.coste[1]]
+		if global.encount[1] > 0:
+			pass
+	else:
+		bus.text = 'Busses: %s \n MAX UPGRADES \n +10 Multiplier' %(global.encount[1])
+		bus.disabled = true
+
+	if global.encount[0] <3: #if there are less than 3 items purchased alr
+		tree.text = 'Trees: %s \n Cost: %d kW \n +1 Multiplier' %[global.encount[0], global.coste[0]]
+		if global.encount[0] > 0:
+			pass
+	else:
+		tree.text = 'Trees: %s \n MAX UPGRADES \n +1 Multiplier' %(global.encount[0])
+		tree.disabled = true
+
+	if global.encount[0] <3: #if there are less than 3 items purchased alr
+		tree.text = 'Trees: %s \n Cost: %d kW \n +1 Multiplier' %[global.encount[0], global.coste[0]]
+		if global.encount[0] > 0:
+			pass
+	else:
+		tree.text = 'Trees: %s \n MAX UPGRADES \n +1 Multiplier' %(global.encount[0])
+		tree.disabled = true
+
+	if global.encount[0] <3: #if there are less than 3 items purchased alr
+		tree.text = 'Trees: %s \n Cost: %d kW \n +1 Multiplier' %[global.encount[0], global.coste[0]]
+		if global.encount[0] > 0:
+			pass
+	else:
+		tree.text = 'Trees: %s \n MAX UPGRADES \n +1 Multiplier' %(global.encount[0])
+		tree.disabled = true
+
+
+
+
 
 func CreatePower() -> void: #global.power created from clicking the thing
 	global.power += 1 * global.multiplier
@@ -187,7 +245,6 @@ func _on_solarpanel_pressed() -> void:
 		var output = upgradeClicker(global.costs[0], global.solarpanelcount)
 		global.costs[0] = output[0]
 		global.solarpanelcount = output[1]
-		solarpanel.text = 'Solar Panel: %s \n Cost: %d kW \n Produces 1 kW/s' %[global.solarpanelcount,global.costs[0]]
 		solaSpriteS.show()
 	'''	if global.power >= global.costs[0]:
 		timer.start()
@@ -203,7 +260,6 @@ func _on_windturbine_pressed() -> void:
 		var output = upgradeClicker(global.costs[1], global.windturbinecount)
 		global.costs[1] = output[0]
 		global.windturbinecount = output[1]
-		windturbine.text = 'Wind Turbine: %s \n Cost: %d kW \n Produces 2 kW/s' %[global.windturbinecount,global.costs[1]]
 		windSpriteS.show()
 		#print(global.costs[1])
 		#global.susUpgCount +=1
@@ -213,7 +269,6 @@ func _on_biomass_pressed() -> void:
 		var output = upgradeClicker(global.costs[2], global.biomasscount)
 		global.costs[2] = output[0]
 		global.biomasscount = output[1]
-		biomass.text = 'Biomass Boiler: %s \n Cost: %d kW \n Produces 3 kW/s' %[global.biomasscount,global.costs[2]]
 		biomSpriteS.show()
 
 func _on_geothermalplant_pressed() -> void: #global.costs[3]
@@ -221,7 +276,6 @@ func _on_geothermalplant_pressed() -> void: #global.costs[3]
 		var output = upgradeClicker(global.costs[3], global.geothermalplantcount)
 		global.costs[3] = output[0]
 		global.geothermalplantcount = output[1]
-		geothermalplant.text = 'Geothermal Plant: %s \n Cost: %d kW \n Produces 15 kW/s' %[global.geothermalplantcount,global.costs[3]]
 		geotSpriteS.show()
 
 func _on_hydroelectricdam_pressed() -> void: #global.costs[4]
@@ -229,7 +283,6 @@ func _on_hydroelectricdam_pressed() -> void: #global.costs[4]
 		var output = upgradeClicker(global.costs[4], global.hydroelectricdamcount)
 		global.costs[4] = output[0]
 		global.hydroelectricdamcount = output[1]
-		hydroelectricdam.text = 'Hydroelectric Dam: %s \n Cost: %d kW \n Produces 50 kW/s' %[global.hydroelectricdamcount,global.costs[4]]
 		hydrSpriteS.show()
 
 func _on_nuclearfusion_pressed() -> void: #global.costs[5]
@@ -237,7 +290,6 @@ func _on_nuclearfusion_pressed() -> void: #global.costs[5]
 		var output = upgradeClicker(global.costs[5], global.nuclearfusioncount)
 		global.costs[5] = output[0]
 		global.nuclearfusioncount = output[1]
-		nuclearfusion.text = 'Nuclear Fusion: %s \n Cost: %d kW \n Produces 1000 kW/s' %[global.nuclearfusioncount,global.costs[5]]
 		fusiSpriteS.show()
 	'''if global.power >= 1000000:
 		timer.start()
@@ -251,7 +303,6 @@ func _on_inc_plant_pressed() -> void:
 		var output = upgradeClicker(global.costn[0], global.nonsuscount[0])
 		global.costn[0] = output[0]
 		global.nonsuscount[0] = output[1]
-		incineratorplant.text = 'Incinerator Plant: %s \n Cost: %d kW \n Produces 1 kW/s' %[global.nonsuscount[0], global.costn[0]]
 		inciSpriteN.show()
 
 func _on_coal_pressed() -> void:
@@ -259,7 +310,6 @@ func _on_coal_pressed() -> void:
 		var output = upgradeClicker(global.costn[1], global.nonsuscount[1])
 		global.costn[1] = output[0]
 		global.nonsuscount[1] = output[1]
-		coal.text = 'Coal Burner: %s \n Cost: %d kW \n Produces 2 kW/s' %[global.nonsuscount[1], global.costn[1]]
 		coalSpriteN.show()
 
 func _on_adv_coal_pressed() -> void:
@@ -267,7 +317,6 @@ func _on_adv_coal_pressed() -> void:
 		var output = upgradeClicker(global.costn[2], global.nonsuscount[2])
 		global.costn[2] = output[0]
 		global.nonsuscount[2] = output[1]
-		advcoal.text = 'Advanced Coal: %s \n Cost: %d kW \n Produces 5 kW/s' %[global.nonsuscount[2], global.costn[2]]
 		advaSpriteN.show()
 
 func _on_nat_gas_pressed() -> void:
@@ -275,7 +324,6 @@ func _on_nat_gas_pressed() -> void:
 		var output = upgradeClicker(global.costn[3], global.nonsuscount[3])
 		global.costn[3] = output[0]
 		global.nonsuscount[3] = output[1]
-		natgas.text = 'Natural Gas: %s \n Cost: %d kW \n Produces 15 kW/s' %[global.nonsuscount[3], global.costn[3]]
 		natuSpriteN.show()
 
 func _on_oil_rig_pressed() -> void:
@@ -283,7 +331,6 @@ func _on_oil_rig_pressed() -> void:
 		var output = upgradeClicker(global.costn[4], global.nonsuscount[4])
 		global.costn[4] = output[0]
 		global.nonsuscount[4] = output[1]
-		oilrig.text = 'Oil Rig: %s \n Cost: %d kW \n Produces 50 kW/s' %[global.nonsuscount[4], global.costn[4]]
 		oilrSpriteN.show()
 
 func _on_n_fission_pressed() -> void:
@@ -291,7 +338,6 @@ func _on_n_fission_pressed() -> void:
 		var output = upgradeClicker(global.costn[5], global.nonsuscount[5])
 		global.costn[5] = output[0]
 		global.nonsuscount[5] = output[1]
-		nfission.text = 'Nuclear Fission: %s \n Cost: %d kW \n Produces 1000 kW/s' %[global.nonsuscount[5], global.costn[5]]
 		fissSpriteN.show()
 
 func _on_tree_pressed() -> void:
@@ -300,12 +346,12 @@ func _on_tree_pressed() -> void:
 		print(global.encount[0])
 		global.coste[0] = output[0]
 		global.encount[0] = output[1]
-		tree.text = 'Trees: %s \n Cost: %d kW \n +1 Multiplier' %[global.encount[0], global.coste[0]]
+	'''	tree.text = 'Trees: %s \n Cost: %d kW \n +1 Multiplier' %[global.encount[0], global.coste[0]]
 		if output[2] == 1:
 			tree.disabled = true
 			#global.encount +1 because it doesnt like when the button disaables for some reason
 			#note: this has been fixed
-			tree.text = 'Trees: %s \n MAX UPGRADES \n +1 Multiplier' %(global.encount[0])
+			tree.text = 'Trees: %s \n MAX UPGRADES \n +1 Multiplier' %(global.encount[0])'''
 
 func _on_bus_pressed() -> void:
 	if global.power >= global.coste[1]:
@@ -313,10 +359,6 @@ func _on_bus_pressed() -> void:
 		print(global.encount[1])
 		global.coste[1] = output[0]
 		global.encount[1] = output[1]
-		bus.text = 'Busses: %s \n Cost: %d kW \n +10 Multiplier' %[global.encount[1], global.coste[1]]
-		if output[2] == 1:
-			bus.disabled = true
-			bus.text = 'Busses: %s \n MAX UPGRADES \n +10 Multiplier' %(global.encount[1])
 
 func _on_ev_pressed() -> void:
 	if global.power >= global.coste[2]:

@@ -142,7 +142,7 @@ offset_right = 144.0
 grow_vertical = 0
 theme_override_fonts/font = ExtResource("5_phe8i")
 theme_override_font_sizes/font_size = 32
-text = "Version Release 1.0.1"
+text = "Version Release 1.0.2"
 vertical_alignment = 2
 
 [node name="titlemusic" type="AudioStreamPlayer" parent="."]
@@ -170,7 +170,7 @@ bus = &"sfx"
 [connection signal="mouse_entered" from="hbox/VBoxContainer/settings" to="." method="_on_settings_mouse_entered"]
 [connection signal="pressed" from="hbox/VBoxContainer/settings" to="." method="_on_settings_pressed"]
 [connection signal="mouse_entered" from="hbox/VBoxContainer/exit" to="." method="_on_exit_mouse_entered"]
-[connection signal="pressed" from="hbox/VBoxContainer/exit" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="hbox/VBoxContainer/exit" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="hbox/VBoxContainer/exit" to="." method="_on_button_pressed"]
 [connection signal="mouse_entered" from="hbox/start" to="." method="_on_start_mouse_entered"]
 [connection signal="pressed" from="hbox/start" to="." method="_on_button_pressed"]

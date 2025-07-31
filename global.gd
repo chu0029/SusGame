@@ -1,6 +1,6 @@
 extends Node
 #THESE ARE ALL THE GLOBAL VARIABLES IN THE GAME
-var power: int = 0000 #set all variables needed to increase power
+var power: int = 1000000 #set all variables needed to increase power
 var multiplier : int = 1
 var automult : int = 0
 
