@@ -146,6 +146,7 @@ offset_bottom = -403.0
 scale = Vector2(0.313, 0.313)
 
 [node name="biom" type="TextureRect" parent="factory/Control"]
+layout_mode = 0
 offset_left = 244.0
 offset_top = 306.0
 offset_right = 4084.0
@@ -154,6 +155,7 @@ mouse_filter = 2
 texture = ExtResource("8_2hywi")
 
 [node name="geot" type="TextureRect" parent="factory/Control"]
+layout_mode = 0
 offset_left = 244.0
 offset_top = 306.0
 offset_right = 4084.0
@@ -162,6 +164,7 @@ mouse_filter = 2
 texture = ExtResource("9_a2inv")
 
 [node name="hydr" type="TextureRect" parent="factory/Control"]
+layout_mode = 0
 offset_left = 244.0
 offset_top = 306.0
 offset_right = 284.0
@@ -169,6 +172,7 @@ offset_bottom = 346.0
 mouse_filter = 2
 
 [node name="fusi" type="TextureRect" parent="factory/Control"]
+layout_mode = 0
 offset_left = 244.0
 offset_top = 306.0
 offset_right = 4084.0
@@ -177,6 +181,7 @@ mouse_filter = 2
 texture = ExtResource("10_q27r4")
 
 [node name="inci" type="TextureRect" parent="factory/Control"]
+layout_mode = 0
 offset_left = 244.0
 offset_top = 306.0
 offset_right = 4084.0
@@ -185,6 +190,7 @@ mouse_filter = 2
 texture = ExtResource("11_bvssg")
 
 [node name="coal" type="TextureRect" parent="factory/Control"]
+layout_mode = 0
 offset_left = 244.0
 offset_top = 306.0
 offset_right = 4084.0
@@ -193,6 +199,7 @@ mouse_filter = 2
 texture = ExtResource("12_5w31o")
 
 [node name="adva" type="TextureRect" parent="factory/Control"]
+layout_mode = 0
 offset_left = 244.0
 offset_top = 306.0
 offset_right = 4084.0
@@ -201,6 +208,7 @@ mouse_filter = 2
 texture = ExtResource("13_h0ywf")
 
 [node name="natu" type="TextureRect" parent="factory/Control"]
+layout_mode = 0
 offset_left = 244.0
 offset_top = 306.0
 offset_right = 4084.0
@@ -209,6 +217,7 @@ mouse_filter = 2
 texture = ExtResource("14_701r1")
 
 [node name="oilr" type="TextureRect" parent="factory/Control"]
+layout_mode = 0
 offset_left = 244.0
 offset_top = 306.0
 offset_right = 4084.0
@@ -217,6 +226,7 @@ mouse_filter = 2
 texture = ExtResource("15_20c3r")
 
 [node name="fiss" type="TextureRect" parent="factory/Control"]
+layout_mode = 0
 offset_left = 244.0
 offset_top = 306.0
 offset_right = 4084.0
@@ -225,6 +235,7 @@ mouse_filter = 2
 texture = ExtResource("16_0lbsl")
 
 [node name="wind" type="TextureRect" parent="."]
+layout_mode = 0
 offset_left = 55.372
 offset_top = -1.222
 offset_right = 3895.37
