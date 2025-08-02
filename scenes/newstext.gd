@@ -11,6 +11,10 @@ var headlines = [
 	"You can't regain health, as this how Earth is in real life.",
 	"Read more about the UN's sustainability development goal No. 11.",
 	"1.12 billion live in slums or informal settlements without basic services.",
+	'Press the ESCAPE key to access settings.',
+	'90% of coral reefs succumb to bleaching, even the Great Barrier Reef.',
+	'Polar bear population set to decline by 30% in 2050',
+	"The north of Jakarta, Indonesia's capital, has sunk!",
 	'Clicking ever so slightly increases sustainability.'
 ]
 var startmsg = [

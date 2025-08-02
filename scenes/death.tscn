@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://ccybex2lv1v85"]
 
 [ext_resource type="FontFile" uid="uid://ch5u3e1ev21f7" path="res://filees and stuff/Perfect DOS VGA 437 Win.ttf" id="1_0hhgj"]
-[ext_resource type="Script" uid="uid://cy1v0fmtjftrj" path="res://scenes/death.gd" id="1_tjai8"]
+[ext_resource type="Script" path="res://scenes/death.gd" id="1_tjai8"]
 [ext_resource type="Theme" uid="uid://yfe8see4c3cw" path="res://filees and stuff/gametest.tres" id="2_w8wr1"]
 [ext_resource type="AudioStream" uid="uid://3kebcwl4p3kx" path="res://filees and stuff/bgmsfxFinal/gamover.ogg" id="4_q1r8t"]
 

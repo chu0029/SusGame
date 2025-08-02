@@ -1,6 +1,6 @@
 extends Node
 #THESE ARE ALL THE GLOBAL VARIABLES IN THE GAME
-var power: int = 1000000 #set all variables needed to increase power
+var power: int = 0 #set all variables needed to increase power
 var multiplier : int = 1
 var automult : int = 0
 
@@ -9,7 +9,7 @@ var automult : int = 0
 var costs = [75,500,3000,20000,200000,2500000]
 var costn = [25,250,1500,10000,100000,1000000]
 var nonsuscount = [0,0,0,0,0,0]
-var coste = [200,1000,5000,10000,50000]
+var coste = [2000,10000,50000,100000,5000000]
 var encount = [0,0,0,0,0]
 
 #amount of sustainable upgrades player has acquired

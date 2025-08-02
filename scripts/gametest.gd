@@ -105,6 +105,7 @@ func UpdateLabelText() -> void:
 	oilrig.text = 'Oil Rig: %s \n Cost: %d kW \n Produces 400 kW/s' %[global.nonsuscount[4], global.costn[4]]
 	nfission.text = 'Nuclear Fission: %s \n Cost: %d kW \n Produces 2000 kW/s' %[global.nonsuscount[5], global.costn[5]]
 
+#UPDATE ENHANCEMENTS TEXT
 	if global.encount[0] <3: #if there are less than 3 items purchased alr
 		tree.text = 'Trees: %s \n Cost: %d kW \n +1 Multiplier' %[global.encount[0], global.coste[0]]
 		if global.encount[0] > 0:
@@ -121,31 +122,29 @@ func UpdateLabelText() -> void:
 		bus.text = 'Busses: %s \n MAX UPGRADES \n +10 Multiplier' %(global.encount[1])
 		bus.disabled = true
 
-	if global.encount[0] <3: #if there are less than 3 items purchased alr
-		tree.text = 'Trees: %s \n Cost: %d kW \n +1 Multiplier' %[global.encount[0], global.coste[0]]
-		if global.encount[0] > 0:
+	if global.encount[2] <3: #if there are less than 3 items purchased alr
+		ev.text = 'Electric Cars: %s \n Cost: %d kW \n +200 Multiplier' %[global.encount[2], global.coste[2]]
+		if global.encount[2] > 2:
 			pass
 	else:
-		tree.text = 'Trees: %s \n MAX UPGRADES \n +1 Multiplier' %(global.encount[0])
-		tree.disabled = true
+		ev.text = 'Electric Cars: %s \n MAX UPGRADES \n +200 Multiplier' %(global.encount[2])
+		ev.disabled = true
 
-	if global.encount[0] <3: #if there are less than 3 items purchased alr
-		tree.text = 'Trees: %s \n Cost: %d kW \n +1 Multiplier' %[global.encount[0], global.coste[0]]
-		if global.encount[0] > 0:
+	if global.encount[3] <3: #if there are less than 3 items purchased alr
+		train.text = 'Metro: %s \n Cost: %d kW \n +2500 Multiplier' %[global.encount[3], global.coste[3]]
+		if global.encount[3] > 3:
 			pass
 	else:
-		tree.text = 'Trees: %s \n MAX UPGRADES \n +1 Multiplier' %(global.encount[0])
-		tree.disabled = true
+		train.text = 'Metro: %s \n MAX UPGRADES \n +2500 Multiplier' %(global.encount[3])
+		train.disabled = true
 
-	if global.encount[0] <3: #if there are less than 3 items purchased alr
-		tree.text = 'Trees: %s \n Cost: %d kW \n +1 Multiplier' %[global.encount[0], global.coste[0]]
-		if global.encount[0] > 0:
+	if global.encount[4] <3: #if there are less than 3 items purchased alr
+		sApartment.text = 'Solar Buildings: %s \n Cost: %d kW \n +5000 Multiplier' %[global.encount[4], global.coste[4]]
+		if global.encount[4] > 4:
 			pass
 	else:
-		tree.text = 'Trees: %s \n MAX UPGRADES \n +1 Multiplier' %(global.encount[0])
-		tree.disabled = true
-
-
+		sApartment.text = 'Solar Buildings: %s \n MAX UPGRADES \n +5000 Multiplier' %(global.encount[4])
+		sApartment.disabled = true
 
 
 
@@ -366,10 +365,6 @@ func _on_ev_pressed() -> void:
 		print(global.encount[2])
 		global.coste[2] = output[0]
 		global.encount[2] = output[1]
-		ev.text = 'Electric Cars: %s \n Cost: %d kW \n +200 Multiplier' %[global.encount[2], global.coste[2]]
-		if output[2] == 1:
-			ev.disabled = true
-			ev.text = 'Electric Cars: %s \n MAX UPGRADES \n +200 Multiplier' %(global.encount[2])
 
 func _on_train_pressed() -> void:
 	if global.power >= global.coste[3]:
@@ -377,10 +372,6 @@ func _on_train_pressed() -> void:
 		print(global.encount[3])
 		global.coste[3] = output[0]
 		global.encount[3] = output[1]
-		train.text = 'Metro: %s \n Cost: %d kW \n +2500 Multiplier' %[global.encount[3], global.coste[3]]
-		if output[2] == 1:
-			train.disabled = true
-			train.text = 'Metro: %s \n MAX UPGRADES \n +2500 Multiplier' %(global.encount[3])
 
 func _on_s_apartment_pressed() -> void:
 	if global.power >= global.coste[4]:
@@ -388,7 +379,3 @@ func _on_s_apartment_pressed() -> void:
 		print(global.encount[4])
 		global.coste[4] = output[0]
 		global.encount[4] = output[1]
-		sApartment.text = 'Solar Buildings: %s \n Cost: %d kW \n +5000 Multiplier' %[global.encount[4], global.coste[4]]
-		if output[2] == 1:
-			sApartment.disabled = true
-			sApartment.text = 'Solar Buildings: %s \n MAX UPGRADES \n +5000 Multiplier' %(global.encount[4])

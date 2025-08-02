@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://bx0jdxb81hjsg" path="res://scripts/settings_menu.gd" id="1_cr101"]
 [ext_resource type="Theme" uid="uid://yfe8see4c3cw" path="res://filees and stuff/gametest.tres" id="2_cr101"]
 [ext_resource type="FontFile" uid="uid://ch5u3e1ev21f7" path="res://filees and stuff/Perfect DOS VGA 437 Win.ttf" id="3_lwwgp"]
-[ext_resource type="Script" uid="uid://dpltd24gclocs" path="res://scenes/h_slider.gd" id="3_wswnh"]
+[ext_resource type="Script" path="res://scenes/h_slider.gd" id="3_wswnh"]
 [ext_resource type="AudioStream" uid="uid://bcb6pk0g8u4l7" path="res://scenes/bgmplaylist.tres" id="4_labj1"]
 [ext_resource type="AudioStream" uid="uid://dxaf162lw1lbq" path="res://filees and stuff/e_se014.ogg" id="6_bgjg7"]
 
