@@ -40,7 +40,7 @@ func resetGame(): #CALLED WHENEVER HEALTH = 0
 	costs = [75,500,3000,20000,200000,2500000]
 	costn = [25,250,1500,10000,100000,1000000]
 	nonsuscount = [0,0,0,0,0,0]
-	coste = [200,1000,5000,10000,50000]
+	coste = [2000,10000,50000,100000,5000000]
 	encount = [0,0,0,0,0]
 
 	#amount of sustainable upgrades player has acquired

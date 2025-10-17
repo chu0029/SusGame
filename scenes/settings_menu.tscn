@@ -140,7 +140,13 @@ Music:
 	Theme (Super Mario 
 	Kart) (Night)
 -  Everybody's Fancy -
-	Johnny Costa"
+	Johnny Costa
+
+               CHANGELOG
+1.1.1:
+-   Fixed prices being 10x less for enhancements once user dies
+-   Hopefully exported correctly so that Ms Mag can play
+-   Skibi Co. LTD copyright"
 
 [node name="bgm" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_labj1")
