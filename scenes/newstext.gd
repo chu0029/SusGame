@@ -35,15 +35,19 @@ func _ready() -> void:
 	self.text = ''
 	await get_tree().create_timer(0).timeout
 	#print(i)
-	for i in range(startmsg.size()): #show start messages
-		#print(startmsg[i], '|', i)
-		var tween = get_tree().create_tween()
-		tween.tween_property(self, "position", Vector2(16, 36), 0.5) 
-		tween.tween_property(self, "position", Vector2(16, 4), 0.5)
-		await get_tree().create_timer(0.5).timeout
-		self.text = startmsg[i]
-		await get_tree().create_timer(10).timeout
-		i += 1
+	if global.coldStart == 1:
+		for i in range(startmsg.size()): #show start messages
+			#print(startmsg[i], '|', i)
+			var tween = get_tree().create_tween()
+			tween.tween_property(self, "position", Vector2(16, 36), 0.5) 
+			tween.tween_property(self, "position", Vector2(16, 4), 0.5)
+			await get_tree().create_timer(0.5).timeout
+			self.text = startmsg[i]
+			await get_tree().create_timer(10).timeout
+			i += 1
+		global.coldStart = 0 #after all start text, no more cold start
+	else:
+		headlinetimer.start()
 	headlinetimer.start()
 	#print('hello')
 

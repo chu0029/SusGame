@@ -30,6 +30,9 @@ var kws: int = 0
 #start screen music progress tracker (NOT WORKING)
 var musicProgress = 0.0
 
+#set cold start (means player hasnt touched game before)
+var coldStart = 1
+
 func resetGame(): #CALLED WHENEVER HEALTH = 0
 	power= 0 #set all variables needed to increase power
 	multiplier = 1
