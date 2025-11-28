@@ -69,6 +69,33 @@ func _ready() -> void: #this is the scratch 'on start' block
 	natuSpriteN.hide()
 	oilrSpriteN.hide()
 	fissSpriteN.hide()
+	if global.nonsuscount[0]>0: #v1.1.2 sprite dissapear on settings bug fix
+		#please someone make this better later, this is spaghetti code
+		inciSpriteN.show()
+	if global.nonsuscount[1]>0:
+		coalSpriteN.show()
+	if global.nonsuscount[2]>0:
+		coalSpriteN.show()
+	if global.nonsuscount[3]>0:
+		advaSpriteN.show()
+	if global.nonsuscount[4]>0:
+		natuSpriteN.show()
+	if global.nonsuscount[5]>0:
+		oilrSpriteN.show()
+		
+	if global.solarpanelcount>0: #v1.1.2 sprite disappear on settings bug fix
+		#please someone make this better later, this is spaghetti code
+		solaSpriteS.show()
+	if global.windturbinecount>0:
+		windSpriteS.show()
+	if global.biomasscount>0:
+		biomSpriteS.show()
+	if global.geothermalplantcount>0:
+		geotSpriteS.show()
+	if global.hydroelectricdamcount>0:
+		hydrSpriteS.show()
+	if global.nuclearfusioncount>0:
+		fusiSpriteS.show()
 
 func _process(delta: float) -> void: #on every frame...
 	UpdateLabelText()

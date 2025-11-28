@@ -15,3 +15,6 @@ func _process(delta: float) -> void:
 func _on_deadbutton_pressed() -> void:
 	global.resetGame()
 	get_tree().change_scene_to_file("res://scenes/menu_start.tscn")
+
+func _on_deadbutton_mouse_entered() -> void:
+	$ESe014.play()

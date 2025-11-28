@@ -1,6 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://dbbtdnjcby4nx"]
+[gd_scene load_steps=8 format=3 uid="uid://dbbtdnjcby4nx"]
 
 [ext_resource type="Script" uid="uid://bx0jdxb81hjsg" path="res://scripts/settings_menu.gd" id="1_cr101"]
+[ext_resource type="Texture2D" uid="uid://d00smxw8w1bsd" path="res://sprites/Image_20250730_163725_130.png" id="2_48ojb"]
 [ext_resource type="Theme" uid="uid://yfe8see4c3cw" path="res://filees and stuff/gametest.tres" id="2_cr101"]
 [ext_resource type="FontFile" uid="uid://ch5u3e1ev21f7" path="res://filees and stuff/Perfect DOS VGA 437 Win.ttf" id="3_lwwgp"]
 [ext_resource type="Script" path="res://scenes/h_slider.gd" id="3_wswnh"]
@@ -15,6 +16,27 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_cr101")
+
+[node name="bgTextureRect" type="TextureRect" parent="."]
+z_index = -2
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -500.0
+offset_right = 2140.0
+offset_bottom = 1760.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.45, 0.45)
+texture = ExtResource("2_48ojb")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 0
+offset_right = 1200.0
+offset_bottom = 800.0
+color = Color(0, 0, 0, 0.627451)
 
 [node name="TextureRect" type="TextureRect" parent="."]
 modulate = Color(0.674815, 0.674815, 0.674815, 1)
@@ -146,7 +168,14 @@ Music:
 1.1.1:
 -   Fixed prices being 10x less for enhancements once user dies
 -   Hopefully exported correctly so that Ms Mag can play
--   Skibi Co. LTD copyright"
+-   Skibi Co. LTD copyright
+
+1.1.2:
+-    fixed sprites disappearing when user opens settings page
+-    added background image for settings page, and also changed transparency levels
+-    added feature where starting text does not disappear until completion
+-    added background colour for death screen
+-    fixed bug where death screen button didn't have a sound effect"
 
 [node name="bgm" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_labj1")

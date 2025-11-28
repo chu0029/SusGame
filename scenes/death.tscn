@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://ccybex2lv1v85"]
+[gd_scene load_steps=6 format=3 uid="uid://ccybex2lv1v85"]
 
 [ext_resource type="FontFile" uid="uid://ch5u3e1ev21f7" path="res://filees and stuff/Perfect DOS VGA 437 Win.ttf" id="1_0hhgj"]
-[ext_resource type="Script" path="res://scenes/death.gd" id="1_tjai8"]
+[ext_resource type="Script" uid="uid://cy1v0fmtjftrj" path="res://scenes/death.gd" id="1_tjai8"]
 [ext_resource type="Theme" uid="uid://yfe8see4c3cw" path="res://filees and stuff/gametest.tres" id="2_w8wr1"]
 [ext_resource type="AudioStream" uid="uid://3kebcwl4p3kx" path="res://filees and stuff/bgmsfxFinal/gamover.ogg" id="4_q1r8t"]
+[ext_resource type="AudioStream" uid="uid://dxaf162lw1lbq" path="res://filees and stuff/e_se014.ogg" id="5_6up1m"]
 
 [node name="Control" type="Control" node_paths=PackedStringArray("info")]
 layout_mode = 3
@@ -72,4 +73,19 @@ text = "You have generated XXXXXX kilowatts of un-sustainable power.
 That would kill XXX trees."
 horizontal_alignment = 1
 
+[node name="ColorRect" type="ColorRect" parent="."]
+z_index = -1
+layout_mode = 0
+offset_right = 1200.0
+offset_bottom = 800.0
+mouse_filter = 2
+mouse_default_cursor_shape = 5
+color = Color(0.0516, 0.09834, 0.12, 1)
+
+[node name="ESe014" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_6up1m")
+pitch_scale = 0.7
+bus = &"sfx"
+
+[connection signal="mouse_entered" from="deadbutton" to="." method="_on_deadbutton_mouse_entered"]
 [connection signal="pressed" from="deadbutton" to="." method="_on_deadbutton_pressed"]

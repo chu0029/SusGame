@@ -28,6 +28,10 @@ var startmsg = [
 
 var i: int = 0
 
+#instructions for semi-transparent tutorial box
+# Assuming 'my_node' is a reference to your 2D node
+#my_node.z_index = 10
+
 #shuffle the headlines to make it appear random, but without repeats
 func _ready() -> void:
 	headlines.shuffle()
@@ -35,7 +39,7 @@ func _ready() -> void:
 	self.text = ''
 	await get_tree().create_timer(0).timeout
 	#print(i)
-	if global.coldStart == 1:
+	if global.coldStart == 1: #ISSUE OF START TEXT ALWAYS SHOWING UP FIXED HERE - v1.1.2
 		for i in range(startmsg.size()): #show start messages
 			#print(startmsg[i], '|', i)
 			var tween = get_tree().create_tween()
@@ -48,6 +52,7 @@ func _ready() -> void:
 		global.coldStart = 0 #after all start text, no more cold start
 	else:
 		headlinetimer.start()
+		self.text = headlines[-1]
 	headlinetimer.start()
 	#print('hello')
 
